@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>.gitignore file generator gig 소개 |  Insanehong's Incorrect Note</title>
+    <meta name="description" content="Insanehong's Incorrect Note is designed to help people of web developer,designer, publisher and early beginnn er who are studying Front-end Technology for the development of web application.">
+    <meta name="author" content="Insanehong">
+    <meta name="keywords" content="javascript,html,css,frends,dart,leanstartup,fornt-end" />
+    <meta name="generator" content="haroopress v0.9.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="/rss.xml" rel="alternate" title="Insanehong's Incorrect Note" type="application/rss+xml">
+
+    <!-- Le styles -->
+    <link rel="canonical" href="http://insanehong.kr">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/markdown.css" rel="stylesheet">
+    <link href="/css/haroopress.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/code/tomorrow-night.css" rel="stylesheet">
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon-64.png">
+
+    <!-- Le javascript -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.jsonp.js"></script>
+    <script src="/js/mustache.js"></script>
+    <script src="/js/apps/github.js"></script>
+    <script src="/js/apps/twitter.js"></script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+        <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
+          
+            <a class="pull-right" href="http://twitter.com/insanehong" target="_blank"><span class="icon-twitter"></span></a>
+          
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/archives">Archives</a>
+              </li>
+              <li>
+                <a href="/slides">Slides</a>
+              </li>
+                
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<link href="/css/code/tomorrow-night.css" rel="stylesheet">
+<div class="container page-archive">
+    <div class="row">
+        <div class="span3">
+            <div id="author" class="well">
+                <div>
+                    <h3>About Author</h3>
+                    <ul class="thumbnails">
+                        <li>
+                            <a class="thumbnail">
+                                <img src="http://www.gravatar.com/avatar/5e9df4b6c732d16a3b41d11d7288e195?r=pg&amp;s=128.jpg&amp;d=identicon" />
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Insanehong</strong><br/>
+                        blog: <a href="http://insanehong.kr" target="_blank">http://insanehong.kr</a><br/>
+                        twitter: <a href="http://twitter.com/insanehong" target="_blank">@insanehong</a><br/>
+                        github: <a href="https://github.com/insanehong.github.com" target="_blank">insanehong.github.com</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/insanehong" class="twitter-follow-button" data-show-count="true">Follow @insanehong</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </p>
+                    <p>
+                        <ul>
+<li>NAVER Corporation, Front-End Engineer(2013~)</li>
+<li>Like Javascript, Dart, HTML5, CSS3,Responsive Web, Haroopress, Frends, Lean Startup, Open Source</li>
+<li><a href="http://hackrslab.github.io">Hackrslab</a> co-founder</li>
+<li>About me <a href="http://about.me/insanehong">http://about.me/insanehong</a></li>
+</ul>
+
+                    </p>
+                </div>
+                <div>
+                    <h3>About this Article</h3>
+                    <p>
+                        <h5>Date Released:</h5>
+                        <span>Thursday, June 6 2013 12:58 AM</span>
+                    </p>
+                </div>
+            </div>
+                        <div class="well">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Categories</li>
+                    <li class=""><a href="/category"><i class="icon-home"></i> Home</a></li>
+                    
+                    <li><a href="/category/ajaxian"><i class="icon-book"></i> ajaxian</a></li>
+                    
+                    <li><a href="/category/essay"><i class="icon-book"></i> essay</a></li>
+                    
+                    <li><a href="/category/reference"><i class="icon-book"></i> reference</a></li>
+                    
+                    <li><a href="/category/conference"><i class="icon-book"></i> conference</a></li>
+                    
+                    <li><a href="/category/git"><i class="icon-book"></i> git</a></li>
+                    
+                    <li><a href="/category/haroopress"><i class="icon-book"></i> haroopress</a></li>
+                    
+                    <li><a href="/category/javascript"><i class="icon-book"></i> javascript</a></li>
+                    
+                    <li><a href="/category/a11y"><i class="icon-book"></i> a11y</a></li>
+                    
+                </ul>
+            </div>
+
+            
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Recent Articles</li>
+    
+        <li>
+            <a href="/post/frends-meetup" target="_blank">FRENDS Meetup 행사를 마치고
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/gitignore-generator-gig" target="_blank">.gitignore file generator gig 소개
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/guide-to-git-for-windows" target="_blank">윈도우 사용자를 위한 git client 설치
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/opensource-mentoring" target="_blank">오픈소스 제대로 활동하기 멘토링 후기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/chrome-user-controll" target="_blank">크롬 사용자 기능 사용하기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+    </ul>
+</div>
+
+        </div>
+        <div class="span9">
+            <div class="row">
+                <div class="span9">
+                    <div class="well bg">
+                        
+                        <div class="page-header">
+                            <h1>.gitignore file generator gig 소개</h1>
+                        </div>
+
+                        <div class="pull-right social-area">
+                                                
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text=".gitignore file generator gig 소개 -" data-url="http://insanehong.kr/post/gitignore-generator-gig" data-via="insanehong">Tweet</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    
+                                                
+                            <!-- Place this tag where you want the +1 button to render -->
+                            <g:plusone href="/post/gitignore-generator-gig" size="medium"></g:plusone>
+
+                            <!-- Place this render call where appropriate -->
+                            <script type="text/javascript">
+                              (function() {
+                                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                po.src = 'https://apis.google.com/js/plusone.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                              })();
+                            </script>
+                    
+
+                            
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial" data-href="http://insanehong.kr/post/gitignore-generator-gig"></div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&appId=246177242115486";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+                        </div>
+
+                        <div class="markdown-wrapper">
+                            <h1 id="toc_71">.gitignore file generator gig</h1>
+<p>최근들어 잉여력이 폭팔하고 있는 관계로 무엇인가 생산적인 일을 해보려고 찾아해매던 중 항상 <a href="http://gitignore.io">gitignore.io</a> 의 도움을 받아 생성해 오던 <code>.gitignore</code>  파일을 오프라인에서도 쉽게 사용할 수 있는 <em class="label label-important"><strong>CLI Command set</strong></em>으로 만들어 보자 라는 참 잉여스런 생각을 하게 되었다. </p>
+<blockquote>
+<p><a href="http://gitignore.io">gitignore.io</a> 에서도 CLI 로 사용가능한 방법을 지원하지만 이역시 RESTfull API 를 이용하는 방식이라 오프라인에서는 사용할 수 없다</p></blockquote>
+
+<h2 id="toc_72">gig</h2>
+<p><em class="label label-info"><strong>gig</strong></em>는  <a href="http://github.com/github/gitignore">gitignore template</a> 를 사용한 node.js 기반의  <code>.gitignore</code> file generator 이다. </p><p><em class="label label-info"><strong>gig</strong></em> 은 <code>.gitignore</code>  파일 자동 생성과 <em class="label label-success"><strong>Custom Template</strong></em> 생성을 지원하는 <code>CLI Command Set</code> 으로 구성되어 있다. </p><pre><code class="">$ gig --help
+show   Display template condition.
+gen    Create .gitignore files. If aleady .gitignore file   : append ignore conditions to .gitignore
+pkg    Create custom template. If aleady same template file exists : append ignore conditions to templae file
+
+Here are the options:
+--help, -h       Display help text
+--version, -v    Display currently version
+--name, -n       create <span class="keyword">new</span> <span class="package"><span class="keyword">package</span> <span class="title">name</span>
+--<span class="title">override</span>, -<span class="title">o</span>   <span class="title">if</span> <span class="title">aleady</span> <span class="title">file</span> <span class="title">exists</span>, <span class="title">override</span> <span class="title">content</span> <span class="title">to</span> <span class="title">file</span>
+
+<span class="title">Here</span> <span class="title">are</span> <span class="title">the</span> <span class="title">template</span>:
+<span class="title">actionscript</span>, <span class="title">android</span>, <span class="title">appceleratortitanium</span>, <span class="title">archives</span>, <span class="title">autotools</span>, <span class="title">bancha</span>, <span class="title">c</span>++, <span class="title">c</span>, <span class="title">cfwheels</span>, <span class="title">cmake</span>,
+<span class="title">cvs</span>, <span class="title">cakephp</span>, <span class="title">clojure</span>, <span class="title">codeigniter</span>, <span class="title">compass</span>, <span class="title">concrete5</span>, <span class="title">coq</span>, <span class="title">dart</span>, <span class="title">delphi</span>, <span class="title">django</span>,
+<span class="title">drupal</span>, <span class="title">eagle</span>, <span class="title">eclipse</span>, <span class="title">emacs</span>, <span class="title">erlang</span>, <span class="title">espresso</span>, <span class="title">expressionengine</span>, <span class="title">finale</span>, <span class="title">flexbuilder</span>, <span class="title">forcedotcom</span>,
+<span class="title">fuelphp</span>, <span class="title">gwt</span>, <span class="title">go</span>, <span class="title">grails</span>, <span class="title">haskell</span>, <span class="title">intellij</span>, <span class="title">java</span>, <span class="title">jboss</span>, <span class="title">jekyll</span>, <span class="title">joomla</span>,
+<span class="title">jython</span>, <span class="title">kohana</span>, <span class="title">latex</span>, <span class="title">leiningen</span>, <span class="title">lemonstand</span>, <span class="title">lilypond</span>, <span class="title">linux</span>, <span class="title">lithium</span>, <span class="title">magento</span>, <span class="title">matlab</span>,
+<span class="title">maven</span>, <span class="title">mercurial</span>, <span class="title">modelsim</span>, <span class="title">monodevelop</span>, <span class="title">netbeans</span>, <span class="title">node</span>, <span class="title">ocaml</span>, <span class="title">osx</span>, <span class="title">objective</span>-<span class="title">c</span>, <span class="title">opa</span>,
+<span class="title">oracleforms</span>, <span class="title">perl</span>, <span class="title">phpstorm</span>, <span class="title">playframework</span>, <span class="title">plone</span>, <span class="title">pycharm</span>, <span class="title">python</span>, <span class="title">qooxdoo</span>, <span class="title">qt</span>, <span class="title">quartus2</span>,
+<span class="title">r</span>, <span class="title">readme</span>.<span class="title">md</span>, <span class="title">rails</span>, <span class="title">redcar</span>, <span class="title">rhodesrhomobile</span>, <span class="title">ruby</span>, <span class="title">rubymine</span>, <span class="title">sass</span>, <span class="title">sbt</span>, <span class="title">svn</span>,
+<span class="title">scala</span>, <span class="title">sdcc</span>, <span class="title">seamgen</span>, <span class="title">sketchup</span>, <span class="title">sublimetext</span>, <span class="title">sugarcrm</span>, <span class="title">symfony</span>, <span class="title">symfony2</span>, <span class="title">symphonycms</span>, <span class="title">tags</span>,
+<span class="title">target3001</span>, <span class="title">tasm</span>, <span class="title">textmate</span>, <span class="title">textpattern</span>, <span class="title">turbogears2</span>, <span class="title">typo3</span>, <span class="title">unity</span>, <span class="title">virtualenv</span>, <span class="title">visualstudio</span>, <span class="title">waf</span>,
+<span class="title">windows</span>, <span class="title">wordpress</span>, <span class="title">xilinxise</span>, <span class="title">yii</span>, <span class="title">zendframework</span>, <span class="title">gcov</span>, <span class="title">nanoc</span>, <span class="title">opencart</span>, <span class="title">test</span>, <span class="title">vim</span>
+</code></pre><p>그럼 지금부터 각설하고 <em class="label label-info"><strong>gig</strong></em>의 설치부터 사용법까지를 알아보도록 한다. </p>
+<h2 id="toc_73">gig install</h2>
+
+<blockquote>
+<p><em class="label label-info"><strong>gig</strong></em>  는 <em class="label label-success"><strong>node.js</strong></em> 로 만들어졌으며 <em class="label label-important"><strong>npm</strong></em>을 통해서 배포 되었기 때문에 <em class="label label-success"><strong>node.js</strong></em>와  <em class="label label-important"><strong>npm</strong></em>이 설치 되어야 사용이 가능하다. 이들의 설치는 워낙 참고할만한 reference 가 널려있기에 생략한다. </p></blockquote>
+<pre><code class=""><span class="comment">$</span> <span class="comment">npm</span> <span class="comment">install</span> <span class="literal">-</span><span class="comment">g</span> <span class="comment">gig</span>
+</code></pre>
+<h2 id="toc_74">tempate conditions 확인하기</h2>
+<p><em class="label label-info"><strong>gig</strong></em> 에서 지원하는 <em class="label label-success"><strong>show</strong></em> 명령어를 통해 <code>template</code> file 의 내용을 확인 할수 있다. </p><pre><code class="">$ gig show java osx intellij sublimetext
+ java :
+*.<span class="class"><span class="keyword">class</span>
+
+# <span class="title">Package</span> <span class="title">Files</span> #
+*.<span class="title">jar</span>
+*.<span class="title">war</span>
+*.<span class="title">ear</span>
+
+<span class="title">osx</span> :
+.<span class="title">DS_Store</span>
+.<span class="title">AppleDouble</span>
+.<span class="title">LSOverride</span>
+<span class="title">Icon</span>
+
+
+# <span class="title">Thumbnails</span>
+.<span class="title">_</span>*
+
+# <span class="title">Files</span> <span class="title">that</span> <span class="title">might</span> <span class="title">appear</span> <span class="title">on</span> <span class="title">external</span> <span class="title">disk</span>
+.<span class="title">Spotlight</span>-<span class="title">V100</span>
+.<span class="title">Trashes</span>
+
+<span class="title">intellij</span> :
+*.<span class="title">iml</span>
+*.<span class="title">ipr</span>
+*.<span class="title">iws</span>
+.<span class="title">idea</span>/
+
+<span class="title">sublimetext</span> :
+# <span class="title">SublimeText</span> <span class="title">project</span> <span class="title">files</span>
+*.<span class="title">sublime</span>-<span class="title">workspace</span>
+</code></pre><p><code>.gitignore</code> 에 포함될 조건들을 확인 했으면 이제 <code>git repository</code> 에 <code>.gitignore</code> 파일을 생성해 보자.  </p>
+<h2 id="toc_75">generate .gitignore file for your git repository</h2>
+<p>위에서 확인한 조건들로 구성된 <code>.gitignore</code> 파일을 만들어 보도록 하자.</p><pre><code class="">$ gig gen  java osx intellij sublimetext
+Completed Generate!
+/Users/insanehong/workspace/project/gigtest/.gitignore:
+
+<span class="preprocessor">### java ###</span>
+*.<span class="class"><span class="keyword">class</span>
+
+# <span class="title">Package</span> <span class="title">Files</span> #
+*.<span class="title">jar</span>
+*.<span class="title">war</span>
+*.<span class="title">ear</span>
+
+### <span class="title">osx</span> ###
+.<span class="title">DS_Store</span>
+.<span class="title">AppleDouble</span>
+.<span class="title">LSOverride</span>
+<span class="title">Icon</span>
+
+
+# <span class="title">Thumbnails</span>
+.<span class="title">_</span>*
+
+# <span class="title">Files</span> <span class="title">that</span> <span class="title">might</span> <span class="title">appear</span> <span class="title">on</span> <span class="title">external</span> <span class="title">disk</span>
+.<span class="title">Spotlight</span>-<span class="title">V100</span>
+.<span class="title">Trashes</span>
+
+### <span class="title">intellij</span> ###
+*.<span class="title">iml</span>
+*.<span class="title">ipr</span>
+*.<span class="title">iws</span>
+.<span class="title">idea</span>/
+
+### <span class="title">sublimetext</span> ###
+# <span class="title">SublimeText</span> <span class="title">project</span> <span class="title">files</span>
+*.<span class="title">sublime</span>-<span class="title">workspace</span>
+
+</code></pre><p>간단한 명령어 한줄로 java, osx, intellij, sublime text 에서 생성하는 파일 혹은 디렉토리에 대한 조건을 가진 <code>.gitignore</code> 파일이 생성되었다. </p><p>위의 경우 <code>.gitignore</code> 파일이 존재하지 않는 디렉토리에서 <em class="label label-important"><strong>gen</strong></em> 명령을 사용했기 때문에 파일을 새로 생성하여 만들었지만 이미 <code>.gitignore</code> 파일이 존재한다면 기존에 등록되어 있는 조건들에 추가 되어지게 된다. </p><p>위에서 만든 조건에 window, vim 의 조건들을 추가 해자.</p><pre><code class="">$ gig gen windows vim
+Completed Generate!
+/Users/insanehong/workspace/project/gigtest/.gitignore:
+
+<span class="preprocessor">### java ###</span>
+*.<span class="class"><span class="keyword">class</span>
+
+# <span class="title">Package</span> <span class="title">Files</span> #
+*.<span class="title">jar</span>
+*.<span class="title">war</span>
+*.<span class="title">ear</span>
+
+### <span class="title">osx</span> ###
+.<span class="title">DS_Store</span>
+.<span class="title">AppleDouble</span>
+.<span class="title">LSOverride</span>
+<span class="title">Icon</span>
+
+
+# <span class="title">Thumbnails</span>
+.<span class="title">_</span>*
+
+# <span class="title">Files</span> <span class="title">that</span> <span class="title">might</span> <span class="title">appear</span> <span class="title">on</span> <span class="title">external</span> <span class="title">disk</span>
+.<span class="title">Spotlight</span>-<span class="title">V100</span>
+.<span class="title">Trashes</span>
+
+### <span class="title">intellij</span> ###
+*.<span class="title">iml</span>
+*.<span class="title">ipr</span>
+*.<span class="title">iws</span>
+.<span class="title">idea</span>/
+
+### <span class="title">sublimetext</span> ###
+# <span class="title">SublimeText</span> <span class="title">project</span> <span class="title">files</span>
+*.<span class="title">sublime</span>-<span class="title">workspace</span>
+### <span class="title">windows</span> ###
+# <span class="title">Windows</span> <span class="title">image</span> <span class="title">file</span> <span class="title">caches</span>
+<span class="title">Thumbs</span>.<span class="title">db</span>
+<span class="title">ehthumbs</span>.<span class="title">db</span>
+
+# <span class="title">Folder</span> <span class="title">config</span> <span class="title">file</span>
+<span class="title">Desktop</span>.<span class="title">ini</span>
+
+# <span class="title">Recycle</span> <span class="title">Bin</span> <span class="title">used</span> <span class="title">on</span> <span class="title">file</span> <span class="title">shares</span>
+$<span class="title">RECYCLE</span>.<span class="title">BIN</span>/
+
+### <span class="title">vim</span> ###
+.*.<span class="title">s</span>[<span class="title">a</span>-<span class="title">w</span>][<span class="title">a</span>-<span class="title">z</span>]
+*.<span class="title">un</span>~
+<span class="title">Session</span>.<span class="title">vim</span>
+.<span class="title">netrwhist</span>
+*~
+</code></pre><p>기존에 만들었던 java, osx, intellij, sublimetext 의 조건들에 새로 추가한 windows, vim 의 조건들이 추가된것을 확인 할수 있다. </p><p>때로는 기존파일에 추가하는것이 아니라 기존파일을 무시하고 새로운 condition 으로 덮어쓰기를 해야하는 경우가 있다. 
+이럴경우에는 <em class="label label-info"><strong>--override</strong></em> 혹은 단축옵션인 <em class="label label-info"><strong>-o</strong></em> 를 사용하면 된다. </p><p>위에서 만들어진 <code>.gitignore</code> 파일을  osx, sublimetext 의 조건만 가진 새로운 녀석으로 교체 해보자.</p><pre><code class="">$ gig gen -o osx sublimetext
+Completed Generate!
+/Users/insanehong/workspace/project/gigtest/<span class="variable">.gitignore</span>:
+<span class="preprocessor">### osx ###</span>
+<span class="variable">.DS_Store</span>
+<span class="variable">.AppleDouble</span>
+<span class="variable">.LSOverride</span>
+Icon
+
+
+<span class="preprocessor"># Thumbnails</span>
+<span class="variable">._</span>*
+
+<span class="preprocessor"># Files that might appear on external disk</span>
+<span class="variable">.Spotlight</span>-V100
+<span class="variable">.Trashes</span>
+
+<span class="preprocessor">### sublimetext ###</span>
+<span class="preprocessor"># SublimeText project files</span>
+*<span class="variable">.sublime</span>-workspace
+</code></pre><p>기존의 파일을 osx, sublimetext 의 조건만을 가진 녀석으로 override 한것을 확인 할 수 있다. </p>
+<h2 id="toc_76">자주사용되는  template packaging 하기</h2>
+<p>지금까지 소개한 방법은 ignore 조건에 추가될 condition 을 하나하나 지정하여야 했다. 하지만 개발머신이 고정적이며 사용하는 환경이 자주 바뀌는 일이 없다면 좀더 쉬운 방법으로 생성하는 방법을 찾게 된다. </p><p>이럴때는 자주쓰는 template 을 하나로 묶어 새로운 template package 로 만들어서 사용하면 좀더 간편하게 사용할 수 있다. </p><p>본인은 imac, macbook pro 를 개발머신으로 사용하고 있고 sublime text2 와 intellij 를 사용하여 개발하고 있다. 
+그래서 이 녀석들을 하나로 묶어 <code>mypkg</code> 라는 이름의 template 을 생성해 보겠다. </p><pre><code class="">$ gig pkg -name <span class="string">'mypkg'</span> osx sublimetext intellij
+Completed packaging!
+mypkg.gitignore :
+<span class="preprocessor">### osx ###</span>
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+<span class="preprocessor"># Thumbnails</span>
+._*
+
+<span class="preprocessor"># Files that might appear on external disk</span>
+.Spotlight-V100
+.Trashes
+
+<span class="preprocessor">### sublimetext ###</span>
+<span class="preprocessor"># SublimeText project files</span>
+*.sublime-workspace
+
+<span class="preprocessor">### intellij ###</span>
+*.iml
+*.ipr
+*.iws
+.idea/
+</code></pre><p><code>mypkg</code> 란 이름으로 새로운 template 를 만들었다. 새로운  template 가 제대로 생성되었는지 확인 하는 방법은 
+<em class="label label-info"><strong>--help</strong></em> 를 통해 template list 를 확인하거나 <em class="label label-info"><strong>show</strong></em> 명령어를 통해 확인해보는 것이다. </p><pre><code class="">$ gig show mypkg
+mypkg :
+<span class="preprocessor">### osx ###</span>
+<span class="variable">.DS_Store</span>
+<span class="variable">.AppleDouble</span>
+<span class="variable">.LSOverride</span>
+Icon
+
+
+<span class="preprocessor"># Thumbnails</span>
+<span class="variable">._</span>*
+
+<span class="preprocessor"># Files that might appear on external disk</span>
+<span class="variable">.Spotlight</span>-V100
+<span class="variable">.Trashes</span>
+
+<span class="preprocessor">### sublimetext ###</span>
+<span class="preprocessor"># SublimeText project files</span>
+*<span class="variable">.sublime</span>-workspace
+
+<span class="preprocessor">### intellij ###</span>
+*<span class="variable">.iml</span>
+*<span class="variable">.ipr</span>
+*<span class="variable">.iws</span>
+<span class="variable">.idea</span>/
+</code></pre><p><em class="label label-info"><strong>pkg</strong></em> 또한 <em class="label label-info"><strong>gen</strong></em> 과 마찬가지로 기존의 동일한 template 파일이 존재하면 해당 파일에 조건을 추가하게 되며 새로운 조건으로 구성된 파일로 만들기 위해서 <em class="label label-info"><strong>--override</strong></em> 혹은 단축옵션인 <em class="label label-info"><strong>-o</strong></em>  옵션을 사용하면 된다. </p><p>방금 만든 <code>mypkg</code> 를 linux, vim 의 조건으로 변경해 보도록 하자</p><pre><code class="">$ gig pkg -name <span class="string">'mypkg'</span> -o linux vim
+Completed packaging!
+mypkg.gitignore :
+<span class="comment">### linux ###</span>
+.*
+!.gitignore
+<span class="variable">*~</span>
+
+<span class="comment">### vim ###</span>
+.<span class="variable">*.</span><span class="keyword">s</span>[a-w][a-z]
+<span class="variable">*.</span>un~
+Session.vim
+.netrwhist
+<span class="variable">*~</span>
+</code></pre><p>이로서 <em class="label label-info"><strong>gig</strong></em>의 사용방법은 모두 익히게 되었다. </p><p>이 녀석을 처음 생각하고 구현하기 까지는 총 3일 정도가 걸렸다. 첫째날은 아이디어를 구상해놓고도 회식으로 인하여 시간이 나지 않았고 다음날은 명령어셋을 어떻게 지원할것인가를 고민하였다. </p><p>처음 구성한 명령어셋은 복잡하기도 하고 굉장히 세분화된 명령어들로 구성하였지만 오히려 많은 명령어를 지원하는 것이 되려 불편하다고 생각하여 과감히 3개의 명령어로 줄여버렸다. </p><p>이 3개의 명령어로도 생각했던 모든 기능은 다 지원할 수 있다고 생각했기 때문에 더이상 명령어를 추가할 계획은 없다.(더 추가할 명령어가 있을지도 의문이다.)</p><p>어째든 이글을 적는동안에도 종종 버그 혹은 버그아닌 버그(??) 들이 발견되어 fetch를 거듭한 끝에 처음 공개할대 <code>v0.1.4</code> 였던 녀석이 지금은 <code>v0.1.7</code> 이 되어 버렸다. </p><p>npm 특성상 동일 버전을 달고 업데이트를 할수 없기 때문에 어쩔수 없는 선택이였지만 제대로 테스트 하지 못한 본인의 잘못이 더 큰거 같다. </p><p>어째든 여기까지 이글을 읽은 분이라면 꼭 <code>npm update -g gig</code> 명령을 수행해보기 바라며 이 글을 마친다.</p>
+                        </div>
+                        <hr />
+                                            
+                        <div class="row-fluid">
+                            
+                            <div class="pull-right">
+                                <a href="/post/gitlab5.1-install-guide" class="btn btn-info">김대리 Gitlab 5.1 설치하다 <i class="icon-white icon-chevron-right"></i></a>
+                            </div>
+                            
+
+                            
+                            <div class="pull-left">
+                                <a href="/post/front-end-developer-interview-javascript" class="btn btn-info"><i class="icon-white icon-chevron-left"></i> front-end 개발자 인터뷰 문제 - javascript 영역</a>
+                            </div>
+                            
+                        </div>
+                    
+
+                        
+    <div class="row-fluid">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'incorrectnote'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">-->
+        <!--<div class="offset3 span9">-->
+            <!--<strong>tags</strong> :-->
+            <!---->
+            <!--<a href="/tag/git">git</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/gitignore">gitignore</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/generator">generator</a>&nbsp;-->
+            <!---->
+        <!--</div>-->
+    <!--</div>-->
+</div><!-- /container -->
+
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12 ">
+                    <div class="well">
+                        <p class="pull-right"><a href="#">Back to top</a></p>
+                            <strong>haroopress</strong> developed by <a href="http://twitter.com/rhiokim" target="_blank">@rhiokim</a>,<a href="http://twitter.com/haroopress" target="_blank">@haroopress</a> and source in <a href="https://github.com/rhiokim/haroopress" target="_blank">github</a><br/>
+                            Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+                            Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-44036299-1']);
+            _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+
+</body>
+</html>

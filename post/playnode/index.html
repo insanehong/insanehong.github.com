@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node.js Korea Conference 1st. PlayNode를 준비하면서 |  Insanehong's Incorrect Note</title>
+    <meta name="description" content="Insanehong's Incorrect Note is designed to help people of web developer,designer, publisher and early beginnn er who are studying Front-end Technology for the development of web application.">
+    <meta name="author" content="Insanehong">
+    <meta name="keywords" content="javascript,html,css,frends,dart,leanstartup,fornt-end" />
+    <meta name="generator" content="haroopress v0.9.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="/rss.xml" rel="alternate" title="Insanehong's Incorrect Note" type="application/rss+xml">
+
+    <!-- Le styles -->
+    <link rel="canonical" href="http://insanehong.kr">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/markdown.css" rel="stylesheet">
+    <link href="/css/haroopress.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/code/tomorrow-night.css" rel="stylesheet">
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon-64.png">
+
+    <!-- Le javascript -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.jsonp.js"></script>
+    <script src="/js/mustache.js"></script>
+    <script src="/js/apps/github.js"></script>
+    <script src="/js/apps/twitter.js"></script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+        <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
+          
+            <a class="pull-right" href="http://twitter.com/insanehong" target="_blank"><span class="icon-twitter"></span></a>
+          
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/archives">Archives</a>
+              </li>
+              <li>
+                <a href="/slides">Slides</a>
+              </li>
+                
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<link href="/css/code/tomorrow-night.css" rel="stylesheet">
+<div class="container page-archive">
+    <div class="row">
+        <div class="span3">
+            <div id="author" class="well">
+                <div>
+                    <h3>About Author</h3>
+                    <ul class="thumbnails">
+                        <li>
+                            <a class="thumbnail">
+                                <img src="http://www.gravatar.com/avatar/5e9df4b6c732d16a3b41d11d7288e195?r=pg&amp;s=128.jpg&amp;d=identicon" />
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Insanehong</strong><br/>
+                        blog: <a href="http://insanehong.kr" target="_blank">http://insanehong.kr</a><br/>
+                        twitter: <a href="http://twitter.com/insanehong" target="_blank">@insanehong</a><br/>
+                        github: <a href="https://github.com/insanehong.github.com" target="_blank">insanehong.github.com</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/insanehong" class="twitter-follow-button" data-show-count="true">Follow @insanehong</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </p>
+                    <p>
+                        <ul>
+<li>NAVER Corporation, Front-End Engineer(2013~)</li>
+<li>Like Javascript, Dart, HTML5, CSS3,Responsive Web, Haroopress, Frends, Lean Startup, Open Source</li>
+<li><a href="http://hackrslab.github.io">Hackrslab</a> co-founder</li>
+<li>About me <a href="http://about.me/insanehong">http://about.me/insanehong</a></li>
+</ul>
+
+                    </p>
+                </div>
+                <div>
+                    <h3>About this Article</h3>
+                    <p>
+                        <h5>Date Released:</h5>
+                        <span>Sunday, November 4 2012 5:09 PM</span>
+                    </p>
+                </div>
+            </div>
+                        <div class="well">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Categories</li>
+                    <li class=""><a href="/category"><i class="icon-home"></i> Home</a></li>
+                    
+                    <li><a href="/category/ajaxian"><i class="icon-book"></i> ajaxian</a></li>
+                    
+                    <li><a href="/category/essay"><i class="icon-book"></i> essay</a></li>
+                    
+                    <li><a href="/category/reference"><i class="icon-book"></i> reference</a></li>
+                    
+                    <li><a href="/category/conference"><i class="icon-book"></i> conference</a></li>
+                    
+                    <li><a href="/category/git"><i class="icon-book"></i> git</a></li>
+                    
+                    <li><a href="/category/haroopress"><i class="icon-book"></i> haroopress</a></li>
+                    
+                    <li><a href="/category/javascript"><i class="icon-book"></i> javascript</a></li>
+                    
+                    <li><a href="/category/a11y"><i class="icon-book"></i> a11y</a></li>
+                    
+                </ul>
+            </div>
+
+            
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Recent Articles</li>
+    
+        <li>
+            <a href="/post/frends-meetup" target="_blank">FRENDS Meetup 행사를 마치고
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/gitignore-generator-gig" target="_blank">.gitignore file generator gig 소개
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/guide-to-git-for-windows" target="_blank">윈도우 사용자를 위한 git client 설치
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/opensource-mentoring" target="_blank">오픈소스 제대로 활동하기 멘토링 후기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/chrome-user-controll" target="_blank">크롬 사용자 기능 사용하기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+    </ul>
+</div>
+
+        </div>
+        <div class="span9">
+            <div class="row">
+                <div class="span9">
+                    <div class="well bg">
+                        
+                        <div class="page-header">
+                            <h1>Node.js Korea Conference 1st. PlayNode를 준비하면서</h1>
+                        </div>
+
+                        <div class="pull-right social-area">
+                                                
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="Node.js Korea Conference 1st. PlayNode를 준비하면서 -" data-url="http://insanehong.kr/post/playnode" data-via="insanehong">Tweet</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    
+                                                
+                            <!-- Place this tag where you want the +1 button to render -->
+                            <g:plusone href="/post/playnode" size="medium"></g:plusone>
+
+                            <!-- Place this render call where appropriate -->
+                            <script type="text/javascript">
+                              (function() {
+                                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                po.src = 'https://apis.google.com/js/plusone.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                              })();
+                            </script>
+                    
+
+                            
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial" data-href="http://insanehong.kr/post/playnode"></div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&appId=246177242115486";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+                        </div>
+
+                        <div class="markdown-wrapper">
+                            <h1 id="toc_270">모든일의 시작은 낚시로 부터</h1>
+<p><strong>&quot;인세인 짐 모해?? 시간 있으면 강남에서 같이 밥 먹자&quot;</strong></p><p>어느날 갑자기 걸려온 <a href="http://twitter.com/nanhapark">난하님</a>님의 전화한통 …그렇다 모든 일의 시작은 바로 여기서 시작되었다. </p><p>즐겁게 밥을 먹으며 이야기 꽃을 피우고 있을무럽 원래의 모임의 취지였던 node.js 컨퍼런스에 대한 얘기를 하실 분들이 하나둘 모여 들었고…. 내가 맛있게 먹은 설렁탕 한그릇의 계산도 <a href="http://twitter.com/doortts">너구리 채수원님</a> 이 하시면서 난 미끼를 물어버린 한마리 물고기로 전락하기 시작했다.</p><p>카페에서 이어진 이야기에서 밥값이라도 하자는 심정으로 열심히 의견을 제시했고…. 그 커피 마저 얻어먹는 결과로 이어지면서 내 이름은 어느세 오거나이저로 등록되어버렸다.</p>
+<h1 id="toc_271">티저의 오픈과 컨퍼런스 이름 정하기</h1>
+<p>어느덧 진행을 발빠르게 진행되어 티저 사이트가 열렸다. 사실 급히 티저 사이트가 오픈된 뒷배경이 있다. 이부분에 대한 글을 적어야 하나 말하야하나 고민했지만 사실 재미있는 애피소드중 하나라고 생각해 남겨두는 것이 좋겠다는 결론을 지었다.</p><p>이미 한국행 비행기표까지 끈어놓고 기다리는 아이작 슐레터의 한마디는 정말 우리의 배꼽 빠지고 뒤로 자빠지게 했다.</p><p><strong>&quot;나 비행기표 다 끈었어!! 근데 니들  정말 컨퍼런스하는거 맞지?? 나 진짜 한국도 되는거지???&quot;</strong></p><p>그렇다. 아이작에게 오라고 해놓고 정작 이사람에게 보여줄게 없었다. 그래서 가장 급선무인 티저 사이트를 오픈하게 되었고
+<a href="http://twitter.com/nanhapark">난하님</a>님과 <a href="http://twitter.com/Outsideris">Outsider</a>님의 노력으로 금세 티저 사이트가 나오게 되었다. </p><p>그리고 또 하나의 이슈로 떠오른 것이 컨퍼런스의 이름을 정하는 것이였다. 정말 많은 후보들이 거론되었다.</p><p><code>nodestorm</code> ,<code>nodeplay</code>, <code>nodeeffect</code>, <code>nodeday</code> 등 많은 이름들이 후보로 나왔다. 한가지 재미있는 것은 원래 채택된 이름은 <code>nodeplay</code> 이다. 하지만 어감등 이것저것을 고려하여 <code>playnode</code>로 재 결정되었다.</p>
+<h1 id="toc_272">정식 사이트 오픈 과 온오프믹스 모임개설</h1>
+<p>이런저런 이슈들에 대한 결정이 반복되는 과정중 이번 컨퍼런스의 디자인을 맞은 <a href="http://twitter.com/iMaZiNe80">iMaZiNe</a>님이 컨퍼런스 로고를 만들어 주셨고 이어 사이트 디자인까지 만들어 주셨다. </p><p>드디어 시작된 정식 사이트 작업. 이 작업 역시 <a href="http://twitter.com/nanhapark">난하님</a>님과 <a href="http://twitter.com/Outsideris">Outsider</a>을 비롯해서 H3에 참가 하셨다가 사이트작업에 대한 이야기를 들으신 오거나이저  중 한분이신 <a href="http://twitter.com/J2P_">J2P</a>님이 합류하셔서 정말 단 하루 이틀사이에 뚝딱하고 <a href="http://nodeconf.kr">PlayNode 공식사이트</a>을 만들어 내셨다. 이분들의 노고에 다시한번 박수를 보낸다. </p><p><img src="./@img/nodeconf.png" alt="node.js korea conference 1st. PlayNode"></p><p>사이트도 열렸겠다 이제 컨퍼런스 신청을 받기 위한 온오프믹스 모임개설이 남았다. 그리고 그 임무는 나에게 떨어졌다.</p><p>사실 오거나이저로 있으면서 마땅히 할일없이 놀고 있었다. 컨퍼런스 당일 여러사정으로 참석여부가 불투명한 관계로 그외 발로 뛰어다녀야하거나 온라인상에서 가능한 일을 맡아야 겠다는 생각은 하고 있었다. 어찌되었건 <a href="http://onoffmix.com/event/10254">온오프믹스 모임</a> 개설도 완료.</p><p><img src="./@img/onoffmix.png" alt="node.js korea conference 1st. PlayNode"></p>
+<h1 id="toc_273">이제 본격적으로 준비에 들어간 PlayNode 준비</h1>
+<p>컨퍼런스를 준비하는 것도 처음이고 이런일을 하게 될 것이란 생각은 추호도 해본적이 없기에 이런저런 시행착오도 많이 격었지만 어찌되었건 지금은 어느정도 준비가 마무리되어가고 부가적인 준비들로 바쁜 날을 보내고 있다.</p><p>금요일에는 하루종일 커피숍에 앉아 <a href="http://twitter.com/hellena_Jang">장정화</a>님과 보도자료를 만들면서 일하는 것보다 더 힘든 하루를 보내기도 하였다. </p><p>이직을 하면서 3~4일정도의 휴식기간이 생겼지만 KTH H3 컨퍼런스 참여와 PlayNode 준비로 쉬는게 쉬는게 아니였던 휴식시간을 보내고 오늘로서 이 달콤한 휴식도 끝이 나고 있다.</p><p>모처럼 만에 휴식기간을 바쁘게 보내고 나니 짧게나마 이 과정을 글로 남기고 싶어져 이렇게 동내커피숍에 앉아 진상을 떨고 있다. </p><p>어쨋건 2012년 11월 20일에 열리는 국내 첫 node.js korea conference 1st. PlayNode 가 점점 다가오고 있고
+모임신청기간도 이제 이틀 남았다. </p><p>node.js에 관심이 있는 많은 분들의 참여와 관심을 받아 성공적으로 끝내길 …..</p><p>이렇게 한가로이 타자나 두두리는 저를 제외하고 이시간에도 컨퍼런스준비에 열심히이신 오거나이저분들 모두 힘내시길..</p><p><strong>By Insanehong</strong> </p>
+                        </div>
+                        <hr />
+                                            
+                        <div class="row-fluid">
+                            
+                            <div class="pull-right">
+                                <a href="/post/playnode-adieu" class="btn btn-info">Playnode 컨퍼런스를 끝마치다. <i class="icon-white icon-chevron-right"></i></a>
+                            </div>
+                            
+
+                            
+                            <div class="pull-left">
+                                <a href="/post/opensource-mentoring" class="btn btn-info"><i class="icon-white icon-chevron-left"></i> 오픈소스 제대로 활동하기 멘토링 후기</a>
+                            </div>
+                            
+                        </div>
+                    
+
+                        
+    <div class="row-fluid">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'incorrectnote'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">-->
+        <!--<div class="offset3 span9">-->
+            <!--<strong>tags</strong> :-->
+            <!---->
+            <!--<a href="/tag/node.js">node.js</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/conference">conference</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/playnode">playnode</a>&nbsp;-->
+            <!---->
+        <!--</div>-->
+    <!--</div>-->
+</div><!-- /container -->
+
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12 ">
+                    <div class="well">
+                        <p class="pull-right"><a href="#">Back to top</a></p>
+                            <strong>haroopress</strong> developed by <a href="http://twitter.com/rhiokim" target="_blank">@rhiokim</a>,<a href="http://twitter.com/haroopress" target="_blank">@haroopress</a> and source in <a href="https://github.com/rhiokim/haroopress" target="_blank">github</a><br/>
+                            Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+                            Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-44036299-1']);
+            _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+
+</body>
+</html>

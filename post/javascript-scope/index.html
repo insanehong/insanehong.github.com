@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>javascript 기초 - Scope, Scope Chain &amp; arguments |  Insanehong's Incorrect Note</title>
+    <meta name="description" content="Insanehong's Incorrect Note is designed to help people of web developer,designer, publisher and early beginnn er who are studying Front-end Technology for the development of web application.">
+    <meta name="author" content="Insanehong">
+    <meta name="keywords" content="javascript,html,css,frends,dart,leanstartup,fornt-end" />
+    <meta name="generator" content="haroopress v0.9.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="/rss.xml" rel="alternate" title="Insanehong's Incorrect Note" type="application/rss+xml">
+
+    <!-- Le styles -->
+    <link rel="canonical" href="http://insanehong.kr">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/markdown.css" rel="stylesheet">
+    <link href="/css/haroopress.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/code/tomorrow-night.css" rel="stylesheet">
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon-64.png">
+
+    <!-- Le javascript -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.jsonp.js"></script>
+    <script src="/js/mustache.js"></script>
+    <script src="/js/apps/github.js"></script>
+    <script src="/js/apps/twitter.js"></script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+        <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
+          
+            <a class="pull-right" href="http://twitter.com/insanehong" target="_blank"><span class="icon-twitter"></span></a>
+          
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/archives">Archives</a>
+              </li>
+              <li>
+                <a href="/slides">Slides</a>
+              </li>
+                
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<link href="/css/code/tomorrow-night.css" rel="stylesheet">
+<div class="container page-archive">
+    <div class="row">
+        <div class="span3">
+            <div id="author" class="well">
+                <div>
+                    <h3>About Author</h3>
+                    <ul class="thumbnails">
+                        <li>
+                            <a class="thumbnail">
+                                <img src="http://www.gravatar.com/avatar/5e9df4b6c732d16a3b41d11d7288e195?r=pg&amp;s=128.jpg&amp;d=identicon" />
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Insanehong</strong><br/>
+                        blog: <a href="http://insanehong.kr" target="_blank">http://insanehong.kr</a><br/>
+                        twitter: <a href="http://twitter.com/insanehong" target="_blank">@insanehong</a><br/>
+                        github: <a href="https://github.com/insanehong.github.com" target="_blank">insanehong.github.com</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/insanehong" class="twitter-follow-button" data-show-count="true">Follow @insanehong</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </p>
+                    <p>
+                        <ul>
+<li>NAVER Corporation, Front-End Engineer(2013~)</li>
+<li>Like Javascript, Dart, HTML5, CSS3,Responsive Web, Haroopress, Frends, Lean Startup, Open Source</li>
+<li><a href="http://hackrslab.github.io">Hackrslab</a> co-founder</li>
+<li>About me <a href="http://about.me/insanehong">http://about.me/insanehong</a></li>
+</ul>
+
+                    </p>
+                </div>
+                <div>
+                    <h3>About this Article</h3>
+                    <p>
+                        <h5>Date Released:</h5>
+                        <span>Thursday, August 16 2012 1:32 PM</span>
+                    </p>
+                </div>
+            </div>
+                        <div class="well">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Categories</li>
+                    <li class=""><a href="/category"><i class="icon-home"></i> Home</a></li>
+                    
+                    <li><a href="/category/ajaxian"><i class="icon-book"></i> ajaxian</a></li>
+                    
+                    <li><a href="/category/essay"><i class="icon-book"></i> essay</a></li>
+                    
+                    <li><a href="/category/reference"><i class="icon-book"></i> reference</a></li>
+                    
+                    <li><a href="/category/conference"><i class="icon-book"></i> conference</a></li>
+                    
+                    <li><a href="/category/git"><i class="icon-book"></i> git</a></li>
+                    
+                    <li><a href="/category/haroopress"><i class="icon-book"></i> haroopress</a></li>
+                    
+                    <li><a href="/category/javascript"><i class="icon-book"></i> javascript</a></li>
+                    
+                    <li><a href="/category/a11y"><i class="icon-book"></i> a11y</a></li>
+                    
+                </ul>
+            </div>
+
+            
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Recent Articles</li>
+    
+        <li>
+            <a href="/post/frends-meetup" target="_blank">FRENDS Meetup 행사를 마치고
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/gitignore-generator-gig" target="_blank">.gitignore file generator gig 소개
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/guide-to-git-for-windows" target="_blank">윈도우 사용자를 위한 git client 설치
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/opensource-mentoring" target="_blank">오픈소스 제대로 활동하기 멘토링 후기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/chrome-user-controll" target="_blank">크롬 사용자 기능 사용하기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+    </ul>
+</div>
+
+        </div>
+        <div class="span9">
+            <div class="row">
+                <div class="span9">
+                    <div class="well bg">
+                        
+                        <div class="page-header">
+                            <h1>javascript 기초 - Scope, Scope Chain &amp; arguments</h1>
+                        </div>
+
+                        <div class="pull-right social-area">
+                                                
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="javascript 기초 - Scope, Scope Chain &amp; arguments -" data-url="http://insanehong.kr/post/javascript-scope" data-via="insanehong">Tweet</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    
+                                                
+                            <!-- Place this tag where you want the +1 button to render -->
+                            <g:plusone href="/post/javascript-scope" size="medium"></g:plusone>
+
+                            <!-- Place this render call where appropriate -->
+                            <script type="text/javascript">
+                              (function() {
+                                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                po.src = 'https://apis.google.com/js/plusone.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                              })();
+                            </script>
+                    
+
+                            
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial" data-href="http://insanehong.kr/post/javascript-scope"></div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&appId=246177242115486";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+                        </div>
+
+                        <div class="markdown-wrapper">
+                            <h1 id="toc_240">소개</h1>
+<p>이전글에서 소개한 function에 대한 글의 연속으로 이번글에서는 function 이 가진 여러가지 특성들에 대하여 알아보려고 한다. 이번 글에서 소개하는 function 의 특성은 <code>Scope</code>, <code>Scope Chain</code> 그리고 <code>arguments 객체</code> 이다. 이들은 <code>Execution Context</code>라는 개념에서 함수객체가 만들어지면서 생성되는 것들로서 이글 이후에 소개될 <code>Execution Context</code>에 대한 이해를 위해 필요로하는 녀석들이다. 그러므로 이번글에서 소개되는 내용을 통해  <code>Scope</code>, <code>Scope Chain</code>, <code>arguments</code> 에 대한 기본적인 이해에 도움이 되었으면 한다. </p>
+<h1 id="toc_241">함수(function)의 특징</h1>
+
+<h2 id="toc_242">함수는 전역변수와 지역변수를 활용할 수 있다.</h2>
+
+<blockquote>
+<p>함수는 자신의 <code>statement</code> 안에서 변수를 선언하여 지역변수로 사용할 수 있다. </p></blockquote>
+<p>이때 선언된 <strong>지역변수는 해당 함수안에서만 접근가능한</strong> <code>private variable</code> 이 된다. 즉 함수 코드블럭을 벗어나게 되면 해당 변수는 메모리에서 사라지게 된다.</p><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> {</span>
+   <span class="keyword">var</span> x= <span class="number">1</span>; <span class="comment">// 함수안에서 선언된 변수임에 지역변수이다. </span>
+   <span class="keyword">return</span> x;
+}
+console.log(foo());
+&gt; <span class="number">1</span>
+console.log(x); <span class="comment">// 외부에서 참조할수 없다.</span>
+&gt;<span class="literal">undefined</span>
+</code></pre><p>하지만 global 영역에 선언된 전역변수는 자바스크립트 코드 어디에서든 사용할 수 있기에 *<em>함수안에서도 전역변수를 이용할 수 있다 *</em></p><pre><code class="javascript"><span class="keyword">var</span> x= <span class="number">1</span>; <span class="comment">// global 영역에 선언된 전역변수</span>
+
+<span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> <span class="comment">{
+   return x; // 전역변수 x를 return
+}</span>
+<span class="title">console</span>.<span class="title">log</span><span class="params">(foo()</span>);</span>
+&gt; <span class="number">1</span>
+console.log(x); <span class="comment">// 어디서든 참조가능한 전역변수</span>
+&gt; <span class="number">1</span>
+</code></pre><p>함수에서 전역변수와 지역변수사용함에 있어 재미있는 현상이 하나 있다. 바로 중첩된 이름의 변수 사용이다. <strong>자바스크립트는 global 영역에 선언된 변수와 동일한 이름의 지역변수를 사용할수 있다.</strong> 이로 인해 디버깅 과정중에 많은 혼란을 초래하기도 한다. </p><pre><code class="javascript"><span class="keyword">var</span> x=<span class="string">'hello'</span>; <span class="comment">// 전역변수 x 에 hello 할당.</span>
+
+<span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> {</span>
+   <span class="keyword">var</span> x=<span class="string">'world'</span>;  <span class="comment">// 지역변수 x 에 world할당.</span>
+   <span class="keyword">return</span> x;  
+}
+
+console.log(foo());
+&gt;world <span class="comment">// 함수실행에 따라 지역변수 x에 할당된 world 가 출력된다.</span>
+console.log(x);
+&gt;hello <span class="comment">// 전역변수 x에 할당된 hello 가 출력된다.</span>
+</code></pre><p><strong>전역변수와 지역변수를 동일한 이름으로 사용했을경우 지역변수에서 다른 값을 할당하여도 전역변수에는 아무런 변화가 없다.</strong></p><p>즉 전역변수와 지역변수를 동일한 이름으로 사용하여도 각각 다른 변수객체가 만들어진다는 것을 알수 있다. 이 현상에 대해 정확히 이해하기 위해서는  <strong>Scope 와 Scope Chain 이란 녀석들에 대해 이해하고 있어야 한다.</strong></p>
+<h2 id="toc_243">함수객체의 Scope &amp; Scope Chain</h2>
+
+<h3 id="toc_244">Scope &amp; Scope Chain</h3>
+
+<blockquote>
+<p><code>ECMA-262 3 Edition</code> 에서는 함수객체는 <code>[[scope]]</code> 라는 프로퍼티를 가지며 <code>[[scope]]</code>는 함수객체가 생성되는 시점과 관련된 Object Reference 정보를 가지고 있으며 이 Object Reference 정보들을 <code>Scope Chain</code> 이라고 한다고 정의한다. 즉 <code>scope</code>는 함수객체가 접근가능한 <code>Valiable Object</code>의 <code>유효범위</code>이며 이 <code>Valiable Object</code>들의 집함을 <code>Scope Chain</code> 이라고 한다.</p></blockquote>
+<p>함수객체는 생성과정에서 <strong>함수구문 내에서 선언된 지역변수들을 <code>Valiable Object</code> 라는 객체에 저장</strong>한다. 그리고 <code>전역객체(Global Object)</code>의 <code>Valiable Object</code> 와 연결된다. <strong>전역객체의 <code>Valiable Object</code>는 <code>전역객체 자신</code></strong>이다. 이때 이 <code>Valiable Object</code>들에 대한 연결들을 <code>Scope Chain</code> 으로 관리하고 <code>[[scope]]</code>를 통해 <code>Scope Chain</code>을 참조하여 함수객체가 가지는 <strong>유효범위를 설정</strong>하게 되는 것이다. </p><pre><code class="javascript"><span class="keyword">var</span> x = <span class="number">1</span>;
+<span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> <span class="comment">{
+    var y = 10;
+    return a+x;
+}</span>
+<span class="title">console</span>.<span class="title">log</span><span class="params">(z)</span>;</span>
+&gt;ReferenceError;
+</code></pre><p>위 예제코드의 foo() 함수객체가 생성될 때의 <code>[[Scope]]</code>와 <code>Scope Chain</code> 에 대한 연결은 아래 다이어그램을 보면 쉽게 이해할수 있다. </p><p><img src="./@img/diagram1.jpeg" alt="다이어그램1"></p><p>변수의 검색은 이 <code>Scope Chain</code> 에서만 탐색 된다. **<code>Scope Chain</code>의 하위에서부터 상위로 등록된 변수가 있는지 찾아가며 가장 처음 탐색되는 scope에 등록된 변수를 이용*<em>한다. 즉 *</em><code>Scope Chain</code> 에의해 탐색되지 않는 변수는 <code>undefined</code> **이며 그런 이유로 예제의 console.log(z); 는 foo함수가 가진 유효범위에서 찾을 수 없는 변수 z 에 대한 접근을 하기 때문에 <code>ReferenceError</code> 가 되는 것이다. 처음의 의문으로 돌아가서 전역변수 x와 지역변수 x가 동일한 이름으로 사용이 가능한 이유는 이처럼 각각 x에 접근하기 위해 참조하는 <code>Valiable Object가 다르기 때문</code>인 것이다. </p>
+<h2 id="toc_245">3. 변수선언에 사용되는 var 키워드</h2>
+<p>자바스크립트에서 <strong>변수선언은 반드시 var 키워드를 사용하여야 한다는 착각</strong>을 하고 있는 입문자들 여럿보았다. 하지만 이는 잘못된 생각이다. var 키워드의 사용은 해당 <strong>변수의 scope를 설정하는 역활</strong>만을 한다.  <strong>var 키워드를 사용한 변수선언은 현재 Scope에 등록</strong>되며  <strong>var 없는 변수 선언은 Global Scopet에 등록</strong>되는 것이다. 이런 이유로 함수안에서 var 없는 변수를 사용하면 함수외부에서도 사용가능 하다. </p><pre><code class="javascript">x=<span class="number">1</span>; <span class="comment">//전역변수로 등록된다. </span>
+<span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">()</span> {</span>
+   y=<span class="number">2</span>; <span class="comment">//전역변수로 등록된다. </span>
+   <span class="keyword">var</span> z = <span class="number">3</span>; <span class="comment">//var 키워드 사용으로 현재 scope에 등록된다. </span>
+   <span class="keyword">return</span> x+y+z;
+}
+console.log(sum());
+&gt; <span class="number">6</span>
+console.log(x+y);
+&gt; <span class="number">3</span> <span class="comment">//x,y 는 전역변수로 등록되기 때문에 정상 수행된다. </span>
+console.log(x+y+z);
+&gt; ReferenceError <span class="comment">// z는 함수실행이 종료되면 메모리에서 비워진다.</span>
+</code></pre><p>위 예제를 보면 알수 있듯이 y 변수는 함수내부에 선언되었지만 var 없이 선언 되었기 때문에 <code>전역객체에 등록되는 전역변수</code>가 된다. var 를 사용한 z는 현재 스코프 즉 현재 실행되는 코드 블럭의 주인읜 객체의 Valiable Object 에 등록되기 때문에 함수가 호출되어 실행되고 있는 시점에서의 런타임 주체인 sum 함수의 Valiable Object에 등록되었다가 함수 실행이 종료되면 메모리에서 비워진다.</p><p><strong>하지만 이런 코드패턴은 그다지 좋은 방법이 아니다.</strong> var 없는 변수는 전역객체에 등록이 됨으로 <strong>항시 메모리를 차지</strong>하고 있을뿐 아니라 변수에 값이 할당되는 것은 런타임에서 일어나는 일이기에 해당 변수는 함수객체가 생성되기 이전 즉 <strong>함수호출되기 이전에는 global scope 에 등록되지 않는다.</strong> </p><pre><code class="javascript">x=<span class="number">1</span>; 
+<span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">()</span> <span class="comment">{
+   y=2; 
+   return x+y;
+}</span>
+<span class="title">console</span>.<span class="title">log</span><span class="params">(x+y)</span>;</span>
+&gt; ReferenceError 
+</code></pre><p>또 한가지 var 없는 변수선언을 지양하는 이유는 복잡하고 길어진 코드내에서 var 없이 사용된 변수는 어디에서 어떻게 바뀌는지 추적하기 힘들기 때문이기도 하다<strong>. var 없이 선언된 변수는 함수내에서 수정된 값이 전역 scope에 직접적으로 영향을 끼치게 됨</strong>으로 본인도 모르는 사이 엄청난 버그를 양산해 낼수 있기 때문이다.</p>
+<h2 id="toc_246">함수는 0개 이상의 매개변수(parameter)를 가질 수 있다.</h2>
+
+<h3 id="toc_247">매개변수(Parameter) 란?</h3>
+
+<blockquote>
+<p>매개변수란 함수호출시 함수객체로 넘겨질 인자값들을 담기 위해 함수명세에서 선언된 변수들을 뜻한다.</p></blockquote>
+<p>함수는 내부에서 선언된 지역변수와 global 영역에 선언된 전역변수를 사용하는 방법말고 변수를 활용하는 한가지 방법이 더 있다. 바로 함수호출시 인자로 전달받은 값을 저장할 변수를 미리 <strong>함수명세에 선언해 두는 것</strong>이다. </p><p>이런 매개변수는 <code>,(comma)</code>를 기준으로 기분하여 선언하면 한개 이상의 매개변수도 사용할 수 있으며 해당 함수의 scope에 등록되어 <strong>함수내부 어디에서든 별다른 선언없이 함수호출시 넘어온 인자값을 할당받아 바로 사용할 수 있다.</strong></p><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(x,y)</span> {</span>
+    <span class="keyword">return</span> x+y;
+}
+
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(sum(<span class="number">1</span>,<span class="number">2</span>));
+&gt; <span class="number">3</span>
+
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(sum(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));
+&gt; <span class="number">3</span>
+
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(sum(<span class="number">1</span>));
+&gt; NaN
+
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(sum());
+&gt; undefined
+</code></pre><p>위 예제에서 알수 있듯이 <strong>명세에 선언된 매개변수보다 많은 매개변수가 전달될 경우 넘어온 순서대로 매개변수로 할당하고 남은 인자값은 버려진다</strong>. 
+재미있는 사실은 넘어온 값이 매개변수보다 적을 경우에 실행 된다는 것이다. 흔히 함수호출시 선언된 매개변수에 대한 인자를 넘기지 않아 생기는 <code>undefined</code> 를 <code>syntax error</code> 라고 생각한다.</p><p>하지만 이는 함수객체 생성과정에서 매개변수로 선언된 변수를 Valiable Object에 추가하면서 <strong>기본적으로 <code>undefined</code> 를 할당</strong>하며 생긴 결과이지 <code>syntax error</code> 가 아니다. </p><p><img src="./@img/diagram2.jpeg" alt="다이어그램2"></p><p>이렇게 함수호출시 전달된 인자값들은 함수객체가 가진 <strong><code>arguments 객체</code>에 저장</strong>된다. </p>
+<h2 id="toc_248">arguments 객체</h2>
+
+<h3 id="toc_249">arguments 객체</h3>
+
+<blockquote>
+<p>자바스크립트의 모든 함수객체 <code>scope</code>는 <code>arguments</code> 라는 프로퍼티를 가지고 있다. 이 <code>arguments</code>는 Function에 넘겨진 모든 인자에 대한 정보가 담겨 있는 <code>arguments Object</code> 라는 특별한 객체를 가리키고 있다. </p></blockquote>
+<p>정의에서 말했듯이 함수객체의 Valiable Object의 프로퍼티로 추가되는 <code>arguments</code>는 <code>arguments Object</code>를 가리킨다.
+이 <code>arguments Object</code> 는 넘어온 인자의 순서에 따른 인덱스를 가진 <strong>유사배열객체</strong>이다. 유사배열객체라는 것은 매우 중요한 특성이다.</p><p><code>arguments Object</code>에 저장된 인자값들에 대한 접근은 배열과 동일한 [] 를 사용하지만 **<code>arguments Object</code>는 <code>Array Prototype Object</code>를 상속하는 객체가 아니다.**그러므로 <code>arguments Object</code> 객체에는 <code>push()</code>, <code>pop()</code>, <code>slice()</code>등이 메소드를 가 존재하지 않는다. </p><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(x,y,z)</span> {</span>
+   var total =arguments<span class="matrix">[<span class="number">0</span>]</span> +arguments<span class="matrix">[<span class="number">1</span>]</span>+arguments<span class="matrix">[<span class="number">2</span>]</span>;
+   <span class="keyword">return</span> total;
+}
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(sum(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));
+&gt; <span class="number">6</span>
+</code></pre><p>위 코드의 scope에 대한 다이어그램을 보도록 하자</p><p><img src="./@img/diagram3.jpeg" alt="다이어그램3"></p><p>다이어그램에서 보면 알수 있듯 <code>arguments Object</code>는 넘어온 인자값을 저장하며** <code>.length</code>와 <code>.callee</code> 라는 프로퍼티를 가지고 있다.** <code>.callee</code> 프로퍼티는 <strong>현재 실행되고 있는 function 을 가리키는 프로퍼티</strong> 이다. sum() 함수객체의 <code>.length</code> 프로퍼티와 arguments 객체가 가진 <code>.length</code> 프로퍼티는 서로 다른 의미를 갖는다. <strong>함수객체의 <code>.length</code> 는 함수명세에 선언된 <code>매개변수의 수</code></strong>를 <strong>arguments 의 <code>.length</code>는 함수호출시 넘어온 <code>인자값의 수</code></strong>를 나타내는 프로퍼티들이다.  함수객체와 arguments 객체가 가진 <code>.length</code> 프로퍼티를 이용하면 함수명세에 선언된 매개변수와 동일한 수의 인자값이 넘어왔는지 체크할수 있다. </p><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">checkParameter</span><span class="params">(x,y,z)</span> {</span>
+    <span class="keyword">if</span>(<span class="transposed_variable">arguments.</span><span class="built_in">length</span> == <span class="transposed_variable">arguments.</span><span class="transposed_variable">callee.</span><span class="built_in">length</span>) <span class="keyword">return</span> true;
+    <span class="keyword">else</span> <span class="keyword">return</span> false;
+}
+
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(checkParameter(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));
+&gt; true 
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(checkParameter(<span class="number">1</span>,<span class="number">2</span>));
+&gt; false
+</code></pre><p>arguments를 이용하려면 반드시 주의해야하는 사항이 있다. arguments는 함수객체 생성과정에서 만들어지지만 *<em>arguments라는 이름의 변수를 지역변수를 선언하여 사용하면 arguments는 만들어지지 않는다. *</em></p><p>*<em><code>.callee</code> 라는 프로퍼티는 현재 호출된 function을 가리키는 참조프로퍼티<strong>다. 이 프로퍼티는</strong> 이름없는 함수에서 재귀를 구현할때 사용하면 참초되는 이름이 없더라도 <code>함수내에서 자기 자신을 재귀호출</code> 할수 있다. *</em></p><pre><code class="javascript">var total=<span class="number">0</span><span class="comment">;</span>
+(function (<span class="built_in">x</span>) {
+    if(<span class="built_in">x</span>&gt;=<span class="number">0</span>) {
+          total+=<span class="built_in">x</span><span class="comment">;</span>
+          <span class="built_in">x</span>--<span class="comment">;</span>
+          arguments<span class="preprocessor">.callee</span>(<span class="built_in">x</span>)<span class="comment">;</span>
+    }   
+})(<span class="number">10</span>)<span class="comment">;</span>
+console<span class="preprocessor">.log</span>(total)<span class="comment">;</span>
+&gt; <span class="number">55</span>
+</code></pre>
+<h1 id="toc_250">갈무리</h1>
+<p>이번글에서 알아본 내용들은 후에 있을 <code>Closure</code>와 <code>Execution Context</code> 에 대한 설명에서 나오는 용어들의 풀이정도라고 생각하면 될것이다. </p><p>즉 이번 글에서 해당 용어들에 대한 정의를 제대로 이해하지 못한다면 앞으로 연재될 글을 제대로 이해하지 못할수도 있다. 그럼 언제나 똑같은 멘트이지만 이글을 통해서도 해당 내용들에 대하여 자세히 이해할 수 없다면 당연히 다른 레퍼런스를 참조해서 이들에 대한 정확한 이해를 해야할것이다.</p><p>이는 비단 다음연재될 글들뿐만이 아닌 자바스크립트 Core 에 대한 이해에 필수적인 내용이기 때문에 반드시 이해하고 있길 바란다. </p><p><strong>by Insanehong</strong></p>
+                        </div>
+                        <hr />
+                                            
+                        <div class="row-fluid">
+                            
+                            <div class="pull-right">
+                                <a href="/post/opensource-mentoring" class="btn btn-info">오픈소스 제대로 활동하기 멘토링 후기 <i class="icon-white icon-chevron-right"></i></a>
+                            </div>
+                            
+
+                            
+                            <div class="pull-left">
+                                <a href="/post/javascript-prototype" class="btn btn-info"><i class="icon-white icon-chevron-left"></i> Javascript 기초 - Object prototype 이해하기</a>
+                            </div>
+                            
+                        </div>
+                    
+
+                        
+    <div class="row-fluid">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'incorrectnote'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">-->
+        <!--<div class="offset3 span9">-->
+            <!--<strong>tags</strong> :-->
+            <!---->
+            <!--<a href="/tag/javascript">javascript</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/scope">scope</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/scope chain">scope chain</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/argumetns">argumetns</a>&nbsp;-->
+            <!---->
+        <!--</div>-->
+    <!--</div>-->
+</div><!-- /container -->
+
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12 ">
+                    <div class="well">
+                        <p class="pull-right"><a href="#">Back to top</a></p>
+                            <strong>haroopress</strong> developed by <a href="http://twitter.com/rhiokim" target="_blank">@rhiokim</a>,<a href="http://twitter.com/haroopress" target="_blank">@haroopress</a> and source in <a href="https://github.com/rhiokim/haroopress" target="_blank">github</a><br/>
+                            Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+                            Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-44036299-1']);
+            _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+
+</body>
+</html>

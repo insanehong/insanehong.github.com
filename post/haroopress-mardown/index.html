@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>하루프레스 포스트작성을 위한 마크다운문법 익히기 |  Insanehong's Incorrect Note</title>
+    <meta name="description" content="Insanehong's Incorrect Note is designed to help people of web developer,designer, publisher and early beginnn er who are studying Front-end Technology for the development of web application.">
+    <meta name="author" content="Insanehong">
+    <meta name="keywords" content="javascript,html,css,frends,dart,leanstartup,fornt-end" />
+    <meta name="generator" content="haroopress v0.9.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="/rss.xml" rel="alternate" title="Insanehong's Incorrect Note" type="application/rss+xml">
+
+    <!-- Le styles -->
+    <link rel="canonical" href="http://insanehong.kr">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/markdown.css" rel="stylesheet">
+    <link href="/css/haroopress.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/code/tomorrow-night.css" rel="stylesheet">
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon-64.png">
+
+    <!-- Le javascript -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.jsonp.js"></script>
+    <script src="/js/mustache.js"></script>
+    <script src="/js/apps/github.js"></script>
+    <script src="/js/apps/twitter.js"></script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+        <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
+          
+            <a class="pull-right" href="http://twitter.com/insanehong" target="_blank"><span class="icon-twitter"></span></a>
+          
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/archives">Archives</a>
+              </li>
+              <li>
+                <a href="/slides">Slides</a>
+              </li>
+                
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<link href="/css/code/tomorrow-night.css" rel="stylesheet">
+<div class="container page-archive">
+    <div class="row">
+        <div class="span3">
+            <div id="author" class="well">
+                <div>
+                    <h3>About Author</h3>
+                    <ul class="thumbnails">
+                        <li>
+                            <a class="thumbnail">
+                                <img src="http://www.gravatar.com/avatar/5e9df4b6c732d16a3b41d11d7288e195?r=pg&amp;s=128.jpg&amp;d=identicon" />
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Insanehong</strong><br/>
+                        blog: <a href="http://insanehong.kr" target="_blank">http://insanehong.kr</a><br/>
+                        twitter: <a href="http://twitter.com/insanehong" target="_blank">@insanehong</a><br/>
+                        github: <a href="https://github.com/insanehong.github.com" target="_blank">insanehong.github.com</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/insanehong" class="twitter-follow-button" data-show-count="true">Follow @insanehong</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </p>
+                    <p>
+                        <ul>
+<li>NAVER Corporation, Front-End Engineer(2013~)</li>
+<li>Like Javascript, Dart, HTML5, CSS3,Responsive Web, Haroopress, Frends, Lean Startup, Open Source</li>
+<li><a href="http://hackrslab.github.io">Hackrslab</a> co-founder</li>
+<li>About me <a href="http://about.me/insanehong">http://about.me/insanehong</a></li>
+</ul>
+
+                    </p>
+                </div>
+                <div>
+                    <h3>About this Article</h3>
+                    <p>
+                        <h5>Date Released:</h5>
+                        <span>Sunday, November 4 2012 9:41 PM</span>
+                    </p>
+                </div>
+            </div>
+                        <div class="well">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Categories</li>
+                    <li class=""><a href="/category"><i class="icon-home"></i> Home</a></li>
+                    
+                    <li><a href="/category/ajaxian"><i class="icon-book"></i> ajaxian</a></li>
+                    
+                    <li><a href="/category/essay"><i class="icon-book"></i> essay</a></li>
+                    
+                    <li><a href="/category/reference"><i class="icon-book"></i> reference</a></li>
+                    
+                    <li><a href="/category/conference"><i class="icon-book"></i> conference</a></li>
+                    
+                    <li><a href="/category/git"><i class="icon-book"></i> git</a></li>
+                    
+                    <li><a href="/category/haroopress"><i class="icon-book"></i> haroopress</a></li>
+                    
+                    <li><a href="/category/javascript"><i class="icon-book"></i> javascript</a></li>
+                    
+                    <li><a href="/category/a11y"><i class="icon-book"></i> a11y</a></li>
+                    
+                </ul>
+            </div>
+
+            
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Recent Articles</li>
+    
+        <li>
+            <a href="/post/frends-meetup" target="_blank">FRENDS Meetup 행사를 마치고
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/gitignore-generator-gig" target="_blank">.gitignore file generator gig 소개
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/guide-to-git-for-windows" target="_blank">윈도우 사용자를 위한 git client 설치
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/opensource-mentoring" target="_blank">오픈소스 제대로 활동하기 멘토링 후기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/chrome-user-controll" target="_blank">크롬 사용자 기능 사용하기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+    </ul>
+</div>
+
+        </div>
+        <div class="span9">
+            <div class="row">
+                <div class="span9">
+                    <div class="well bg">
+                        
+                        <div class="page-header">
+                            <h1>하루프레스 포스트작성을 위한 마크다운문법 익히기</h1>
+                        </div>
+
+                        <div class="pull-right social-area">
+                                                
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="하루프레스 포스트작성을 위한 마크다운문법 익히기 -" data-url="http://insanehong.kr/post/haroopress-mardown" data-via="insanehong">Tweet</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    
+                                                
+                            <!-- Place this tag where you want the +1 button to render -->
+                            <g:plusone href="/post/haroopress-mardown" size="medium"></g:plusone>
+
+                            <!-- Place this render call where appropriate -->
+                            <script type="text/javascript">
+                              (function() {
+                                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                po.src = 'https://apis.google.com/js/plusone.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                              })();
+                            </script>
+                    
+
+                            
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial" data-href="http://insanehong.kr/post/haroopress-mardown"></div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&appId=246177242115486";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+                        </div>
+
+                        <div class="markdown-wrapper">
+                            <h1 id="toc_134">하루프레스의 모든 컨텐츠는 마크다운(Markdown)으로 작성</h1>
+
+<h2 id="toc_135">마크다운(Markdown) 이란?</h2>
+
+<blockquote>
+<p>MarkdownMarkdown is a <code>text-to-HTML conversion tool</code> for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML). by John Gruber</p></blockquote>
+<p>말그대로 마크다운은 웹에서 컨텐츠 문서를 작성을 위해서 html로 변환가능한 텍스트 문법이다. 정의에서 말하는 마크다운을 간다히 정리해보면</p>
+<ul>
+<li>읽기 싶고</li>
+<li>쓰기 싶고</li>
+<li>일반 텍스트 기반으로 작성된</li>
+<li>HTML 컨버팅을 위한 문법이다.</li>
+</ul>
+<p>하루프레스는 이 마크다운 문법을 사용한다. 즉 일반적으로 블로그 포스팅을 위해 알고 있어야하는(물론 반드시 필요한 것은 아니다.) HTML에 비해 표현법이 매우 단순하며 구조적인 작성이 가능해서 가독성도 높은 문서 작성 문법이다. </p>
+<h2 id="toc_136">새로운 문법을 배워야 하는 기회비용</h2>
+<p>마크다운 역시 HTML과 마찬가지로 본연의 문법이 존재한다. 그러므로 마크다운이 아무리 싶다고 하지만 해당 문법을 익히고 있어야 한다. </p><p>하지만 너무 걱정하지 않아도 된다. 마크다운 문법은 매우 간단하고 쉬우면 HTML을 익히는 노력의 1/100 정도만 투자해도 거이 대부분의 표현법을 읽힐 수 있다. </p><p>그리고 HTML처럼 같은 태그를 사용해도 그 사용법에 따라 용도가 틀려진다던가 CSS를 어떻게 쓰느냐에 따라 같은 테그를 사용하더라도 전혀 다른 표현법이 나오는 것이 비해 매우 간단한 사용법과 문법사용에 있어 그 표현이 정확히 정해져 있기 때문에 몇가지 문법만 익히더라도 문서를 작성하는데 거의 지장을 받지 않는다.</p>
+<h1 id="toc_137">마크다운 기본문법</h1>
+
+<h2 id="toc_138">해딩태그</h2>
+<p>HTML에서는  &lt;h1&gt; 등과 같은 해딩테그를 사용하지만 마크다운에서는 매우 간단한 <code>#</code> 로 표현하면 된다. </p>
+<h3 id="toc_139">작성예</h3>
+<pre><code class=""><span class="preprocessor"># H1</span>
+<span class="preprocessor">## H2</span>
+<span class="preprocessor">### H3</span>
+</code></pre>
+<h3 id="toc_140">변환된 화면</h3>
+
+<h1 id="toc_141">H1</h1>
+
+<h2 id="toc_142">H2</h2>
+
+<h3 id="toc_143">H3</h3>
+
+<h2 id="toc_144">인용구</h2>
+<p>문서를 작성하다 보면 인용구를 사용하는 경우가 많다. 이글에서 마크다운 정의에 대한 부분이 바로 인용구 문법을 활용해서 작성된 것이다. HTML로 인용구를 사용할때는 css를 사용한 Box 레이아웃을 작성하여야 한다. 하지만 마크다운에서는 매우 간다한 방법으로 인용구를 사용할 수있다. 마크다운에서 사용하는 인용구 문법은 <code>&gt;</code> 이다.</p>
+<h3 id="toc_145">작성예</h3>
+<pre><code class="markdown"><span class="blockquote">&gt; 이글은 인용구 표현을 위한 더미 텍스트 입니다. </span>
+</code></pre>
+<h3 id="toc_146">변환된 화면</h3>
+
+<blockquote>
+<p>이글은 인용구 표현을 위한 더미 텍스트 입니다. </p></blockquote>
+
+<h2 id="toc_147">리스트</h2>
+<p>목차나 특정 목록에 대한 리스트에 대한 표현을 위해서 사용하는 리스트 문법은 HTML 에서 사용되는 &lt;ul&gt;, &lt;ol&gt; 등을 대체하는 문법이다. 마크다운 문법은 아래와 같다. </p>
+<ul>
+<li>순차를 사용하지 않는 리스트
+
+<ul>
+<li> + 사용</li>
+<li>* 사용</li>
+<li>- 사용</li>
+</ul></li>
+<li>순차를 사용하는 리스트
+
+<ul>
+<li>1. , 2. 등을 사용</li>
+</ul></li>
+</ul>
+
+<h3 id="toc_148">작성 예</h3>
+<pre><code class="markdown"><span class="bullet">* </span>리스트1
+<span class="bullet">+ </span>리스트2
+<span class="code">    * 서브 리스트1</span>
+<span class="code">    * 서브리스트 2</span>
+<span class="bullet">- </span>리스트3
+<span class="code">    1. 순차 리스트1</span>
+<span class="code">    2. 순차 리스트2</span>
+</code></pre>
+<h3 id="toc_149">변환된 화면</h3>
+
+<ul>
+<li>리스트1</li>
+<li>리스트2
+
+<ul>
+<li>서브 리스트1</li>
+<li>서브리스트 2</li>
+</ul></li>
+<li>리스트3
+
+<ol>
+<li>순차 리스트1</li>
+<li>순차 리스트2</li>
+</ol></li>
+</ul>
+
+<h2 id="toc_150">강조구문</h2>
+<p>특정 단어나 문장의 강조를 위해 사용되는 문법</p><p><code>*</code> 은 단독으로 사용되었을 때 리스트문법으로 사용되지만 블럭형으로 사용되면 강조문이 된다. 주의 할점은 <code>강조하려는 문자열사이에 공백이 없어야 한다.</code></p>
+<h3 id="toc_151">작성예</h3>
+<pre><code class="markdown"><span class="variable">*이</span> 문장을 강조하려고 합니다.*
+<span class="variable">**</span>이 문장을 더욱 강조하려고 합니다.<span class="variable">**</span>
+</code></pre>
+<h3 id="toc_152">변환된 화면</h3>
+<p><em>이 문장을 강조하려고 합니다.</em></p><p><strong>이 문장을 더욱 강조하려고 합니다.</strong></p>
+<h2 id="toc_153">링크 및 이미지</h2>
+<p>&lt;a&gt; 태그와 같은 역활을 수행하는 하이퍼링크 문법. 를 사용 하여 표현한다. 이미지 링크를 사용하고 싶은 경우 링크 문법 앞에 <code>!</code> 를 붙혀 주기만 하면된다. </p><p><strong>이미지 링크에서는 일반 링크와 달리 텍스트 내용이 <code>alt attribute</code>로 삽입된다.</strong></p>
+<h3 id="toc_154">작성예</h3>
+<pre><code class="markdown"><span class="link_label">[Incorrect Note 바로가기]</span>(<span class="link_url">http://insanehong.kr</span>) // 외부링크
+<span class="link_label">[Incorrect Note aboutme 바로가기]</span>(<span class="link_url">/about</span>) // 내부링크
+!<span class="link_label">[인세인홍]</span>(<span class="link_url">./@img/insanehong.jpeg</span>) // 이미지링크
+</code></pre>
+<h3 id="toc_155">변환된 화면</h3>
+<p><a href="http://insanehong.kr">Incorrect Note 바로가기</a></p><p><a href="/about">Incorrect Note  &gt; about 바로가기</a> </p><p><img src="./@img/insanehong.jpeg" alt="인세인홍"> </p>
+<h2 id="toc_156">코드 블럭</h2>
+<p>코드 블럭은 여러가지 사용법이 있지만  사용법은 ```,~~~, 탭, 스페이스 4칸을 사용하는 것이다.
+강조문법가 동일하게 블럭형 문법임으로 마지막에 동일한 문법으로 닫아주어야 한다. </p><pre><code class="javascript"><span class="keyword">var</span> a=<span class="number">1</span>,b=<span class="number">2</span>;
+<span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> <span class="comment">{ return a+b;}</span>
+<span class="title">foo</span><span class="params">()</span>;</span>
+</code></pre>
+<h1 id="toc_157">마크다운 배울만 하지 않나?</h1>
+<p>위에서 소개 했듯이 마크다운은 매우 단순한 문법으로 표현하고자 하는 것을 문서화 할수 있다. 
+HTML 을 사용할 경우 표현을 위한 태그가 난무 함에 따라 문서의 가독성 및 구조가 복잡해 지는 결과를 초래하는 반면
+마크다운은 그 자체가 구조화된 표현식으로 사용되기 때문에 마크다운으로 작성된 문서 자체만으로도 충분히 내용을 파악하는데 큰 어려움이 없다. </p><p>그리고 마크다운 편집기등을 이용할 경우 현재 작성되고 있는 문서를 타이핑하는 즉시 변환된 화면으로 볼수 있기 때문에 훨씬 효율적인 문서 작성을 할수 있다. (이글은 Markdown pro App으로 작성되었다)</p><p>마크다운은 하루프레스뿐 아니라 다양한 곳에서 사용되며 wiki문서에서도 사용된다. (단 위키전용 마크다운문법이 존재한다)
+즉 마크다운을 익혀두면 두루두루 편하고 유용히 사용될 날이 있을 것이다. </p>
+<h1 id="toc_158">하루프레스에서 지원하는 멀티 마크다운 문법</h1>
+
+<blockquote>
+<p>하루프레스에서는 기본적인 마크다운 문법외에도 다양한 마크다운 문법을 지원하면 Youtube동영상 연결도 가능하며 작성된 문서를 웹프리젠테이션으로 전환시켜주기도 한다. <sup>^</sup></p></blockquote>
+<p>하루프레스에서 지원하는 멀티마크다운 및 플러그인 사용법은 하루프레스 공식 홈페이지에 매우 자세히 설명되어 있다.</p><p><a href="http://haroopress.com/post/haroopress-v0-dot-9/">하루프레스 공식 홈페이지 마크다운 설명</a> 이 링크에 소개된 마크다운 문법을 익힌다면 더욱 재미있고 다이나믹한 포스팅이 가능하게 될것이다. </p><p><strong>By Insanehong</strong></p>
+                        </div>
+                        <hr />
+                                            
+                        <div class="row-fluid">
+                            
+                            <div class="pull-right">
+                                <a href="/post/haroopress-pre" class="btn btn-info">하루프레스설치 전 살펴볼것들 <i class="icon-white icon-chevron-right"></i></a>
+                            </div>
+                            
+
+                            
+                            <div class="pull-left">
+                                <a href="/post/h32012" class="btn btn-info"><i class="icon-white icon-chevron-left"></i> KTH Developer Conference H3 2012를 다녀오다.</a>
+                            </div>
+                            
+                        </div>
+                    
+
+                        
+    <div class="row-fluid">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'incorrectnote'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">-->
+        <!--<div class="offset3 span9">-->
+            <!--<strong>tags</strong> :-->
+            <!---->
+            <!--<a href="/tag/maroopress">maroopress</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/markdown">markdown</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/하루프레스">하루프레스</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/마크다운">마크다운</a>&nbsp;-->
+            <!---->
+        <!--</div>-->
+    <!--</div>-->
+</div><!-- /container -->
+
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12 ">
+                    <div class="well">
+                        <p class="pull-right"><a href="#">Back to top</a></p>
+                            <strong>haroopress</strong> developed by <a href="http://twitter.com/rhiokim" target="_blank">@rhiokim</a>,<a href="http://twitter.com/haroopress" target="_blank">@haroopress</a> and source in <a href="https://github.com/rhiokim/haroopress" target="_blank">github</a><br/>
+                            Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+                            Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-44036299-1']);
+            _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+
+</body>
+</html>

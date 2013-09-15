@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>윈도우 사용자를 위한 git client 설치 |  Insanehong's Incorrect Note</title>
+    <meta name="description" content="Insanehong's Incorrect Note is designed to help people of web developer,designer, publisher and early beginnn er who are studying Front-end Technology for the development of web application.">
+    <meta name="author" content="Insanehong">
+    <meta name="keywords" content="javascript,html,css,frends,dart,leanstartup,fornt-end" />
+    <meta name="generator" content="haroopress v0.9.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="/rss.xml" rel="alternate" title="Insanehong's Incorrect Note" type="application/rss+xml">
+
+    <!-- Le styles -->
+    <link rel="canonical" href="http://insanehong.kr">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/markdown.css" rel="stylesheet">
+    <link href="/css/haroopress.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/code/tomorrow-night.css" rel="stylesheet">
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon-64.png">
+
+    <!-- Le javascript -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.jsonp.js"></script>
+    <script src="/js/mustache.js"></script>
+    <script src="/js/apps/github.js"></script>
+    <script src="/js/apps/twitter.js"></script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+        <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="pull-right" href="/rss.xml"><span class="icon-rss"></span></a>
+          
+            <a class="pull-right" href="http://twitter.com/insanehong" target="_blank"><span class="icon-twitter"></span></a>
+          
+
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/archives">Archives</a>
+              </li>
+              <li>
+                <a href="/slides">Slides</a>
+              </li>
+                
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<link href="/css/code/tomorrow-night.css" rel="stylesheet">
+<div class="container page-archive">
+    <div class="row">
+        <div class="span3">
+            <div id="author" class="well">
+                <div>
+                    <h3>About Author</h3>
+                    <ul class="thumbnails">
+                        <li>
+                            <a class="thumbnail">
+                                <img src="http://www.gravatar.com/avatar/5e9df4b6c732d16a3b41d11d7288e195?r=pg&amp;s=128.jpg&amp;d=identicon" />
+                            </a>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Insanehong</strong><br/>
+                        blog: <a href="http://insanehong.kr" target="_blank">http://insanehong.kr</a><br/>
+                        twitter: <a href="http://twitter.com/insanehong" target="_blank">@insanehong</a><br/>
+                        github: <a href="https://github.com/insanehong.github.com" target="_blank">insanehong.github.com</a>
+                    </p>
+                    <p>
+                        <a href="https://twitter.com/insanehong" class="twitter-follow-button" data-show-count="true">Follow @insanehong</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </p>
+                    <p>
+                        <ul>
+<li>NAVER Corporation, Front-End Engineer(2013~)</li>
+<li>Like Javascript, Dart, HTML5, CSS3,Responsive Web, Haroopress, Frends, Lean Startup, Open Source</li>
+<li><a href="http://hackrslab.github.io">Hackrslab</a> co-founder</li>
+<li>About me <a href="http://about.me/insanehong">http://about.me/insanehong</a></li>
+</ul>
+
+                    </p>
+                </div>
+                <div>
+                    <h3>About this Article</h3>
+                    <p>
+                        <h5>Date Released:</h5>
+                        <span>Tuesday, May 28 2013 11:56 AM</span>
+                    </p>
+                </div>
+            </div>
+                        <div class="well">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Categories</li>
+                    <li class=""><a href="/category"><i class="icon-home"></i> Home</a></li>
+                    
+                    <li><a href="/category/ajaxian"><i class="icon-book"></i> ajaxian</a></li>
+                    
+                    <li><a href="/category/essay"><i class="icon-book"></i> essay</a></li>
+                    
+                    <li><a href="/category/reference"><i class="icon-book"></i> reference</a></li>
+                    
+                    <li><a href="/category/conference"><i class="icon-book"></i> conference</a></li>
+                    
+                    <li><a href="/category/git"><i class="icon-book"></i> git</a></li>
+                    
+                    <li><a href="/category/haroopress"><i class="icon-book"></i> haroopress</a></li>
+                    
+                    <li><a href="/category/javascript"><i class="icon-book"></i> javascript</a></li>
+                    
+                    <li><a href="/category/a11y"><i class="icon-book"></i> a11y</a></li>
+                    
+                </ul>
+            </div>
+
+            
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Recent Articles</li>
+    
+        <li>
+            <a href="/post/frends-meetup" target="_blank">FRENDS Meetup 행사를 마치고
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/gitignore-generator-gig" target="_blank">.gitignore file generator gig 소개
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/guide-to-git-for-windows" target="_blank">윈도우 사용자를 위한 git client 설치
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/opensource-mentoring" target="_blank">오픈소스 제대로 활동하기 멘토링 후기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
+            <a href="/post/chrome-user-controll" target="_blank">크롬 사용자 기능 사용하기
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+    </ul>
+</div>
+
+        </div>
+        <div class="span9">
+            <div class="row">
+                <div class="span9">
+                    <div class="well bg">
+                        
+                        <div class="page-header">
+                            <h1>윈도우 사용자를 위한 git client 설치</h1>
+                        </div>
+
+                        <div class="pull-right social-area">
+                                                
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="윈도우 사용자를 위한 git client 설치 -" data-url="http://insanehong.kr/post/guide-to-git-for-windows" data-via="insanehong">Tweet</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    
+                                                
+                            <!-- Place this tag where you want the +1 button to render -->
+                            <g:plusone href="/post/guide-to-git-for-windows" size="medium"></g:plusone>
+
+                            <!-- Place this render call where appropriate -->
+                            <script type="text/javascript">
+                              (function() {
+                                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                po.src = 'https://apis.google.com/js/plusone.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                              })();
+                            </script>
+                    
+
+                            
+        <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial" data-href="http://insanehong.kr/post/guide-to-git-for-windows"></div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&appId=246177242115486";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+                        </div>
+
+                        <div class="markdown-wrapper">
+                            <h1 id="toc_103">Guide to Git for Windows</h1>
+<p>이 글은 팀내 <em class="label label-info"><strong>Windows OS</strong></em> 사용자를 위하여 Git 설치 및 업무환경 세팅에 대하여 사내 위키 문서에 정리해 놓은 내용을 옮겨온 것입니다. </p><p><em class="label label-info"><strong>Windows 7</strong></em> 을 기준으로 작성 되었으며 GUI 특히 <em class="label label-info"><strong>tortoiseSVN</strong></em> 에 익숙한 사용자 경험을 원하는 분들을 위하여<br>
+<em class="label label-important"><strong>TortoiseGit</strong></em> 의 설치와 <em class="label label-important"><strong>CLI</strong></em>를 사용하기 원하는 분들을 위한 <em class="label label-info"><strong>mysysgit</strong></em>의 설치 과정을 담고 있습니다.</p>
+<h2 id="toc_104">TortoiseGit 설치하기</h2>
+
+<ul>
+<li><a href="https://code.google.com/p/tortoisegit/wiki/Download?tm=2">다운로드</a></li>
+</ul>
+
+<h3 id="toc_105">1. 다운로드 페이지 본인 컴퓨터에 맞는 설치 파일을 다운로드 받습니다.</h3>
+<p><img src="./@img/tor1.jpg" alt="TortoiseGit 다운로드 페이지"></p>
+<h3 id="toc_106">2. 다운로드된 파일을 실행 합니다.</h3>
+<p><img src="./@img/tor2.jpg" alt="TortoiseGit 다운로드 페이지"></p>
+<h3 id="toc_107">3. 다음의 예시와 같이 설치를 진행 합니다.</h3>
+<p><img src="./@img/tor3.jpg" alt="TortoiseGit 설치1"></p><p><img src="./@img/tor4.jpg" alt="TortoiseGit 설치2"></p><p><img src="./@img/tor5.jpg" alt="TortoiseGit 설치3"></p><p><img src="./@img/tor6.jpg" alt="TortoiseGit 설치4"></p><p><img src="./@img/tor7.jpg" alt="TortoiseGit 설치5"></p><p><img src="./@img/tor8.jpg" alt="TortoiseGit 설치6"></p>
+<h3 id="toc_108">4. 설치가 완료되면 마우스 오른쪽 버튼을 눌러 TortoiseGit 이 제대로 설치 됬는지 확인 합니다.</h3>
+<p><img src="./@img/tor9.jpg" alt="TortoiseGit 설치 확인"></p>
+<h2 id="toc_109">ssh public key 만들기</h2>
+<p><em class="label label-info"><strong>github</strong></em>, <em class="label label-info"><strong>gitlab</strong></em>, <em class="label label-info"><strong>bitbucket</strong></em> 등을 이용하거나 별도로 구축한 원격의 저장소를 이용하기 위해서는 <em class="label label-important"><strong>ssh key</strong></em> 가 필요합니다. </p><p>이후에 얘기할 <em class="label label-info"><strong>msysGit</strong></em>을 이용하면 몇줄의 <em class="label label-info"><strong>commend</strong></em>info 입력으로 간단하게 만들수 있지만 일단 windows 환경에서 <em class="label label-important"><strong>PuTTYgen</strong></em> 을 이용하여 만드는 법을 소개 합니다.</p>
+<h3 id="toc_110">1. 윈도우 시작 &gt; TortoiseGit 안에 있는 PuTTYgen 을 실행 합니다.</h3>
+<p><img src="./@img/key1.jpg" alt="PuTTYgen 실행1"></p>
+<h3 id="toc_111">2. PuTTY Key Generator 실행 화면에서 Generate 버튼을 클릭 합니다.</h3>
+<p><img src="./@img/key2.jpg" alt="PuTTYgen 실행2"></p>
+<h3 id="toc_112">3. 표시된 영역에서 progress bar가 100%가 될때까지 마우스를 움직입니다.</h3>
+<p><img src="./@img/key3.jpg" alt="PuTTYgen 실행3"></p>
+<h3 id="toc_113">4. 키 생성이 완료되면 Save Button 이 활성화 됩니다. password 를 사용하는 경우 비밀번호를 입력하고 Save Private Key Button 을 클릭합니다.</h3>
+<p><img src="./@img/key4.jpg" alt="PuTTYgen 실행4"></p>
+<h3 id="toc_114">5. 적당한 곳에 적당한 이름으로 저장합니다. ( 예제에서는 C:\Users{username}.ssh 디렉토리를 생성하고 key 라는 이름으로 저장 하였습니다.)</h3>
+<p><img src="./@img/key5.jpg" alt="PuTTYgen 실행5"></p>
+<ol>
+<li>public key 부분도 복사하여 별도의 파일로 저장해둔다. (추후 repository server에 public key를 등록해야한다.)</li>
+</ol>
+<p><img src="./@img/key6.jpg" alt="PuTTYgen 실행6"></p>
+<h2 id="toc_115">CLI 사용을 위한 msysGit 설치</h2>
+<p>Git은 여러모로 GUI보다는 CLI 에 최적화 있기 때문에 윈도우 사용자 중 CLI를 이용하고 싶은 분만 따라 하시면 됩니다. 
+GUI 를 선호하시는분은 Skip 하셔도 됩니다. </p>
+<ul>
+<li><a href="https://code.google.com/p/msysgit/downloads/list">다운로드</a></li>
+</ul>
+
+<h3 id="toc_116">1. msysGit Download 사이트로 접속후 최신버전의 설치 파일을 받습니다. (git-버전.preview배포일자.exe)</h3>
+<p><img src="./@img/msys1.jpg" alt="msysGit 다운로드"></p>
+<h3 id="toc_117">2. 다운로드 받은 파일을 실행 합니다.</h3>
+<p><img src="./@img/msys2.jpg" alt="msysGit 설치 실행"></p>
+<h3 id="toc_118">3. 다음의 안내와 같이 설치를 진행 합니다.</h3>
+<p><img src="./@img/msys3.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys4.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys5.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys6.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys7.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys8.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys9.jpg" alt="msysGit 설치 실행"></p>
+<h2 id="toc_119">참고 할만한 동영상</h2>
+
+<ul>
+<li><a href="http://youtu.be/pp2S2lHjzZI">설치 가이드 영상</a></li>
+</ul>
+
+                        </div>
+                        <hr />
+                                            
+                        <div class="row-fluid">
+                            
+                            <div class="pull-right">
+                                <a href="/post/h32012" class="btn btn-info">KTH Developer Conference H3 2012를 다녀오다. <i class="icon-white icon-chevron-right"></i></a>
+                            </div>
+                            
+
+                            
+                            <div class="pull-left">
+                                <a href="/post/gitlab5.1-install-guide" class="btn btn-info"><i class="icon-white icon-chevron-left"></i> 김대리 Gitlab 5.1 설치하다</a>
+                            </div>
+                            
+                        </div>
+                    
+
+                        
+    <div class="row-fluid">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'incorrectnote'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">-->
+        <!--<div class="offset3 span9">-->
+            <!--<strong>tags</strong> :-->
+            <!---->
+            <!--<a href="/tag/git">git</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/windows">windows</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/tortoriseGit">tortoriseGit</a>&nbsp;-->
+            <!---->
+            <!--<a href="/tag/msysGit">msysGit</a>&nbsp;-->
+            <!---->
+        <!--</div>-->
+    <!--</div>-->
+</div><!-- /container -->
+
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12 ">
+                    <div class="well">
+                        <p class="pull-right"><a href="#">Back to top</a></p>
+                            <strong>haroopress</strong> developed by <a href="http://twitter.com/rhiokim" target="_blank">@rhiokim</a>,<a href="http://twitter.com/haroopress" target="_blank">@haroopress</a> and source in <a href="https://github.com/rhiokim/haroopress" target="_blank">github</a><br/>
+                            Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br />
+                            Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-44036299-1']);
+            _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+
+</body>
+</html>
