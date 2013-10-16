@@ -221,14 +221,14 @@
 
                         <div class="markdown-wrapper">
                             <p>몇일전  <a href="https://github.com/Songhun/Front-end-Developer-Interview-Questions/blob/master/Korean/README_KR.md">front-end 개발자 인터뷰 질문</a> 이라는 내용의 글이 Github 에 공개되어 많은 사람들에게 거론되길래 보게 되었다. </p><p>나름 괜찮은 질문 내용이며 각 영역별로 얼마나 많은 관심을 가지고 있나를 잘 알수 있는 내용들의 질문들이라 생각 되었다. </p><p>이에 나름 오지랍을 펼쳐 각각의 영역별 답을 작성해 볼가? 라는 생각으로 한 섹션씩 작성보기로 했다. </p><p>물론 개인의 지식한계선에서 작성된 답안들이니 이것들이 정답이라고 맹신하는 일은 없기 바란다. 틀린부분이나 다른 의견이 있으면 언제든 피드백을 통해 수정하여 반영할 예정이다. </p><p>어째거 첫 섹션으로 html 관련 문제에 답을 달아본다.</p>
-<h1 id="toc_36">HTML 관련 질문</h1>
+<h1 id="toc_34">HTML 관련 질문</h1>
 
-<h2 id="toc_37">1. doctype 이 하는 일은 뭔가요? doctype을 몇개나 댈수 있나요?</h2>
+<h2 id="toc_35">1. doctype 이 하는 일은 뭔가요? doctype을 몇개나 댈수 있나요?</h2>
 
 <blockquote>
 <p>doctype  이란 DTD(Document Type Definition)를 선어하기 위한 태그로서 문서의 렌더링 모드를 설정하거나 유효성 검사에 사용될 기준을 정의 하는 것을 말한다. </p></blockquote>
 
-<h3 id="toc_38">html 4.0.1 doctype</h3>
+<h3 id="toc_36">html 4.0.1 doctype</h3>
 
 <ol>
 <li>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Strict//EN&quot; &quot;<a href="http://www.w3.org/TR/html4/strict.dtd%22%3E">http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</a></li>
@@ -236,7 +236,7 @@
 <li>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;<a href="http://www.w3.org/TR/html4/frameset.dtd%22%3E">http://www.w3.org/TR/html4/frameset.dtd&quot;&gt;</a></li>
 </ol>
 
-<h3 id="toc_39">xhtml 1.0 doctype</h3>
+<h3 id="toc_37">xhtml 1.0 doctype</h3>
 
 <ol>
 <li>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 4.01 Strict//EN&quot; &quot;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd%22%3E">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</a> </li>
@@ -244,30 +244,30 @@
 <li>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 4.01 Frameset//EN&quot; &quot;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd%22%3E">http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;&gt;</a></li>
 </ol>
 
-<h3 id="toc_40">xhtml 1.1 doctype</h3>
+<h3 id="toc_38">xhtml 1.1 doctype</h3>
 
 <ol>
 <li>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;<a href="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd%22%3E">http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;</a> </li>
 </ol>
 
-<h3 id="toc_41">html5 doctype</h3>
+<h3 id="toc_39">html5 doctype</h3>
 
 <ol>
 <li>&lt;!DOCTYPE html&gt;</li>
 </ol>
 
-<h2 id="toc_42">2. 스탠더드 모드와 관용(쿼크) 모드간의 차이를 말해보세요.</h2>
+<h2 id="toc_40">2. 스탠더드 모드와 관용(쿼크) 모드간의 차이를 말해보세요.</h2>
 <p>스탠더드 모드와 관용모드의 차이는 하위호환성을 유지하기 위해 현재 표준에 어긋나는 형식을 지원할 것인가 ? 혹은 하위 호환성을 배재하고 현재 표준 형식만을 인정하는가의 차이를 보인다.</p><p>사용할 랜더링 모드는 doctype 선언시 결정되는데 FPI(formal public identifier), FSI(formal system identifier) 이 모두 선언되어야 스텐더드 모드로 랜더링 하게 된다. </p>
-<h3 id="toc_43">스탠더드 모드</h3>
+<h3 id="toc_41">스탠더드 모드</h3>
 <p>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;<a href="http://www.w3.org/TR/html4/strict.dtd%22%3E">http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</a></p>
-<h3 id="toc_44">쿼크 모드</h3>
+<h3 id="toc_42">쿼크 모드</h3>
 
 <ol>
 <li>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &gt;</li>
 <li>doctype  을 선언하지 않는 경우.</li>
 </ol>
 
-<h2 id="toc_45">3. XHTML 페이지를 운용할 때 발생하는 제약으로는 뭐가 있나요?</h2>
+<h2 id="toc_43">3. XHTML 페이지를 운용할 때 발생하는 제약으로는 뭐가 있나요?</h2>
 <p>XHTML 는 사실 문서 렌더링 면에서는 html 4.0.1 과 크게 다르지 않다. html 을 기반으로  xhtml 이 구성되어졌기 때문이다. 
 하지만 이들 사이에는 몇가지 차이점이 생긴다. 서로 각가의 모드에서만 지원하는 몇가지 제약들이 존재한다. </p><p>xhtml 에서의 마크업 문서 작성시 다음의 제약을 지켜야 한다. </p>
 <ol>
@@ -279,7 +279,7 @@
 <li><code>attribute</code> 선언시 <code>shortcut</code> 을 사용해서는 안된다. </li>
 </ol>
 <p>물론 위에 나온 제약사양 보다 더 많은 제약이 존재한다. </p>
-<h2 id="toc_46">4. 다국어가 포함된 페이지는 어떤 방식으로 제공하나요?</h2>
+<h2 id="toc_44">4. 다국어가 포함된 페이지는 어떤 방식으로 제공하나요?</h2>
 <p>다국어 지원의 방법은 front-end 보다 back-end 에서 지원하는 경우가 많다. 하지만 front-end 에서도 해야할 일은 있다. 
 바로 encoding 방식과 문서에서 주로 사용하는 언어 설정을 해주는 것은 필수다. </p><p>그리고 다국어 지원을 위한 css(언어특성상 box 모델링에 영향을 주는 경우도 있다)와 javascript message set 을 언어형식에 맞게 분리 하는 것도 필요하다. </p><p>html 선언시 웹접근성,웹표준에 맞추게 된다면 주요 사용언어를 기입해주어야 한다. </p><pre><code class="html"><span class="doctype">&lt;!doctype html&gt;</span>
 <span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"ko&gt;
@@ -288,7 +288,7 @@
 .
 &lt;/html&gt;
 </code></pre><p>javascript 의 경우 cookie 등을 이용하여 설정된 언어설정을 global variable 로 저장해 놓는다면 message set 을 선택하는데 편하다. </p>
-<h2 id="toc_47">4. HTML5에서 XHTML문법을 사용할 수 있나요? HTML5에서 XML을 어떻게 사용하나요?</h2>
+<h2 id="toc_45">4. HTML5에서 XHTML문법을 사용할 수 있나요? HTML5에서 XML을 어떻게 사용하나요?</h2>
 <p>html5 표준은 기본적으로 하위호환성을 지키는 것으로 시작되었다. 즉 html5 에서 xthml 을 사용하던, html 4.0.1 의 표준을 사용하던 문제 될것이 없다. </p>
 <ul>
 <li>xhtml 문법 작성시에는 <code>MIME</code> 타입을 <code>application/xhtml-html</code> 로 지정해 준다.</li>
@@ -296,7 +296,7 @@
 <li>네임스페이스를 명시해준다. <code>&lt;html xmlns=&quot;http://www.w3c.org/1999/xhtml&quot;&gt;</code></li>
 </ul>
 <p>위와 같이 해당 문서에서 xhtml 문법을 사용할 것을 명시해준다면 큰 문제가 되는 일은 없을 것이다. </p>
-<h2 id="toc_48">5. data-* 속성은 무엇을 하는 것인가요?</h2>
+<h2 id="toc_46">5. data-* 속성은 무엇을 하는 것인가요?</h2>
 <p>custom data attribute 는 굉장히 많은 역활을 담당한다. 웹표준 마크업 제약사항에는 표준에 정의되 attribute 외의 사용은 문법에 어긋난 것으로 간주하여 validator 에서 이를 오류로 분류한다. </p><p>하지만 이는 많은 제약사항을 가지게 되면 특히 예전부터  validation 등에 사용하기 위하여 표준에 정의 되지 않은 <code>attribute</code> 사용하거나 <code>class</code> 명에 명시하며 많이 사용해 왔다.</p><p>이를 한번에 해결해준 녀석이 <code>data-*</code> 이다. 말그대로 사용자가 임의 설정하여 선언하고 사용할 수 있다. 정확히는 문서를 다루는 html 마크업 에서 data 에 대한 정의를 선언할수 있게 도와주는 역활을 담당한다. </p><p>본인이 자주 사용하는 방법을 예로 들어 보겠다. </p><pre><code class="html">// validation 을 위한 데이터셋 저장
 <span class="tag">&lt;<span class="title">form</span> <span class="attribute">name</span>=<span class="value">"actionForm"</span>&gt;</span>
 <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"account"</span> <span class="attribute">data-valide</span>=<span class="value">"notnull alphanum"</span> <span class="attribute">value</span>=<span class="value">""</span>/&gt;</span>
@@ -310,9 +310,9 @@
 // input 데이터의 수정내역을 원본으로 복귀 하기 위한 origin data 저장
 <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"username"</span> <span class="attribute">value</span>=<span class="value">"insanehong"</span> <span class="attribute">data-origin-data</span>=<span class="value">"insanehong"</span> /&gt;</span>
 </code></pre><p>위와 같은 사용을 하게 된다면 javascript 단에서 action 에 대한 설정을 fixed 시키지 않고 유연하게 적용할 수 있다. </p>
-<h2 id="toc_49">6. HTML4에서 콘텐츠 모델(content models)은 무엇이며, HTML5의 그것과 다른 점은 무엇인가요?</h2>
+<h2 id="toc_47">6. HTML4에서 콘텐츠 모델(content models)은 무엇이며, HTML5의 그것과 다른 점은 무엇인가요?</h2>
 <p>html4  의 경우 단순한 콘텐츠 모델을 따른다. <code>블락(block)</code>, &#39;인라인(inline)<code>요소로 구분하여</code>인라인 안에 블락요소의 선언을 하면 안된다` 라는 단순한 문법을 지시한다. </p><p>하지만 html5 에서는 이부분이 더욱 엄격하게 적용된다. html5 에서는 각 그룹요소들을 카테고리별로 나누어 제약을 걸어두고 있으며 자식요소에 대한 엄격한 제한 규칙을 가지고 있다. </p>
-<h2 id="toc_50">HTML5를 오픈웹플랫폼(open web platform)으로 생각해본다면, 어떤 것들로 구성돼 있을까요?</h2>
+<h2 id="toc_48">HTML5를 오픈웹플랫폼(open web platform)으로 생각해본다면, 어떤 것들로 구성돼 있을까요?</h2>
 
 <blockquote>
 <p>사실 개인적으로 html4,html5 등의 버전을 붙히는 것을 좋아 하진 않는다. 언어를 다룰때 특정 버전을 붙혀가면서 하는 경우는 그리 많지 않다. 그래서 html5 라고 강조하는 것을 약간 약팔이라고 생각하고 있다. </p></blockquote>
@@ -324,14 +324,14 @@
 <li>오프라인 핸들러</li>
 </ol>
 <p>개인적으로 css3 를 html5 에 포함시켜 소개하는 것도 잘못되었다고 생각한다. </p>
-<h2 id="toc_51">7. 쿠키(Cookies)와 세션저장소(sessionStorage)와 로컬저장소(localStorage)의 차이점을 설명해주세요.</h2>
+<h2 id="toc_49">7. 쿠키(Cookies)와 세션저장소(sessionStorage)와 로컬저장소(localStorage)의 차이점을 설명해주세요.</h2>
 
-<h3 id="toc_52">Cookies</h3>
+<h3 id="toc_50">Cookies</h3>
 <p>쿠키는 서버가 클라이언트에 남기고 싶은 정보를 저장하는 텍스트기반 파일 이다. 이는 response header 에 포함된  <code>Set-Cookie</code> 필드를 참조하여 클라이어트에 작성되어 지며 유효범위를 url, 혹은 도메인 기반으로 정의 할수 있다. 
 파일 사이즈의 제한이 있으며 텍스트 파일 기반으로 동작하기때문에 사용자가 언제든 쿠키 정보를 열람 할수도 있고 클라이언트에 저장된 쿠키정보를 request header 에 항상 포함하여 서버로 알려주기 때문에 패킷사이즈를 늘리는 1등공신을 한다.</p><p>그런 이유로 공통된 혹은 의미없는  cookie(서버가 알필요가 없는)정보를 response-header 에서 제외하는 것도 front-end 최적화 작업에 포함되어 진다. </p>
-<h3 id="toc_53">sessionStorage</h3>
+<h3 id="toc_51">sessionStorage</h3>
 <p>세션 스토리지는 쿠키와 같이 파일형태로 저장되지 않고 window  객체에 저장된다. 즉 윈도우에 dependency 가 걸려있기 때문에 해당 윈도우가 열려있는 동안만 데이터를 유지하면 윈도우가 닫히게 되면 저장되 데이터도 사라져 버리게 된다. </p><p>active action 을 수행하는 동안만 유지되어야 하는 정보등을 저장해 둘때 유용하게 사용된다. </p>
-<h3 id="toc_54">localStorage</h3>
+<h3 id="toc_52">localStorage</h3>
 <p>로컬 스토리지는 세션스토리지와 마찬가지로 파일형태가 아닌 브라우저에 자체에 저장되는 저장소로 세션스토리지와 다르게 윈도우가 닫혀도 그 내용을 유지 시킬수 있다. 특히 용량제한 및 보존기간에 대한 제약이 없어 web application 에서 영구적으로 보존 관리 되어야하는 경우 사용하게 된다. </p><p>트위터의 경우 새 트윗 입력창에 입력되는 내용이 로컬스토리지에 등록되어 윈도우를 닫았다가 다시 열어도 그 내용을 복원해 준다. </p>
                         </div>
                         <hr />

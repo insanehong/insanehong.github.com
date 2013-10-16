@@ -220,12 +220,12 @@
                         </div>
 
                         <div class="markdown-wrapper">
-                            <h1 id="toc_82">.gitignore file generator gig</h1>
+                            <h1 id="toc_80">.gitignore file generator gig</h1>
 <p>최근들어 잉여력이 폭팔하고 있는 관계로 무엇인가 생산적인 일을 해보려고 찾아해매던 중 항상 <a href="http://gitignore.io">gitignore.io</a> 의 도움을 받아 생성해 오던 <code>.gitignore</code>  파일을 오프라인에서도 쉽게 사용할 수 있는 <em class="label label-important"><strong>CLI Command set</strong></em>으로 만들어 보자 라는 참 잉여스런 생각을 하게 되었다. </p>
 <blockquote>
 <p><a href="http://gitignore.io">gitignore.io</a> 에서도 CLI 로 사용가능한 방법을 지원하지만 이역시 RESTfull API 를 이용하는 방식이라 오프라인에서는 사용할 수 없다</p></blockquote>
 
-<h2 id="toc_83">gig</h2>
+<h2 id="toc_81">gig</h2>
 <p><em class="label label-info"><strong>gig</strong></em>는  <a href="http://github.com/github/gitignore">gitignore template</a> 를 사용한 node.js 기반의  <code>.gitignore</code> file generator 이다. </p><p><em class="label label-info"><strong>gig</strong></em> 은 <code>.gitignore</code>  파일 자동 생성과 <em class="label label-success"><strong>Custom Template</strong></em> 생성을 지원하는 <code>CLI Command Set</code> 으로 구성되어 있다. </p><pre><code class="">$ gig --help
 show   Display template condition.
 gen    Create .gitignore files. If aleady .gitignore file   : append ignore conditions to .gitignore
@@ -250,13 +250,13 @@ Here are the options:
 <span class="title">target3001</span>, <span class="title">tasm</span>, <span class="title">textmate</span>, <span class="title">textpattern</span>, <span class="title">turbogears2</span>, <span class="title">typo3</span>, <span class="title">unity</span>, <span class="title">virtualenv</span>, <span class="title">visualstudio</span>, <span class="title">waf</span>,
 <span class="title">windows</span>, <span class="title">wordpress</span>, <span class="title">xilinxise</span>, <span class="title">yii</span>, <span class="title">zendframework</span>, <span class="title">gcov</span>, <span class="title">nanoc</span>, <span class="title">opencart</span>, <span class="title">test</span>, <span class="title">vim</span>
 </code></pre><p>그럼 지금부터 각설하고 <em class="label label-info"><strong>gig</strong></em>의 설치부터 사용법까지를 알아보도록 한다. </p>
-<h2 id="toc_84">gig install</h2>
+<h2 id="toc_82">gig install</h2>
 
 <blockquote>
 <p><em class="label label-info"><strong>gig</strong></em>  는 <em class="label label-success"><strong>node.js</strong></em> 로 만들어졌으며 <em class="label label-important"><strong>npm</strong></em>을 통해서 배포 되었기 때문에 <em class="label label-success"><strong>node.js</strong></em>와  <em class="label label-important"><strong>npm</strong></em>이 설치 되어야 사용이 가능하다. 이들의 설치는 워낙 참고할만한 reference 가 널려있기에 생략한다. </p></blockquote>
 <pre><code class=""><span class="comment">$</span> <span class="comment">npm</span> <span class="comment">install</span> <span class="literal">-</span><span class="comment">g</span> <span class="comment">gig</span>
 </code></pre>
-<h2 id="toc_85">tempate conditions 확인하기</h2>
+<h2 id="toc_83">tempate conditions 확인하기</h2>
 <p><em class="label label-info"><strong>gig</strong></em> 에서 지원하는 <em class="label label-success"><strong>show</strong></em> 명령어를 통해 <code>template</code> file 의 내용을 확인 할수 있다. </p><pre><code class="">$ gig show java osx intellij sublimetext
  java :
 *.<span class="class"><span class="keyword">class</span>
@@ -290,7 +290,7 @@ Here are the options:
 # <span class="title">SublimeText</span> <span class="title">project</span> <span class="title">files</span>
 *.<span class="title">sublime</span>-<span class="title">workspace</span>
 </code></pre><p><code>.gitignore</code> 에 포함될 조건들을 확인 했으면 이제 <code>git repository</code> 에 <code>.gitignore</code> 파일을 생성해 보자.  </p>
-<h2 id="toc_86">generate .gitignore file for your git repository</h2>
+<h2 id="toc_84">generate .gitignore file for your git repository</h2>
 <p>위에서 확인한 조건들로 구성된 <code>.gitignore</code> 파일을 만들어 보도록 하자.</p><pre><code class="">$ gig gen  java osx intellij sublimetext
 Completed Generate!
 /Users/insanehong/workspace/project/gigtest/.gitignore:
@@ -401,7 +401,7 @@ Icon
 <span class="preprocessor"># SublimeText project files</span>
 *<span class="variable">.sublime</span>-workspace
 </code></pre><p>기존의 파일을 osx, sublimetext 의 조건만을 가진 녀석으로 override 한것을 확인 할 수 있다. </p>
-<h2 id="toc_87">자주사용되는  template packaging 하기</h2>
+<h2 id="toc_85">자주사용되는  template packaging 하기</h2>
 <p>지금까지 소개한 방법은 ignore 조건에 추가될 condition 을 하나하나 지정하여야 했다. 하지만 개발머신이 고정적이며 사용하는 환경이 자주 바뀌는 일이 없다면 좀더 쉬운 방법으로 생성하는 방법을 찾게 된다. </p><p>이럴때는 자주쓰는 template 을 하나로 묶어 새로운 template package 로 만들어서 사용하면 좀더 간편하게 사용할 수 있다. </p><p>본인은 imac, macbook pro 를 개발머신으로 사용하고 있고 sublime text2 와 intellij 를 사용하여 개발하고 있다. 
 그래서 이 녀석들을 하나로 묶어 <code>mypkg</code> 라는 이름의 template 을 생성해 보겠다. </p><pre><code class="">$ gig pkg -name <span class="string">'mypkg'</span> osx sublimetext intellij
 Completed packaging!

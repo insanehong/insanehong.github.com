@@ -220,11 +220,11 @@
                         </div>
 
                         <div class="markdown-wrapper">
-                            <h1 id="toc_251">소개</h1>
+                            <h1 id="toc_249">소개</h1>
 <p>이전글에서 소개한 function에 대한 글의 연속으로 이번글에서는 function 이 가진 여러가지 특성들에 대하여 알아보려고 한다. 이번 글에서 소개하는 function 의 특성은 <code>Scope</code>, <code>Scope Chain</code> 그리고 <code>arguments 객체</code> 이다. 이들은 <code>Execution Context</code>라는 개념에서 함수객체가 만들어지면서 생성되는 것들로서 이글 이후에 소개될 <code>Execution Context</code>에 대한 이해를 위해 필요로하는 녀석들이다. 그러므로 이번글에서 소개되는 내용을 통해  <code>Scope</code>, <code>Scope Chain</code>, <code>arguments</code> 에 대한 기본적인 이해에 도움이 되었으면 한다. </p>
-<h1 id="toc_252">함수(function)의 특징</h1>
+<h1 id="toc_250">함수(function)의 특징</h1>
 
-<h2 id="toc_253">함수는 전역변수와 지역변수를 활용할 수 있다.</h2>
+<h2 id="toc_251">함수는 전역변수와 지역변수를 활용할 수 있다.</h2>
 
 <blockquote>
 <p>함수는 자신의 <code>statement</code> 안에서 변수를 선언하여 지역변수로 사용할 수 있다. </p></blockquote>
@@ -257,9 +257,9 @@ console.log(foo());
 console.log(x);
 &gt;hello <span class="comment">// 전역변수 x에 할당된 hello 가 출력된다.</span>
 </code></pre><p><strong>전역변수와 지역변수를 동일한 이름으로 사용했을경우 지역변수에서 다른 값을 할당하여도 전역변수에는 아무런 변화가 없다.</strong></p><p>즉 전역변수와 지역변수를 동일한 이름으로 사용하여도 각각 다른 변수객체가 만들어진다는 것을 알수 있다. 이 현상에 대해 정확히 이해하기 위해서는  <strong>Scope 와 Scope Chain 이란 녀석들에 대해 이해하고 있어야 한다.</strong></p>
-<h2 id="toc_254">함수객체의 Scope &amp; Scope Chain</h2>
+<h2 id="toc_252">함수객체의 Scope &amp; Scope Chain</h2>
 
-<h3 id="toc_255">Scope &amp; Scope Chain</h3>
+<h3 id="toc_253">Scope &amp; Scope Chain</h3>
 
 <blockquote>
 <p><code>ECMA-262 3 Edition</code> 에서는 함수객체는 <code>[[scope]]</code> 라는 프로퍼티를 가지며 <code>[[scope]]</code>는 함수객체가 생성되는 시점과 관련된 Object Reference 정보를 가지고 있으며 이 Object Reference 정보들을 <code>Scope Chain</code> 이라고 한다고 정의한다. 즉 <code>scope</code>는 함수객체가 접근가능한 <code>Valiable Object</code>의 <code>유효범위</code>이며 이 <code>Valiable Object</code>들의 집함을 <code>Scope Chain</code> 이라고 한다.</p></blockquote>
@@ -271,7 +271,7 @@ console.log(x);
 <span class="title">console</span>.<span class="title">log</span><span class="params">(z)</span>;</span>
 &gt;ReferenceError;
 </code></pre><p>위 예제코드의 foo() 함수객체가 생성될 때의 <code>[[Scope]]</code>와 <code>Scope Chain</code> 에 대한 연결은 아래 다이어그램을 보면 쉽게 이해할수 있다. </p><p><img src="./@img/diagram1.jpeg" alt="다이어그램1"></p><p>변수의 검색은 이 <code>Scope Chain</code> 에서만 탐색 된다. **<code>Scope Chain</code>의 하위에서부터 상위로 등록된 변수가 있는지 찾아가며 가장 처음 탐색되는 scope에 등록된 변수를 이용*<em>한다. 즉 *</em><code>Scope Chain</code> 에의해 탐색되지 않는 변수는 <code>undefined</code> **이며 그런 이유로 예제의 console.log(z); 는 foo함수가 가진 유효범위에서 찾을 수 없는 변수 z 에 대한 접근을 하기 때문에 <code>ReferenceError</code> 가 되는 것이다. 처음의 의문으로 돌아가서 전역변수 x와 지역변수 x가 동일한 이름으로 사용이 가능한 이유는 이처럼 각각 x에 접근하기 위해 참조하는 <code>Valiable Object가 다르기 때문</code>인 것이다. </p>
-<h2 id="toc_256">3. 변수선언에 사용되는 var 키워드</h2>
+<h2 id="toc_254">3. 변수선언에 사용되는 var 키워드</h2>
 <p>자바스크립트에서 <strong>변수선언은 반드시 var 키워드를 사용하여야 한다는 착각</strong>을 하고 있는 입문자들 여럿보았다. 하지만 이는 잘못된 생각이다. var 키워드의 사용은 해당 <strong>변수의 scope를 설정하는 역활</strong>만을 한다.  <strong>var 키워드를 사용한 변수선언은 현재 Scope에 등록</strong>되며  <strong>var 없는 변수 선언은 Global Scopet에 등록</strong>되는 것이다. 이런 이유로 함수안에서 var 없는 변수를 사용하면 함수외부에서도 사용가능 하다. </p><pre><code class="javascript">x=<span class="number">1</span>; <span class="comment">//전역변수로 등록된다. </span>
 <span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">()</span> {</span>
    y=<span class="number">2</span>; <span class="comment">//전역변수로 등록된다. </span>
@@ -292,9 +292,9 @@ console.log(x+y+z);
 <span class="title">console</span>.<span class="title">log</span><span class="params">(x+y)</span>;</span>
 &gt; ReferenceError 
 </code></pre><p>또 한가지 var 없는 변수선언을 지양하는 이유는 복잡하고 길어진 코드내에서 var 없이 사용된 변수는 어디에서 어떻게 바뀌는지 추적하기 힘들기 때문이기도 하다<strong>. var 없이 선언된 변수는 함수내에서 수정된 값이 전역 scope에 직접적으로 영향을 끼치게 됨</strong>으로 본인도 모르는 사이 엄청난 버그를 양산해 낼수 있기 때문이다.</p>
-<h2 id="toc_257">함수는 0개 이상의 매개변수(parameter)를 가질 수 있다.</h2>
+<h2 id="toc_255">함수는 0개 이상의 매개변수(parameter)를 가질 수 있다.</h2>
 
-<h3 id="toc_258">매개변수(Parameter) 란?</h3>
+<h3 id="toc_256">매개변수(Parameter) 란?</h3>
 
 <blockquote>
 <p>매개변수란 함수호출시 함수객체로 넘겨질 인자값들을 담기 위해 함수명세에서 선언된 변수들을 뜻한다.</p></blockquote>
@@ -315,9 +315,9 @@ console.log(x+y+z);
 &gt; undefined
 </code></pre><p>위 예제에서 알수 있듯이 <strong>명세에 선언된 매개변수보다 많은 매개변수가 전달될 경우 넘어온 순서대로 매개변수로 할당하고 남은 인자값은 버려진다</strong>. 
 재미있는 사실은 넘어온 값이 매개변수보다 적을 경우에 실행 된다는 것이다. 흔히 함수호출시 선언된 매개변수에 대한 인자를 넘기지 않아 생기는 <code>undefined</code> 를 <code>syntax error</code> 라고 생각한다.</p><p>하지만 이는 함수객체 생성과정에서 매개변수로 선언된 변수를 Valiable Object에 추가하면서 <strong>기본적으로 <code>undefined</code> 를 할당</strong>하며 생긴 결과이지 <code>syntax error</code> 가 아니다. </p><p><img src="./@img/diagram2.jpeg" alt="다이어그램2"></p><p>이렇게 함수호출시 전달된 인자값들은 함수객체가 가진 <strong><code>arguments 객체</code>에 저장</strong>된다. </p>
-<h2 id="toc_259">arguments 객체</h2>
+<h2 id="toc_257">arguments 객체</h2>
 
-<h3 id="toc_260">arguments 객체</h3>
+<h3 id="toc_258">arguments 객체</h3>
 
 <blockquote>
 <p>자바스크립트의 모든 함수객체 <code>scope</code>는 <code>arguments</code> 라는 프로퍼티를 가지고 있다. 이 <code>arguments</code>는 Function에 넘겨진 모든 인자에 대한 정보가 담겨 있는 <code>arguments Object</code> 라는 특별한 객체를 가리키고 있다. </p></blockquote>
@@ -348,7 +348,7 @@ console.log(x+y+z);
 console<span class="preprocessor">.log</span>(total)<span class="comment">;</span>
 &gt; <span class="number">55</span>
 </code></pre>
-<h1 id="toc_261">갈무리</h1>
+<h1 id="toc_259">갈무리</h1>
 <p>이번글에서 알아본 내용들은 후에 있을 <code>Closure</code>와 <code>Execution Context</code> 에 대한 설명에서 나오는 용어들의 풀이정도라고 생각하면 될것이다. </p><p>즉 이번 글에서 해당 용어들에 대한 정의를 제대로 이해하지 못한다면 앞으로 연재될 글을 제대로 이해하지 못할수도 있다. 그럼 언제나 똑같은 멘트이지만 이글을 통해서도 해당 내용들에 대하여 자세히 이해할 수 없다면 당연히 다른 레퍼런스를 참조해서 이들에 대한 정확한 이해를 해야할것이다.</p><p>이는 비단 다음연재될 글들뿐만이 아닌 자바스크립트 Core 에 대한 이해에 필수적인 내용이기 때문에 반드시 이해하고 있길 바란다. </p><p><strong>by Insanehong</strong></p>
                         </div>
                         <hr />
