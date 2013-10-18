@@ -131,9 +131,9 @@
                     
                     <li><a href="/category/reference"><i class="icon-book"></i> reference</a></li>
                     
-                    <li><a href="/category/conference"><i class="icon-book"></i> conference</a></li>
-                    
                     <li><a href="/category/git"><i class="icon-book"></i> git</a></li>
+                    
+                    <li><a href="/category/conference"><i class="icon-book"></i> conference</a></li>
                     
                     <li><a href="/category/haroopress"><i class="icon-book"></i> haroopress</a></li>
                     
@@ -148,6 +148,11 @@
 <div class="well">
     <ul class="nav nav-list">
         <li class="nav-header">Recent Articles</li>
+    
+        <li>
+            <a href="/post/debuging-with-git" target="_blank">git으로 디버깅하기
+            <span class="label">Insanehong</span></a>
+        </li>
     
         <li>
             <a href="/post/deview2013" target="_blank">deview2013 -  2일간의 행적들
@@ -166,11 +171,6 @@
     
         <li>
             <a href="/post/guide-to-git-for-windows" target="_blank">윈도우 사용자를 위한 git client 설치
-            <span class="label">Insanehong</span></a>
-        </li>
-    
-        <li>
-            <a href="/post/opensource-mentoring" target="_blank">오픈소스 제대로 활동하기 멘토링 후기
             <span class="label">Insanehong</span></a>
         </li>
     
@@ -220,14 +220,14 @@
                         </div>
 
                         <div class="markdown-wrapper">
-                            <h1 id="toc_236">소개</h1>
+                            <h1 id="toc_244">소개</h1>
 <p>이번 글에서 다룰 내용은 자바스크립트의 <code>프로토타입 상속(prototypal inheritance)</code> 이라는 확장과 객체의 재사용을 가능하게 해주며 class 기반으로 인스턴스를 생성하지 않는 자바스크립트에서 객체지향적인 개발 개념을 가질수 있게 해주는  <code>Prototype</code>에 대한 내용이다. 
 하지만 일반적으로 자바스크립트에 대한 정공파가 아니면 제대로 이해하고 있지 않거나 이해 하기 힘든 부분이기도 하다. 
 그이유는 <code>Prototype Object</code> 와 <code>Prototype Link</code>을 제대로 구분하여 인지 하지 못하고 있기 때문일 것이다. 
 이번글을 통해서 자바스크립트에서 사용하는 프로토타입이란 녀석의 개념을 확실히 집고 넘어가 보도록 하겠다. </p>
-<h1 id="toc_237">프로토타입기반 프로그래밍 이해하기</h1>
+<h1 id="toc_245">프로토타입기반 프로그래밍 이해하기</h1>
 
-<h2 id="toc_238">프로토타입 기반 프로그래밍 이란?</h2>
+<h2 id="toc_246">프로토타입 기반 프로그래밍 이란?</h2>
 
 <blockquote>
 <p>객체의 원형인 프로토타입을 이용하여 새로운 객체를 만들어내는 프로그래밍 기법이다. 이렇게 만들어진 객체 역시 자기자신의 프로토타입을 갖는다. 이 새로운 객체의 원형을 이용하면 또 다른 새로운 객체를 만들어 낼수도 있으며 이런 구조로 객체를 확장하는 방식을 프로토타입 기반 프로그래밍이라고 한다.</p></blockquote>
@@ -235,7 +235,7 @@
 하지만 <strong>자바스크립트는  Class 가 존재하지 않는다.</strong> 그래서 자바스크립트에서는 객체의 원형인 <strong>프로토타입을 이용한 클로닝(Cloning: 복사)과 객체특성을 확장해 나가는 방식을 통해 새로운 객체를 생성</strong>해 낸다. 
 자바스크립트 응용에서 다룰 프로그래밍 패턴과 연관된 재밌는 사실중 하나는 자바스크립트의 프로토타입 객체의 확장은 옵져버패턴을 따른다. 
 지금으로서는 그다지 중요하게 알고 있을 필요는 없다. 하지만 이 연재를 계속 지켜본다면 후에 굉장히 신선한 내용으로 다가올 것이다.</p>
-<h1 id="toc_239">자바스크립트에서 사용되는 프로토타입</h1>
+<h1 id="toc_247">자바스크립트에서 사용되는 프로토타입</h1>
 <pre><code class="javascript"><span class="title">var</span> foo = {name : <span class="string">"foo"</span>}; // foo 라는 객체를 생성.
 <span class="title">foo</span>.prototype.a='hello world';
 <span class="title">console</span>.log(foo.a);
@@ -244,7 +244,7 @@
 자바스크립트 관련 레퍼런스는 대부분 프로토타입에 대한 정의는 객체의 원형을 의미하는 <code>Prototype Link</code> 로 정의하지만 <code>Prototype Property</code>를 이용한 객체 확장에 대해서만 다루기 때문에 이 둘의 차이를 자세히 거론하지 않는다. 
 그런이유로 자바스크립트의 프로토타입을 공부하는 사람들은 <code>Prototype Property</code>가 자바스크립트에서 말하는 프로토타입이라고 이해하고 이를 사용한다.
 하지만 이둘은 엄연히 틀린 의미이기 때문에 제대로 이해하고 있어야 한다. </p>
-<h1 id="toc_240">자바스크립트의 프로토타입(Prototype) 란?</h1>
+<h1 id="toc_248">자바스크립트의 프로토타입(Prototype) 란?</h1>
 
 <blockquote>
 <p>자바스크립트의 모든 객체는 자신을 생성한 객체 원형에 대한 숨겨진 연결을 갖는다. 이때 자기 자신을 생성하기 위해 사용된 객체원형을 프로토타입이란 한다. 자바스크립트의 모든 객체는 Object 객체의 프로토타입을 기반으로 확장 되었기때문에 이 연결의 끝은 Object 객체의 프로토타입 Object 다.</p></blockquote>
@@ -254,7 +254,7 @@ console.log(A);
 </code></pre><p>위 예제는 new Operator 를 사용하여  A라는 객체 생성자를 이용한 새로운 객체를 생성하여 B라는 변수에 담는 코드이다. 그렇게 만들어진 객체를 console.log롤 찍어보면 아래와 같은 내용을 확인 할수 있다. </p><p><img src="./@img/object.jpeg" alt="object"></p><p>위 내용에서 주의깊게 봐야할 것이 있다. 바로 <code>__proto__</code>과 <code>constructor</code> 이다.  <code>__proto__</code> 바로 이 녀석이 A라는 객체를 만들어내기 위해 사용된 <strong>객체원형에 대한 숨겨진 연결</strong>이다.
 해당객체의 프로토타입은 A라는 함수객체이며 이 객체의 생성자 역시 function A() 함수라는 것이다. 즉 new Operator를 통해 만들어진 객체는 function A() 를 자신의 프로토타입으로 사용하여 만들어졌다는 말이다. </p><p>하지만 역시 먼가 꺼림직하다 <strong>&quot;내가 알고있는 프로토타입은 저게 아닌데?&quot;</strong> 라고 생각하고 있을 것이다.
 그 이유는 바로 당신이 알고 있는 프로토타입은 자신을 만들어낸 객체원형을 의미하는 것이 아니기 때문이다. <strong>대부분의 자바스크립트 기초가 부족한 사람들이 말하는 프로토타입은 애석하게도 <code>prototype 프로퍼티</code></strong>다. </p>
-<h2 id="toc_241">자바스크립트의 프로토타입(Prototype) 프로퍼티 란?</h2>
+<h2 id="toc_249">자바스크립트의 프로토타입(Prototype) 프로퍼티 란?</h2>
 
 <blockquote>
 <p>모든 함수 객체의 Constructor는  prototype 이란 프로퍼티를 가지고 있다. 이 prototype 프로퍼티는 객체가 생성될 당시 만들어지는 객체 자신의 원형이될 prototype 객체를 가리킨다. 즉 자신을 만든 원형이 아닌 자신을 통해 만들어질 객체들이 원형으로 사용할 객체를 말한다. prototype object는 default로 empty Object 를 가리킨다.</p></blockquote>
@@ -319,7 +319,7 @@ C.x();
 &gt; world
 </code></pre><p>예제1, 예제2 에서 B,C 를 생성하기 위한 객체 원형 프로토타입은 A 이다. 하지만 여기서 반드시 집고 넘어가야하는 사실은 B,C는 A 를 프로토타입으로 사용하기위해서 A의 <code>prototype Object</code>를 사용한다는 것이다. 그리고 이 <code>Prototype Object</code>는 A 가 생성될 당시의 정보만을 가지기 때문에 예제1에서 A의 <code>Prototype Object</code>가 알고 있는 x 는 <code>function () {console.log(&#39;hello&#39;);}</code> 가 된다. 즉 A.x 를 아무리 수정하여도 A의 Prototype Object는 변경되지 않기 때문에 A 를 프로토타입으로 생성되는 B,C는 function () {console.log(&#39;hello&#39;);} 만 참조하는 것이다. </p><p>예제2 에서의 결과가 world 가 되는 이유도 같은 이유다. A.prototype 은 A의 <code>Prototype Object</code>를 참조하는 녀석이기 때문에 A.prototype.x 를 정의한다는 것은 A의 <code>Prototype Object</code>를 직접 이용하게 되는 것이고 그에 따라서 A의 <code>Prototype Object</code>를 프로토타입으로 이용하여 만들어지는 B,C 가 알고 있는 x 는  <code>function () {console.log(&#39;world&#39;);}</code> 가 되는 것이다.</p><p>예제2의 객체 상속 모델을 그림으로 표현하면 아래와 같이 나온다.
 <img src="./@img/relation2.png" alt="관계도2"></p>
-<h2 id="toc_242">자바스크립트의 프로토타입 체인(Prototype Chain)</h2>
+<h2 id="toc_250">자바스크립트의 프로토타입 체인(Prototype Chain)</h2>
 
 <blockquote>
 <p>객체의 생성 과정에서 모태가 되는 프로토타입과의 연결고리가 이어져 상속관계를 통하여 상위 프로토타입으로 연속해서 이어지는 관계를 <code>프로토타입 체인</code>이라고 한다. 이 연결은 <code>__proto__</code> 를 따라 올라가게 된다. </p></blockquote>
@@ -358,9 +358,9 @@ var B = new A();
 <span class="keyword">var</span> B = <span class="keyword">new</span> A();
 console.log(B);
 </code></pre><p><img src="./@img/result2.jpeg" alt="A"></p><p>이처럼 공유와 상속의 구분을 정확히 이해하고 사용하는 것은 매우 중요하다. 이들을 햇갈리게 되면 후에 프로토타입 재정의에 따른 원하지 않는 참혹한 결과를 가져다 줄수도 있기 때문이다.</p>
-<h1 id="toc_243">갈무리</h1>
+<h1 id="toc_251">갈무리</h1>
 <p>프로토타입에 대한 제대로된 이해를 한다는 것은 결국 자바스크립트의 객체에 대한 이해를 하는 것과 동일하다고 생각한다. 이 글을 쓰면서도 이 주제를 어떻게 풀어야할지 많은 고민을 했었다. 그만큼 개념적으로 다가서기가 좀 까다로운 부분이기도 했다. 하지만 내가 아는 범위내에서는 모두 풀어냈다고 보고 이글을 보고도 이해가 잘안된다면 더 많은 레퍼런스를 참고하기 바란다. 참고할만한 레퍼런스는 이글 끝에 추가 하도록 하겠다. 이로서 미루고 미루고 미뤄왔던 프로토타입에 대한 글을 마무리하고 다음 주제는 function 객체 외 다수의 객체들에 대하여 알아볼것이라는 떡밥을 던지며 마무리 한다. </p>
-<h1 id="toc_244">프로토타입에 관련 참고레퍼런스</h1>
+<h1 id="toc_252">프로토타입에 관련 참고레퍼런스</h1>
 
 <ul>
 <li><a href="http://rhio.tistory.com/236">@Rhiokim님의 블로그</a></li>

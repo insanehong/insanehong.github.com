@@ -103,9 +103,9 @@
                     
                     <li><a href="/category/reference"><i class="icon-book"></i> reference</a></li>
                     
-                    <li><a href="/category/conference"><i class="icon-book"></i> conference</a></li>
-                    
                     <li><a href="/category/git"><i class="icon-book"></i> git</a></li>
+                    
+                    <li><a href="/category/conference"><i class="icon-book"></i> conference</a></li>
                     
                     <li><a href="/category/haroopress"><i class="icon-book"></i> haroopress</a></li>
                     
@@ -201,6 +201,30 @@
             <div class="well">
                 
                 <div class="page-header">
+                    <h1><a href="/post/debuging-with-git">git으로 디버깅하기</a></h1>
+                    <span class="pull-right">Friday, October 18 2013 9:01 AM</span>
+                </div>
+                <div class="pull-right">
+                    <ul class="thumbnails">
+                        <li class="thumbnail">
+                            <img src="http://www.gravatar.com/avatar/5e9df4b6c732d16a3b41d11d7288e195?r=pg&amp;s=128.jpg&amp;d=identicon"/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="markdown-wrapper">
+                    <h1 id="toc_26">git 으로 Debuging 하기</h1>
+<p>보통 프로젝트를 진행하다가 버그를 발견하고 이 부분이 언제 어떤 커밋으로 인하여 발생하였는지 알고 싶은 경우가 있다. </p><p>어떤 코드로 인하여 발생한 문제인지를 정확히 집어야 해당 문제를 해결하는데 수월할 뿐만아니라 변경된 시점을 알게되면  언제부터 문제가 발생하였는지 정확히 트레킹 할수 있기 때문이다. </p><p>하지만 프로젝트의 모든 커밋 히스토리를 하나하나 뒤져가며 복구하고 실행해보고 재현이 되는가를 테스트하는 것은 거의 불가능한 일이다. </p><p>하지만 <em class="label label-success"><strong>git</strong></em> 을 이용하면 약 5분도 안되는 시간이내에 어떤 커밋으로 인하여 문제가 되었는지 쉽게 찾을 수 있다. </p>
+                </div>
+                <hr/>
+                <a class="pull-right" href="/post/debuging-with-git#disqus_thread"></a>
+                <p>
+                    <a href="/post/debuging-with-git" class="btn btn-info">Read more...</a>
+                </p>
+            </div>
+            
+            <div class="well">
+                
+                <div class="page-header">
                     <h1><a href="/post/deview2013">deview2013 -  2일간의 행적들</a></h1>
                     <span class="pull-right">Wednesday, October 16 2013 8:33 PM</span>
                 </div>
@@ -240,7 +264,7 @@
                     </ul>
                 </div>
                 <div class="markdown-wrapper">
-                    <h2 id="toc_33">FRENDS Meetup</h2>
+                    <h2 id="toc_41">FRENDS Meetup</h2>
 
 <blockquote>
 <p>이제 올해도 정식모임을 5번 했습니다. 이제 7번 남았네요. 5번 모일동안 나왔던 거 추스려서.. 소규모 Meetup을 한번 하면 어떨까요?</p></blockquote>
@@ -267,12 +291,12 @@
                     </ul>
                 </div>
                 <div class="markdown-wrapper">
-                    <h1 id="toc_86">.gitignore file generator gig</h1>
+                    <h1 id="toc_94">.gitignore file generator gig</h1>
 <p>최근들어 잉여력이 폭팔하고 있는 관계로 무엇인가 생산적인 일을 해보려고 찾아해매던 중 항상 <a href="http://gitignore.io">gitignore.io</a> 의 도움을 받아 생성해 오던 <code>.gitignore</code>  파일을 오프라인에서도 쉽게 사용할 수 있는 <em class="label label-important"><strong>CLI Command set</strong></em>으로 만들어 보자 라는 참 잉여스런 생각을 하게 되었다. </p>
 <blockquote>
 <p><a href="http://gitignore.io">gitignore.io</a> 에서도 CLI 로 사용가능한 방법을 지원하지만 이역시 RESTfull API 를 이용하는 방식이라 오프라인에서는 사용할 수 없다</p></blockquote>
 
-<h2 id="toc_87">gig</h2>
+<h2 id="toc_95">gig</h2>
 <p><em class="label label-info"><strong>gig</strong></em>는  <a href="http://github.com/github/gitignore">gitignore template</a> 를 사용한 node.js 기반의  <code>.gitignore</code> file generator 이다. </p>
                 </div>
                 <hr/>
@@ -296,55 +320,22 @@
                     </ul>
                 </div>
                 <div class="markdown-wrapper">
-                    <h1 id="toc_129">Guide to Git for Windows</h1>
+                    <h1 id="toc_137">Guide to Git for Windows</h1>
 <p>이 글은 팀내 <em class="label label-info"><strong>Windows OS</strong></em> 사용자를 위하여 Git 설치 및 업무환경 세팅에 대하여 사내 위키 문서에 정리해 놓은 내용을 옮겨온 것입니다. </p><p><em class="label label-info"><strong>Windows 7</strong></em> 을 기준으로 작성 되었으며 GUI 특히 <em class="label label-info"><strong>tortoiseSVN</strong></em> 에 익숙한 사용자 경험을 원하는 분들을 위하여<br>
 <em class="label label-important"><strong>TortoiseGit</strong></em> 의 설치와 <em class="label label-important"><strong>CLI</strong></em>를 사용하기 원하는 분들을 위한 <em class="label label-info"><strong>mysysgit</strong></em>의 설치 과정을 담고 있습니다.</p>
-<h2 id="toc_130">TortoiseGit 설치하기</h2>
+<h2 id="toc_138">TortoiseGit 설치하기</h2>
 
 <ul>
 <li><a href="https://code.google.com/p/tortoisegit/wiki/Download?tm=2">다운로드</a></li>
 </ul>
 
-<h3 id="toc_131">1. 다운로드 페이지 본인 컴퓨터에 맞는 설치 파일을 다운로드 받습니다.</h3>
+<h3 id="toc_139">1. 다운로드 페이지 본인 컴퓨터에 맞는 설치 파일을 다운로드 받습니다.</h3>
 <p><img src="/post/guide-to-git-for-windows/@img/tor1.jpg" alt="TortoiseGit 다운로드 페이지"></p>
                 </div>
                 <hr/>
                 <a class="pull-right" href="/post/guide-to-git-for-windows#disqus_thread"></a>
                 <p>
                     <a href="/post/guide-to-git-for-windows" class="btn btn-info">Read more...</a>
-                </p>
-            </div>
-            
-            <div class="well">
-                
-                <div class="page-header">
-                    <h1><a href="/post/opensource-mentoring">오픈소스 제대로 활동하기 멘토링 후기</a></h1>
-                    <span class="pull-right">Sunday, May 26 2013 4:08 AM</span>
-                </div>
-                <div class="pull-right">
-                    <ul class="thumbnails">
-                        <li class="thumbnail">
-                            <img src="http://www.gravatar.com/avatar/5e9df4b6c732d16a3b41d11d7288e195?r=pg&amp;s=128.jpg&amp;d=identicon"/>
-                        </li>
-                    </ul>
-                </div>
-                <div class="markdown-wrapper">
-                    <h1 id="toc_277">오픈소스 제대로 활동하기 멘토링</h1>
-
-<ul>
-<li>장소  : 토즈 홍대점 </li>
-<li>일시  : 13. 05. 25 15:30 ~ 17:30</li>
-<li>주제 : 트위터 국내 유일 개발자 이희승에게 오픈소스프로젝트 활동하는법 배우기</li>
-<li>발표자 : 이희승 at Twitter</li>
-</ul>
-<p>이글은 <em class="label label-info"><strong>트위터 국내 유일 개발자 이희승에게 오픈소스프로젝트 활동하는법 배우기</strong></em>에 참여한 하루동안에 기록을 남긴 글로서 발표내용을 공유하려는 목적이 아닌 모임을 통해 보고 느낀것 , 개인적으로 인상 깊었던 내용을 정리하고 하루동안 있었던 일을 리뷰하는 목적으로 작성되었다. </p><p>혹여나 이글을 통해서 발표의 전체내용을 알고 싶다고 한다면 이 글이 큰도움이 되지 않을수도 있다는 것을 먼저 밝힌다. (단 Q&amp;A 에 나온내용은 비교적(?) 자세히 적어 놓았다)</p>
-<h1 id="toc_278">참여 계기</h1>
-<p>한동안 주말에 시간이 나지 않아 <code>세미나</code>나 <code>스터디모임</code>등에 참석하지 못하였는데 때마침 여유가 생기게 되어 참석할 만한 세미나를 찾던중 <code>onoffmix</code> 에서 발견한 <em class="label label-info"><strong>트위터 국내 유일 개발자 이희승에게 오픈소스프로젝트 활동하는법 배우기</strong></em> 라는 재미있는 주제의 모임을 발견!! 평소 오픈소스 프로젝트에 관심도 많았고 개인 프로젝트로 진행하는 것도 있고 한 터라 1초의 고민도 없이 참가 신청과 동시에 참가비 입금까지 완료 하였다.</p>
-                </div>
-                <hr/>
-                <a class="pull-right" href="/post/opensource-mentoring#disqus_thread"></a>
-                <p>
-                    <a href="/post/opensource-mentoring" class="btn btn-info">Read more...</a>
                 </p>
             </div>
             
