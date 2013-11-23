@@ -294,23 +294,23 @@ console<span class="preprocessor">.log</span>(isFinite(<span class="number">1</s
 &gt; <span class="number">5</span>
 </code></pre>
 <h2 id="toc_204">String method : replace(),charAt(),toUpperCase(),split()</h2>
-<p><strong>문자열은 객체에 의존적으로서 객체의 수행을 담당한다는 메소드(함수와 메소드의 차이는 객체를 다룰때 자세히 정의 하겠다.) 를 가지고 있다.</strong> 이들 메소드들은 문자열을 여러가지 형태로 변환하거나 문자열 정의에서 밝힌 문자 하나하나의 연결중 특정 위치의 값을 가져오는데 활용할 수 있다.</p><pre><code class="javascript">console<span class="variable">.log</span>(<span class="string">"hello world"</span><span class="variable">.charAt</span>(<span class="number">0</span>));
-&gt; h <span class="comment">// charAt() 를 활용하여 문자열의 특정 자리에 위치한 문자를 반환.````</span>
+<p><strong>문자열은 객체에 의존적으로서 객체의 수행을 담당한다는 메소드(함수와 메소드의 차이는 객체를 다룰때 자세히 정의 하겠다.) 를 가지고 있다.</strong> 이들 메소드들은 문자열을 여러가지 형태로 변환하거나 문자열 정의에서 밝힌 문자 하나하나의 연결중 특정 위치의 값을 가져오는데 활용할 수 있다.</p><pre><code class="javascript">console<span class="preprocessor">.log</span>(<span class="string">"hello world"</span><span class="preprocessor">.charAt</span>(<span class="number">0</span>))<span class="comment">;</span>
+&gt; h // charAt() 를 활용하여 문자열의 특정 자리에 위치한 문자를 반환.````
 
-console<span class="variable">.log</span>(<span class="string">"hello world"</span><span class="variable">.replace</span>(<span class="string">"hello"</span>,<span class="string">"goodbye"</span>));
-&gt; goodbye world <span class="comment">// replace() 를 활용하여 문자열 치환을 수행.</span>
+console<span class="preprocessor">.log</span>(<span class="string">"hello world"</span><span class="preprocessor">.replace</span>(<span class="string">"hello"</span>,<span class="string">"goodbye"</span>))<span class="comment">;</span>
+&gt; goodbye world // replace() 를 활용하여 문자열 치환을 수행.
 
-console<span class="variable">.log</span>(<span class="string">"hello world"</span><span class="variable">.toUpperCase</span>());
-&gt; HELLO WORLD <span class="comment">//toUpperCase()를 이용하여 문자열을 대문자로 치환.</span>
+console<span class="preprocessor">.log</span>(<span class="string">"hello world"</span><span class="preprocessor">.toUpperCase</span>())<span class="comment">;</span>
+&gt; HELLO WORLD //toUpperCase()를 이용하여 문자열을 대문자로 치환.
 
-console<span class="variable">.log</span>(<span class="string">"1+2+3+4+5"</span><span class="variable">.split</span>(<span class="string">"+"</span>));
-&gt; [<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>] <span class="comment">// split() 를 활용하여 "+" 를 기준으로 문자열을 나누어 배열로 반환한다.</span>
+console<span class="preprocessor">.log</span>(<span class="string">"1+2+3+4+5"</span><span class="preprocessor">.split</span>(<span class="string">"+"</span>))<span class="comment">;</span>
+&gt; [<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>] // split() 를 활용하여 <span class="string">"+"</span> 를 기준으로 문자열을 나누어 배열로 반환한다.
 </code></pre>
 <h1 id="toc_205">Null (값 없음) 과 undefined</h1>
 <p>자바스크립트는 <strong>값이 없음을 나타내는 <code>null</code></strong> 과 <strong>초기화(선언) 되지 않았거나 값이 할당되지 않았음을 나타내는 <code>undefined</code></strong>라는 특별한 데이터 타입이 존재한다. 자바스크립트를 활용함에 있어서 <code>null</code> 과 <code>undefined</code>의 차이를 정확히 이해하지 않는다면 훗날 큰 곤욕을 치를 지도 모른다.
-**<code>null</code> 은 자바스크립트 개발자가 의도적으로 비어있는 값을 부여<strong>한 것이고 <code>undefined</code> 는 **애당초 어떤한 값도 할당되지 않은 것</strong>이다. 자바스크립트는 변수의 선언과 초기화를 동시에 하지 않아도 된다. 이는 다른 언어에서도 마찬가지로 활용되지만 자바스크립트에서는 특이하게 선언만 하고 초기화 되지 않은 변수는 초기화되지 않았거나 값이 할당되지 않았음을 표현하는 <code>undefined</code> 라는 값을 할당받는다.</p><pre><code class="javascript"><span class="reserved">var</span> a; <span class="regexp">//</span> 선언만 되고 초기화 되지 않은 변수;
+**<code>null</code> 은 자바스크립트 개발자가 의도적으로 비어있는 값을 부여<strong>한 것이고 <code>undefined</code> 는 **애당초 어떤한 값도 할당되지 않은 것</strong>이다. 자바스크립트는 변수의 선언과 초기화를 동시에 하지 않아도 된다. 이는 다른 언어에서도 마찬가지로 활용되지만 자바스크립트에서는 특이하게 선언만 하고 초기화 되지 않은 변수는 초기화되지 않았거나 값이 할당되지 않았음을 표현하는 <code>undefined</code> 라는 값을 할당받는다.</p><pre><code class="javascript"><span class="keyword">var</span> a; <span class="comment">// 선언만 되고 초기화 되지 않은 변수;</span>
 console.log(a);
-&gt; <span class="literal">undefined</span> <span class="regexp">//</span> 초기화가 이루어지지 않았음으로 java-script 엔진이 <span class="literal">undefined</span>를 강제적로 할당한다.
+&gt; <span class="literal">undefined</span> <span class="comment">// 초기화가 이루어지지 않았음으로 java-script 엔진이 undefined를 강제적로 할당한다.</span>
 </code></pre><p>하지만 유념해야하는 것이 있다. 위 예제의 결과는 undefined 지만 아래의 예제를 보면 null과 undefined가 굉장히 햇갈리게 된다.</p><pre><code class="javascript"><span class="reserved">var</span> a;
 console.log(<span class="keyword">typeof</span> a);
 &gt; <span class="literal">undefined</span> <span class="regexp">//</span> 초기화가 이루어지지 않았음으로 당연히 <span class="literal">undefined</span>
@@ -324,21 +324,21 @@ console.log(a==<span class="literal">null</span>);
 console.log(<span class="literal">null</span>==<span class="literal">undefined</span>);
 &gt; <span class="literal">true</span> <span class="regexp">//</span> <span class="literal">null</span>==<span class="literal">undefined</span> 검증은 <span class="literal">true</span>를 반환한다.
 </code></pre><p>위 예제를 보면 <code>null</code>과 <code>undefined</code>는 그닥 별반 차이가 없어 보인다. 검증에 따른 결과가 둘다 <code>true</code> 이기 때문이다. 하지만 <strong>선언조차 하지 않은 변수를 활용한다면 이야기가 틀려진다.</strong></p><pre><code class="javascript">console.log(<span class="keyword">typeof</span> a);
-&gt; <span class="literal">undefined</span> <span class="regexp">//</span> 선언되지 않은 변수를 사용함에 따라 자바스크립트 엔진이 강제적으로 <span class="literal">undefined</span>를 할당한다. 
+&gt; <span class="literal">undefined</span> <span class="comment">// 선언되지 않은 변수를 사용함에 따라 자바스크립트 엔진이 강제적으로 undefined를 할당한다. </span>
 
 console.log(a==<span class="literal">undefined</span>);
-&gt;  <span class="regexp">//</span> error. 선언되지 않은 변수이기에 <span class="literal">undefined</span>의 데이터타입이지만 사용할 수는 없는 문법 오류이다.
-</code></pre><p>그럼 정확하게 <code>null</code>과 <code>undefined</code>를 구별하기 위해서는 어떻게 해야하느냐? 간단하다 **<code>null</code>은 변수가 참조하는 객체가 없음(null)<strong>을 나타내고, **<code>undefined</code>는 그 변수가 참조하는 객체를 아직 지정하지 않았음(not initialized)</strong>을 뜻한다. 따라서 <code>undefined</code> 값을 가지는 변수는 할당을 통해 값을 가지며 이 값(객체)을 해제할때 <code>null</code> 이 되는 것이다.</p><pre><code class="javascript"><span class="reserved">var</span> a;
-console.log(a);
-&gt; <span class="literal">undefined</span> <span class="regexp">//</span> 아직 값이 할당되지 않은 <span class="literal">undefined</span>
+&gt;  <span class="comment">// error. 선언되지 않은 변수이기에 undefined의 데이터타입이지만 사용할 수는 없는 문법 오류이다.</span>
+</code></pre><p>그럼 정확하게 <code>null</code>과 <code>undefined</code>를 구별하기 위해서는 어떻게 해야하느냐? 간단하다 **<code>null</code>은 변수가 참조하는 객체가 없음(null)<strong>을 나타내고, **<code>undefined</code>는 그 변수가 참조하는 객체를 아직 지정하지 않았음(not initialized)</strong>을 뜻한다. 따라서 <code>undefined</code> 값을 가지는 변수는 할당을 통해 값을 가지며 이 값(객체)을 해제할때 <code>null</code> 이 되는 것이다.</p><pre><code class="javascript">var a<span class="comment">;</span>
+console<span class="preprocessor">.log</span>(a)<span class="comment">;</span>
+&gt; undefined // 아직 값이 할당되지 않은 undefined
 
-a = <span class="string">"hello world"</span>;
-console.log(a);
-&gt;  hello world <span class="regexp">//</span> a는 <span class="string">"hello world"</span>의 문자열 객체를 할당 받았음으로 <span class="literal">null</span>,<span class="literal">undefined</span>가 아닌 hello world 이다.
+a = <span class="string">"hello world"</span><span class="comment">;</span>
+console<span class="preprocessor">.log</span>(a)<span class="comment">;</span>
+&gt;  hello world // a는 <span class="string">"hello world"</span>의 문자열 객체를 할당 받았음으로 null,undefined가 아닌 hello world 이다.
 
-a=<span class="literal">null</span>;
-console.log(a);
-&gt; <span class="literal">null</span> <span class="regexp">//</span> a가 참조하는 hello world 라는 문자열 객체를 해제하였기에 <span class="literal">undefined</span>가 아닌 <span class="literal">null</span> 이다.
+a=null<span class="comment">;</span>
+console<span class="preprocessor">.log</span>(a)<span class="comment">;</span>
+&gt; null // a가 참조하는 hello world 라는 문자열 객체를 해제하였기에 undefined가 아닌 null 이다.
 </code></pre>
 <h1 id="toc_206">Boolean (부울,불린)</h1>
 <p>자바스크립트도 부울 혹은 불린으로 불리우는 이 데이터 타입은 <strong>true,false값을 가지는 논리 데이터 타입</strong>이다 . 자바스크립트뿐만 아니라 대다수의 프로그래밍 언어에서 가장 많이 사용되는 이 Boolean 데이터 타입은 <code>Boolean()</code> 함수를 이용하여 검증을 수행할수 있다.</p><pre><code class="javascript">console<span class="preprocessor">.log</span>(Boolean(<span class="string">"hello"</span>))<span class="comment">;</span>

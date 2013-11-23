@@ -223,34 +223,34 @@
                             <h1 id="toc_179">하루프레스를 설치하기 위한 준비</h1>
 <p>하루프레스는 <code>node.js</code> 와 <code>git</code>을 필수로 필요로 한다. 로컬에서만 작업을 한다면 더이상의 설치에 필요한 요소들은 없지만 실제 블로그로서 서비스를 하기 위해서는 <a href="http://github.com">http://github.com</a>에 repository 를 만들어야 한다. </p><p><a href="http://haroopress.github.com">하루프레스 공식 사이트</a>에 잘 나와있지만 본인이 하루프레스를 설치파고 포스팅 하기 위해 했던 뻘짓들을 조금이나마 공유하기 위해 지금부터 하루프레스를 사용하기 위한 기본적인 설치가이드를 소개하려고 한다. </p><p><strong>앞으로 나올 내용들은 철저하게 본인의 Macbook pro(산사자)에서 작업되었던 내용으로서 Os X 기준으로 작성되었다</strong></p>
 <h1 id="toc_180">로컬에 Git 설치하기</h1>
-<p>사실 Os X에는 Git이 기본 탑제 되어 있는 것으로 알고 있었다. 하지만 산사자 업데이트 후 Git 명령어가 말썽을 부린다는 분들이 많이 발생 하였다. 그래서 이번 단계는 Terminal에서 갑자기 git 명령어가 듣지 않는 다거나 본인과 같이 Mac을 처음 접하는 사람들만 참고하면 될 것이다. </p><pre><code class=""><span class="variable">$ </span>git
-- <span class="symbol">bash:</span> git <span class="symbol">:</span> command <span class="keyword">not</span> found
+<p>사실 Os X에는 Git이 기본 탑제 되어 있는 것으로 알고 있었다. 하지만 산사자 업데이트 후 Git 명령어가 말썽을 부린다는 분들이 많이 발생 하였다. 그래서 이번 단계는 Terminal에서 갑자기 git 명령어가 듣지 않는 다거나 본인과 같이 Mac을 처음 접하는 사람들만 참고하면 될 것이다. </p><pre><code class="">$ git
+- bash: git : <span class="command"><span class="keyword">command</span> <span class="title">not</span> <span class="title">found</span></span>
 </code></pre><p>위와 같은 상황에 봉착했다면 <a href="http://www.hongkiat.com/blog/mountain-lion-git-fix/">http://www.hongkiat.com/blog/mountain-lion-git-fix/</a> 를 참고하면 쉽게 해결 가능 할 것이다. </p>
 <h1 id="toc_181">node.js 설치하기</h1>
 <p>로컬에 node.js를 설치할때에는 package 나 소스코드로 직접 설치하는 것보다 <code>NVM(Node Version Manager)</code>를 통하여 사용하는 것이 좋다. </p>
 <h2 id="toc_182">nvm을 이용하여 node.js 설치하기</h2>
 <pre><code class=""><span class="variable">$ </span>git clone <span class="symbol">git:</span>/<span class="regexp">/github.com/creationix</span><span class="regexp">/nvm.git ~/</span>.nvm
-</code></pre><p>nvm 역시 바로 사용할 수 없고 <code>.profile</code>에 등록을 해주어야 한다. </p><pre><code class=""><span class="variable">$ </span>echo <span class="string">'source ~/.nvm/nvm.sh'</span> &gt;&gt; ~<span class="regexp">/.profile; source ~/</span>.profile
+</code></pre><p>nvm 역시 바로 사용할 수 없고 <code>.profile</code>에 등록을 해주어야 한다. </p><pre><code class="">$ <span class="built_in">echo</span> <span class="string">'source ~/.nvm/nvm.sh'</span> &gt;&gt; ~/.profile; <span class="built_in">source</span> ~/.profile
 </code></pre><p>이제 nvm을 사용하여 node.js 설치하기 위한 준비가 끝났으니 설치를 해보도록 하자.
 이글을 적는 시점에서 node.js의 최신버전은 v0.8.7 이였기에 v0.8.7 버전을 설치 해보도록 하자</p><pre><code class=""><span class="variable">$ </span>nvm install v<span class="number">0</span>.<span class="number">8.7</span>
 <span class="variable">$ </span>nvm use v<span class="number">0</span>.<span class="number">8.7</span>
 <span class="variable">$ </span>nvm <span class="keyword">alias</span> default v<span class="number">0</span>.<span class="number">8.7</span>
 </code></pre><p>설치가 끝났으면 설치가 잘되었는지와 사용하고자 하는 버전이 잘 설정 되었는지 확인해 보면 된다. </p><pre><code class=""><span class="comment">$</span> <span class="comment">node</span> <span class="literal">-</span><span class="comment">v</span>
-<span class="comment">v0</span>.<span class="comment">8</span>.<span class="comment">7</span>
+<span class="comment">v0</span><span class="string">.</span><span class="comment">8</span><span class="string">.</span><span class="comment">7</span>
 </code></pre><p>버전 정보가 설정한대로 잘 나온다면 설치가 완료 된 것이다. </p>
 <h2 id="toc_183">npm 설치 하기</h2>
 <p><code>npm(Node Package manager)</code> 는 node.js 의 모듈들을 쉽게 설치 할 수 있게 도와주는 녀석이다. 하루프레스에서도 엔진에 종속된 모듈들을 initalize 과정에서 자동으로 받아 주기 때문에 그전에 npm을 설치 해 주어야 한다.</p><pre><code class=""><span class="variable">$ </span>curl <span class="symbol">http:</span>/<span class="regexp">/npmjs.org/install</span>.sh | sh
 </code></pre><p>설치가 끝났으면 제대로 설치 되었는지 확인을 해보자.</p><pre><code class=""><span class="comment">$</span> <span class="comment">npm</span> <span class="literal">-</span><span class="comment">v</span>
-<span class="comment">1</span>.<span class="comment">1</span>.<span class="comment">48</span>
+<span class="comment">1</span><span class="string">.</span><span class="comment">1</span><span class="string">.</span><span class="comment">48</span>
 </code></pre>
 <h1 id="toc_184">로컬 SSH Key 발급하기</h1>
-<p>로컬에서 github.com 에 일련의 작업을 수행하기 위해서는 ssh key를 등록 하여야 한다.</p><pre><code class=""><span class="comment">$</span> <span class="comment">ssh</span>-<span class="comment">keygen</span> <span class="literal">-</span><span class="comment">t</span> <span class="comment">rsa</span> <span class="literal">-</span><span class="comment">C</span> <span class="comment">"input</span> <span class="comment">your</span> <span class="comment">email</span> <span class="comment">address"</span>
-</code></pre><p>위와 같이 <code>input your email address</code> 부분에 사용할 이메일 주소를 입력하면 다음과 같은 결과가 나온다</p><pre><code class="">Generating public/private rsa key pair.
-Enter <span class="type">file</span> <span class="keyword">in</span> which <span class="keyword">to</span> save <span class="keyword">the</span> key (/Users/<span class="comment">#yourusername#/.ssh/id_rsa):</span>
-</code></pre><p>위와 같은 화면이 나오면 엔터를 눌러준다. 그럼 비밀번호를 입력하라는 메세지가 나오고 비밀번호를 입력하면 비밀번호를 확인차 다시 입력해 달라는 메세지가 나온다. </p><pre><code class=""><span class="title">Enter</span> passphrase (empty for <span class="built_in">no</span> passphrase): (비밀번호 입력+엔터)
-Enter same passphrase again: (동일한 비밀번호 입력+엔터)
-</code></pre><p>ssh key가 제대로 발급 되었는지 확인을 해보려면</p><pre><code class=""><span class="comment">$</span> <span class="comment">cd</span> <span class="string">.</span><span class="comment">ssh/</span>
-<span class="comment">$</span> <span class="comment">ls</span> <span class="literal">-</span><span class="comment">al</span>
+<p>로컬에서 github.com 에 일련의 작업을 수행하기 위해서는 ssh key를 등록 하여야 한다.</p><pre><code class=""><span class="comment">$</span> <span class="comment">ssh</span><span class="literal">-</span><span class="comment">keygen</span> <span class="literal">-</span><span class="comment">t</span> <span class="comment">rsa</span> <span class="literal">-</span><span class="comment">C</span> <span class="comment">"input</span> <span class="comment">your</span> <span class="comment">email</span> <span class="comment">address"</span>
+</code></pre><p>위와 같이 <code>input your email address</code> 부분에 사용할 이메일 주소를 입력하면 다음과 같은 결과가 나온다</p><pre><code class="">Generating <span class="keyword">public</span>/<span class="keyword">private</span> rsa <span class="keyword">key</span> pair.
+Enter file <span class="keyword">in</span> which <span class="keyword">to</span> save the <span class="keyword">key</span> (/Users/<span class="preprocessor">#yourusername#/.ssh/id_rsa):</span>
+</code></pre><p>위와 같은 화면이 나오면 엔터를 눌러준다. 그럼 비밀번호를 입력하라는 메세지가 나오고 비밀번호를 입력하면 비밀번호를 확인차 다시 입력해 달라는 메세지가 나온다. </p><pre><code class="">Enter passphrase (empty <span class="keyword">for</span> <span class="literal">no</span> passphrase): (비밀번호 입력+엔터)
+Enter same passphrase <span class="attribute">again</span>: (동일한 비밀번호 입력+엔터)
+</code></pre><p>ssh key가 제대로 발급 되었는지 확인을 해보려면</p><pre><code class=""><span class="variable">$ </span>cd .ssh/
+<span class="variable">$ </span>ls -al
 </code></pre><p><code>id_rsa</code>, <code>id_rsa.pub</code> 파일이 존재하면 제대로 발급 된것이다. </p>
 <h1 id="toc_185">마무리</h1>
 <p>이제 하루프레스를 설치할 준비는 다 되었다. 이후의 작업은 <a href="http://haroopress.github.com">하루프레스 공식 사이트</a>에 잘 나와있다. 

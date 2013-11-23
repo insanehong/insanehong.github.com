@@ -235,7 +235,7 @@
 <p>함수선언은 <code>Function Statement</code> 라고도 하며 말그대로 함수 문장이란 뜻이다. 이는 곧  실행가능한 코드블럭이 아니며 함수의 정의를 나타내는 문장으로 해석되며 따라서 코드해석에 따른 수행결과가 존재하지 않는다는 것을 의미한다.</p></blockquote>
 <p><code>Statement</code> 라는 개념을 잘 집고 넘어가야 한다. 함수 선언문이 <code>Statement</code> 라고 하는 말은 정의에서 밝힌것 처럼 코드블럭 자체는 <strong>실행가능 코드가 아니라는 것</strong>이다. 즉 해당 코드블럭을 <strong>콘솔에서 실행하여도 어떠한 결과도 return 되지 않는다</strong>. 그러한 이유로 함수선언문을 Class와 동일한 개념으로 이해해도 무방하다. </p><pre><code class="javascript"><span class="comment">//Function Declarations</span>
 <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> {</span>
-    console.log(<span class="string">'hello'</span>);
+    <span class="transposed_variable">console.</span>log(<span class="string">'hello'</span>);
 }
 </code></pre><p>이러한 statement 는 console 에서 실행을 시켜도 아무런 결과를 반환하지 않는다.</p><p><img src="./@img/state.jpeg" alt="return"></p>
 <h2 id="toc_216">함수표현(Function Expressions) 이란?</h2>
@@ -269,14 +269,14 @@
 <p>즉 Global 영역에 선언된 변수 또는 함수는 자바사크립트 엔진이 가장 먼저 해석하게 된다. 단 할당구문은 런타임과정 이루어지기 때문에 hosting 되지 않는다. </p><p>이 정의가 다소 어려울수도 있다. 하지만 단순하게 <strong>선언문은 항시 자바스크립트 엔진 구동시 가장 최우선으로 해석</strong>한다고 이해하면 쉬울 것이다. 즉 인터프린터가 자바스크립트의 코드를 해석하면서 코드작성 순서에 상관없이 global 영역에 선언되어 있는 변수나 함수의 선언문들을 먼저 수집하여 전역객체의 속성으로 등록시켜 둔다는 것이다. 그렇기 때문에 전역변수와 전역함수는 자바스크립트 코드의 어떠한 위치에서도 실행이 가능한 것이다. </p><p>하지만 같은 이유로 너무 많은 선언문이 남발되어 있는 자바스크립트 코드는 실행코드의 해석시점이 뒤로 밀리게 됨으로서 자바스크립트 실행코드의 구동시점이 길어지는 좋지않는 결과를 가져오기도 한다.</p><p>이 hoisting에서 중요한 부분은 <strong>statement 는 hoisting 되지만 할당은 hoisting 되지 않는 다는 것</strong>이다. 즉 {} 안의 내용은 포함하지만 = 연사자를 사용한 값은 hoisting 되지 않는다. </p><pre><code class="javascript"><span class="comment">//#예제 1 : 함수선언에서의  호이스팅</span>
 foo();
 <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> {</span>
-    console.log(<span class="string">'hello'</span>);
+    <span class="transposed_variable">console.</span>log(<span class="string">'hello'</span>);
 };
 &gt; hello
 
 <span class="comment">//#예제 2 : 함수표현에서의  호이스팅</span>
 foo();
-<span class="keyword">var</span> foo = <span class="keyword">function</span>() {
-    console.log(<span class="string">'hello'</span>);
+var foo = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="transposed_variable">console.</span>log(<span class="string">'hello'</span>);
 };
 &gt; Syntax Error 
 </code></pre><p>위 코드에서 알수 있듯이 함수선언은 foo(); 라는 실행코드를 해석하기 이전에 foo 함수에 대한 선언을 호이스팅하여 global 객체에 등록시키기 때문에 오류 없이 수행된다. 하지만 함수표현은 변수에 <code>함수리터럴을 할당</code>하는 구조이기 때문에 Hoisting  되지 않으며 <code>Syntax Error</code> 를 발생시킨다. </p><p>이러한 Hoisting은 자바스크립트 코드를 사람이 해석하는데 많은 혼란을 주게 된다. 그런 이유로 자바스크립트 코드를 작성할대 <strong>선언문은 항상 최상위에서 작성하는 것을 권고</strong>하고 있다. </p><p>그럼 지금까지 이해한 내용을 가지고 아래의 퀴즈들을 풀어보도록 하자. 아래의 퀴즈들을 보고 바로 답이 나온다면 더이상 이글을 읽을 필요는 없을 것이다. </p>
@@ -284,25 +284,25 @@ foo();
 <pre><code class="javascript"><span class="comment">//Question 1:</span>
 <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>{</span>
     <span class="function"><span class="keyword">function</span> <span class="title">bar</span><span class="params">()</span> {</span>
-        console.log(<span class="string">'hello'</span>);
+        <span class="transposed_variable">console.</span>log(<span class="string">'hello'</span>);
     }
 
     <span class="keyword">return</span> bar();
 
     <span class="function"><span class="keyword">function</span> <span class="title">bar</span><span class="params">()</span> {</span>
-        console.log(<span class="string">'world'</span>);
+        <span class="transposed_variable">console.</span>log(<span class="string">'world'</span>);
     }
 }
 foo();
 
 <span class="comment">//Question 2:</span>
 <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>{</span>
-    <span class="keyword">var</span> bar= <span class="keyword">function</span>() {
-        console.log(<span class="string">'hello'</span>);
+    var bar= <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        <span class="transposed_variable">console.</span>log(<span class="string">'hello'</span>);
     };
     <span class="keyword">return</span> bar();
-    <span class="keyword">var</span> bar = <span class="keyword">function</span>() {
-         console.log(<span class="string">'world'</span>);
+    var bar = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+         <span class="transposed_variable">console.</span>log(<span class="string">'world'</span>);
     };
 }
 foo();
@@ -343,33 +343,33 @@ foo();
     }
 
 }
-</code></pre>
+</span></code></pre>
 <h3 id="toc_221">Question 2. 풀이</h3>
 <pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>{</span>
-    <span class="keyword">var</span> bar= <span class="keyword">function</span>() {
-        console.log(<span class="string">'hello'</span>);
+    var bar= <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        <span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="string">'hello'</span>);
     };
     <span class="keyword">return</span> bar();
-    <span class="keyword">var</span> bar = <span class="keyword">function</span>() {
-         console.log(<span class="string">'world'</span>);
+    var bar = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+         <span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="string">'world'</span>);
     };
 }
 foo();
 </code></pre><p>2번 퀴즈에서 역시 foo 함수는 hoisting 되어 런타임이전에 미리 해석되어 진다. 하지만 {}안에 작성된 var bar 라는 변수는 함수리터럴을 할당받고 있다. 할당은 런타임 시점에서 이루어지고 자바스크립트 엔진은 런타임 이전까지는 강제적으로 undefinde 를 할당하게 된다. 즉 hoisting 되어진 foo 함수안에 구조는 실행코드를 만나기 전까지는 아래와 같이 해석되어 진다. </p><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>{</span>
     <span class="keyword">var</span> bar= <span class="literal">undefined</span>;
     <span class="keyword">var</span> bar= <span class="literal">undefined</span>;
-    bar= <span class="keyword">function</span>() {
+    bar= <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
         console.log(<span class="string">'hello'</span>);
     };
    <span class="keyword">return</span> bar();
 }
 </code></pre><p>2번째로 작성된 함수표현식은 실행조차 되지 않는다. 런타임에서는 자바스크립트 엔진이 해석한 순서로 실행되기 때문에 할당구문보다 먼저 return 이 실행되어 버린다. 그렇기 때문에 2번 퀴즈는 <strong>&#39;hello&#39;</strong> 를 출력한다. 같은 이유로 아래의 코드는 Syntax Error 를 뱉어내게 된다. </p><pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>{</span>
    <span class="keyword">return</span> bar(); 
-   <span class="keyword">var</span> bar= <span class="keyword">function</span>() {
-        console.log(<span class="string">'hello'</span>);
+   var bar= <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        <span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="string">'hello'</span>);
     };
-    <span class="keyword">var</span> bar = <span class="keyword">function</span>() {
-         console.log(<span class="string">'world'</span>);
+    var bar = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+         <span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="string">'world'</span>);
     };
 }
 foo();

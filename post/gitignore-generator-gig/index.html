@@ -249,7 +249,7 @@ Here are the options:
 <span class="title">scala</span>, <span class="title">sdcc</span>, <span class="title">seamgen</span>, <span class="title">sketchup</span>, <span class="title">sublimetext</span>, <span class="title">sugarcrm</span>, <span class="title">symfony</span>, <span class="title">symfony2</span>, <span class="title">symphonycms</span>, <span class="title">tags</span>,
 <span class="title">target3001</span>, <span class="title">tasm</span>, <span class="title">textmate</span>, <span class="title">textpattern</span>, <span class="title">turbogears2</span>, <span class="title">typo3</span>, <span class="title">unity</span>, <span class="title">virtualenv</span>, <span class="title">visualstudio</span>, <span class="title">waf</span>,
 <span class="title">windows</span>, <span class="title">wordpress</span>, <span class="title">xilinxise</span>, <span class="title">yii</span>, <span class="title">zendframework</span>, <span class="title">gcov</span>, <span class="title">nanoc</span>, <span class="title">opencart</span>, <span class="title">test</span>, <span class="title">vim</span>
-</code></pre><p>그럼 지금부터 각설하고 <em class="label label-info"><strong>gig</strong></em>의 설치부터 사용법까지를 알아보도록 한다. </p>
+</span></code></pre><p>그럼 지금부터 각설하고 <em class="label label-info"><strong>gig</strong></em>의 설치부터 사용법까지를 알아보도록 한다. </p>
 <h2 id="toc_90">gig install</h2>
 
 <blockquote>
@@ -289,13 +289,13 @@ Here are the options:
 <span class="title">sublimetext</span> :
 # <span class="title">SublimeText</span> <span class="title">project</span> <span class="title">files</span>
 *.<span class="title">sublime</span>-<span class="title">workspace</span>
-</code></pre><p><code>.gitignore</code> 에 포함될 조건들을 확인 했으면 이제 <code>git repository</code> 에 <code>.gitignore</code> 파일을 생성해 보자.  </p>
+</span></code></pre><p><code>.gitignore</code> 에 포함될 조건들을 확인 했으면 이제 <code>git repository</code> 에 <code>.gitignore</code> 파일을 생성해 보자.  </p>
 <h2 id="toc_92">generate .gitignore file for your git repository</h2>
 <p>위에서 확인한 조건들로 구성된 <code>.gitignore</code> 파일을 만들어 보도록 하자.</p><pre><code class="">$ gig gen  java osx intellij sublimetext
 Completed Generate!
 /Users/insanehong/workspace/project/gigtest/.gitignore:
 
-<span class="preprocessor">### java ###</span>
+<span class="comment">### java ###</span>
 *.<span class="class"><span class="keyword">class</span>
 
 # <span class="title">Package</span> <span class="title">Files</span> #
@@ -327,7 +327,7 @@ Completed Generate!
 # <span class="title">SublimeText</span> <span class="title">project</span> <span class="title">files</span>
 *.<span class="title">sublime</span>-<span class="title">workspace</span>
 
-</code></pre><p>간단한 명령어 한줄로 java, osx, intellij, sublime text 에서 생성하는 파일 혹은 디렉토리에 대한 조건을 가진 <code>.gitignore</code> 파일이 생성되었다. </p><p>위의 경우 <code>.gitignore</code> 파일이 존재하지 않는 디렉토리에서 <em class="label label-important"><strong>gen</strong></em> 명령을 사용했기 때문에 파일을 새로 생성하여 만들었지만 이미 <code>.gitignore</code> 파일이 존재한다면 기존에 등록되어 있는 조건들에 추가 되어지게 된다. </p><p>위에서 만든 조건에 window, vim 의 조건들을 추가 해자.</p><pre><code class="">$ gig gen windows vim
+</span></code></pre><p>간단한 명령어 한줄로 java, osx, intellij, sublime text 에서 생성하는 파일 혹은 디렉토리에 대한 조건을 가진 <code>.gitignore</code> 파일이 생성되었다. </p><p>위의 경우 <code>.gitignore</code> 파일이 존재하지 않는 디렉토리에서 <em class="label label-important"><strong>gen</strong></em> 명령을 사용했기 때문에 파일을 새로 생성하여 만들었지만 이미 <code>.gitignore</code> 파일이 존재한다면 기존에 등록되어 있는 조건들에 추가 되어지게 된다. </p><p>위에서 만든 조건에 window, vim 의 조건들을 추가 해자.</p><pre><code class="">$ gig gen windows vim
 Completed Generate!
 /Users/insanehong/workspace/project/gigtest/.gitignore:
 
@@ -379,27 +379,27 @@ $<span class="title">RECYCLE</span>.<span class="title">BIN</span>/
 <span class="title">Session</span>.<span class="title">vim</span>
 .<span class="title">netrwhist</span>
 *~
-</code></pre><p>기존에 만들었던 java, osx, intellij, sublimetext 의 조건들에 새로 추가한 windows, vim 의 조건들이 추가된것을 확인 할수 있다. </p><p>때로는 기존파일에 추가하는것이 아니라 기존파일을 무시하고 새로운 condition 으로 덮어쓰기를 해야하는 경우가 있다. 
+</span></code></pre><p>기존에 만들었던 java, osx, intellij, sublimetext 의 조건들에 새로 추가한 windows, vim 의 조건들이 추가된것을 확인 할수 있다. </p><p>때로는 기존파일에 추가하는것이 아니라 기존파일을 무시하고 새로운 condition 으로 덮어쓰기를 해야하는 경우가 있다. 
 이럴경우에는 <em class="label label-info"><strong>--override</strong></em> 혹은 단축옵션인 <em class="label label-info"><strong>-o</strong></em> 를 사용하면 된다. </p><p>위에서 만들어진 <code>.gitignore</code> 파일을  osx, sublimetext 의 조건만 가진 새로운 녀석으로 교체 해보자.</p><pre><code class="">$ gig gen -o osx sublimetext
 Completed Generate!
-/Users/insanehong/workspace/project/gigtest/<span class="variable">.gitignore</span>:
+/Users/insanehong/workspace/project/gigtest/<span class="preprocessor">.gitignore</span>:
 <span class="preprocessor">### osx ###</span>
-<span class="variable">.DS_Store</span>
-<span class="variable">.AppleDouble</span>
-<span class="variable">.LSOverride</span>
+<span class="preprocessor">.DS</span>_Store
+<span class="preprocessor">.AppleDouble</span>
+<span class="preprocessor">.LSOverride</span>
 Icon
 
 
 <span class="preprocessor"># Thumbnails</span>
-<span class="variable">._</span>*
+._*
 
 <span class="preprocessor"># Files that might appear on external disk</span>
-<span class="variable">.Spotlight</span>-V100
-<span class="variable">.Trashes</span>
+<span class="preprocessor">.Spotlight</span>-V100
+<span class="preprocessor">.Trashes</span>
 
 <span class="preprocessor">### sublimetext ###</span>
 <span class="preprocessor"># SublimeText project files</span>
-*<span class="variable">.sublime</span>-workspace
+*<span class="preprocessor">.sublime</span>-workspace
 </code></pre><p>기존의 파일을 osx, sublimetext 의 조건만을 가진 녀석으로 override 한것을 확인 할 수 있다. </p>
 <h2 id="toc_93">자주사용되는  template packaging 하기</h2>
 <p>지금까지 소개한 방법은 ignore 조건에 추가될 condition 을 하나하나 지정하여야 했다. 하지만 개발머신이 고정적이며 사용하는 환경이 자주 바뀌는 일이 없다면 좀더 쉬운 방법으로 생성하는 방법을 찾게 된다. </p><p>이럴때는 자주쓰는 template 을 하나로 묶어 새로운 template package 로 만들어서 사용하면 좀더 간편하게 사용할 수 있다. </p><p>본인은 imac, macbook pro 를 개발머신으로 사용하고 있고 sublime text2 와 intellij 를 사용하여 개발하고 있다. 
@@ -433,28 +433,28 @@ Icon
 <em class="label label-info"><strong>--help</strong></em> 를 통해 template list 를 확인하거나 <em class="label label-info"><strong>show</strong></em> 명령어를 통해 확인해보는 것이다. </p><pre><code class="">$ gig show mypkg
 mypkg :
 <span class="preprocessor">### osx ###</span>
-<span class="variable">.DS_Store</span>
-<span class="variable">.AppleDouble</span>
-<span class="variable">.LSOverride</span>
+<span class="preprocessor">.DS</span>_Store
+<span class="preprocessor">.AppleDouble</span>
+<span class="preprocessor">.LSOverride</span>
 Icon
 
 
 <span class="preprocessor"># Thumbnails</span>
-<span class="variable">._</span>*
+._*
 
 <span class="preprocessor"># Files that might appear on external disk</span>
-<span class="variable">.Spotlight</span>-V100
-<span class="variable">.Trashes</span>
+<span class="preprocessor">.Spotlight</span>-V100
+<span class="preprocessor">.Trashes</span>
 
 <span class="preprocessor">### sublimetext ###</span>
 <span class="preprocessor"># SublimeText project files</span>
-*<span class="variable">.sublime</span>-workspace
+*<span class="preprocessor">.sublime</span>-workspace
 
 <span class="preprocessor">### intellij ###</span>
-*<span class="variable">.iml</span>
-*<span class="variable">.ipr</span>
-*<span class="variable">.iws</span>
-<span class="variable">.idea</span>/
+*<span class="preprocessor">.iml</span>
+*<span class="preprocessor">.ipr</span>
+*<span class="preprocessor">.iws</span>
+<span class="preprocessor">.idea</span>/
 </code></pre><p><em class="label label-info"><strong>pkg</strong></em> 또한 <em class="label label-info"><strong>gen</strong></em> 과 마찬가지로 기존의 동일한 template 파일이 존재하면 해당 파일에 조건을 추가하게 되며 새로운 조건으로 구성된 파일로 만들기 위해서 <em class="label label-info"><strong>--override</strong></em> 혹은 단축옵션인 <em class="label label-info"><strong>-o</strong></em>  옵션을 사용하면 된다. </p><p>방금 만든 <code>mypkg</code> 를 linux, vim 의 조건으로 변경해 보도록 하자</p><pre><code class="">$ gig pkg -name <span class="string">'mypkg'</span> -o linux vim
 Completed packaging!
 mypkg.gitignore :

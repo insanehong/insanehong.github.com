@@ -236,9 +236,9 @@
 자바스크립트 응용에서 다룰 프로그래밍 패턴과 연관된 재밌는 사실중 하나는 자바스크립트의 프로토타입 객체의 확장은 옵져버패턴을 따른다. 
 지금으로서는 그다지 중요하게 알고 있을 필요는 없다. 하지만 이 연재를 계속 지켜본다면 후에 굉장히 신선한 내용으로 다가올 것이다.</p>
 <h1 id="toc_247">자바스크립트에서 사용되는 프로토타입</h1>
-<pre><code class="javascript"><span class="title">var</span> foo = {name : <span class="string">"foo"</span>}; // foo 라는 객체를 생성.
-<span class="title">foo</span>.prototype.a='hello world';
-<span class="title">console</span>.log(foo.a);
+<pre><code class="javascript">var foo = {name : <span class="string">"foo"</span>}; <span class="comment">// foo 라는 객체를 생성.</span>
+<span class="transposed_variable">foo.</span><span class="transposed_variable">prototype.</span>a=<span class="string">'hello world'</span>;
+<span class="transposed_variable">console.</span>log(<span class="transposed_variable">foo.</span>a);
 </code></pre><p>지금 자신이 알고 있는 자바스크립트 프로토타입에 대한 지식만으로 위 코드의 결과를 추측해 보길 바란다. 어떤 결과를 예상했는지 모르겠지만 위 결과는 당연히 <code>syntax error</code> 이다.
 적어도 이글을 읽고 있는 사람중 몇몇은 예상했던 결과와 코드 실행결과를 비교하면서 왜 그런지 이해하지 못할 것이라 생각한다.  </p><p>그 이유는 극히 단순하다. 자바스크립트에서 말하는 프로토타입이란 말에 원천적인 의미와 실제 자바스크립트를 사용하면서 눈으로 보는 프로토타입이란 녀석과의 차이를 이해하지 못하기 때문이다. </p><p>자바스크립트에서 사용되는 프로토타입이란 용어는 크게 두가지로 나눈다. <strong>Prototype Property가 가리키고 있는</strong> <code>Prototype Object</code> 와 자기 자신을 만들어낸 <strong>객체의 원형</strong>을 의미하는 <code>Prototype Link</code> 이다.
 자바스크립트 관련 레퍼런스는 대부분 프로토타입에 대한 정의는 객체의 원형을 의미하는 <code>Prototype Link</code> 로 정의하지만 <code>Prototype Property</code>를 이용한 객체 확장에 대해서만 다루기 때문에 이 둘의 차이를 자세히 거론하지 않는다. 
@@ -288,34 +288,34 @@ A.prototype.x = <span class="function"><span class="keyword">function</span> <sp
     <span class="comment">//do something</span>
 };
 </code></pre><p>지금까지 내용을 잘 이해하고 있다면 예제1의 this.x 는 A의 프로퍼티 x 이고, 예제2 는 A의 <code>prototype Object</code> 에 연결된 x 라는 것을 이해 할 수 있을것이다. 그럼 왜 굳이 prototype 을 사용하여야 하는가? 이 문제는 객체를 어떻게 사용 할 것인가에 따라 다르게 된다. </p><pre><code class="js"><span class="comment">//#예제 1.</span>
-<span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-    <span class="keyword">this</span>.x = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-         console.log(<span class="string">'hello'</span>);
+var A = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+    <span class="transposed_variable">this.</span>x = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+         <span class="transposed_variable">console.</span>log(<span class="string">'hello'</span>);
     };
 };
-A.x=<span class="keyword">function</span>() {
-    console.log(<span class="string">'world'</span>);
+<span class="transposed_variable">A.</span>x=<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="transposed_variable">console.</span>log(<span class="string">'world'</span>);
 };
-<span class="keyword">var</span> B = <span class="keyword">new</span> A();
-<span class="keyword">var</span> C = <span class="keyword">new</span> A();
-B.x();
+var B = new A();
+var C = new A();
+<span class="transposed_variable">B.</span>x();
 &gt; hello
-C.x();
+<span class="transposed_variable">C.</span>x();
 &gt; hello
 
 <span class="comment">//#예제 2.</span>
-<span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span> };
-A.x=<span class="keyword">function</span>() {
-    console.log(<span class="string">'hello'</span>);
+var A = <span class="function"><span class="keyword">function</span> <span class="params">()</span> { };</span>
+<span class="transposed_variable">A.</span>x=<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="transposed_variable">console.</span>log(<span class="string">'hello'</span>);
 };
-A.prototype.x = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-     console.log(<span class="string">'world'</span>);
+<span class="transposed_variable">A.</span><span class="transposed_variable">prototype.</span>x = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+     <span class="transposed_variable">console.</span>log(<span class="string">'world'</span>);
 };
-<span class="keyword">var</span> B = <span class="keyword">new</span> A();
-<span class="keyword">var</span> C = <span class="keyword">new</span> A();
-B.x();
+var B = new A();
+var C = new A();
+<span class="transposed_variable">B.</span>x();
 &gt; world
-C.x();
+<span class="transposed_variable">C.</span>x();
 &gt; world
 </code></pre><p>예제1, 예제2 에서 B,C 를 생성하기 위한 객체 원형 프로토타입은 A 이다. 하지만 여기서 반드시 집고 넘어가야하는 사실은 B,C는 A 를 프로토타입으로 사용하기위해서 A의 <code>prototype Object</code>를 사용한다는 것이다. 그리고 이 <code>Prototype Object</code>는 A 가 생성될 당시의 정보만을 가지기 때문에 예제1에서 A의 <code>Prototype Object</code>가 알고 있는 x 는 <code>function () {console.log(&#39;hello&#39;);}</code> 가 된다. 즉 A.x 를 아무리 수정하여도 A의 Prototype Object는 변경되지 않기 때문에 A 를 프로토타입으로 생성되는 B,C는 function () {console.log(&#39;hello&#39;);} 만 참조하는 것이다. </p><p>예제2 에서의 결과가 world 가 되는 이유도 같은 이유다. A.prototype 은 A의 <code>Prototype Object</code>를 참조하는 녀석이기 때문에 A.prototype.x 를 정의한다는 것은 A의 <code>Prototype Object</code>를 직접 이용하게 되는 것이고 그에 따라서 A의 <code>Prototype Object</code>를 프로토타입으로 이용하여 만들어지는 B,C 가 알고 있는 x 는  <code>function () {console.log(&#39;world&#39;);}</code> 가 되는 것이다.</p><p>예제2의 객체 상속 모델을 그림으로 표현하면 아래와 같이 나온다.
 <img src="./@img/relation2.png" alt="관계도2"></p>
@@ -331,32 +331,32 @@ C.x();
 var B = new A();
 var C = new A();
 
-<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">B.</span>x);
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">B.</span>x());
 &gt; hello 
 
-<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">C.</span>x);
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">C.</span>x());
 &gt; hello 
 
 <span class="transposed_variable">A.</span><span class="transposed_variable">prototype.</span>x = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
      <span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="string">'world'</span>);
 };
 
-<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">B.</span>x);
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">B.</span>x());
 &gt; world
 
-<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">C.</span>x);
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">C.</span>x());
 &gt; world
 </code></pre><p>위 예제에서 A의 <code>Prototype Object</code>의 x 메소드를 재정의 하였을 때 B,C객체도 그 영향을 받는다는 것을 알 수 있다. 그 이유는 <strong>프로토타입 체인에 의한 공유 때문</strong>이다. 아래의 그림을 잘 봐보기 바란다. 
 <img src="./@img/relation3.png" alt="관계도1"></p><p>이전에 소개했던 그림과 비슷하다. 그러니 프로토타입 상속에 대한 구조 이해는 가능하리라 믿는다. 여기서 유심히 봐야할것은 <code>A Prototype Object</code> 가 소유한 <code>Constructor</code> 다. <code>A Prototype Object</code>의 <code>Constructor</code>는 A 객체의 생성자 함수이다.
 즉 이를 통해 만들어지는 객체들은 <strong>A 객체가 생성될 당시 소유하고 있지 않은 x 라는 메소드를 가질수 없다.</strong> x는 A.prototype 를 이용하여   <code>A Prototype Object</code>에 추가 되어진 메소드다. 
 하지만 이 x 메소드는 프로토타입 체인에 의한 공유 메소드다. A의 <code>Prototype Object</code> 가 소유한 x 라는 메소드는 <code>A Prototype Object</code>를 프로토타입으로 만들어진 모든 객체에서 사용할 수 있다.
-이는 프로토타입 기반 상속에서 매우 중요한 특성을 말하고 있다. </p><p>위 예제에서 사용한 x 라는 메소드를 하위객체에서 찾지 못하면 상위객체에서 해당 메소드를 탐색한다. 이러 방법으로 프로토타입 체인을 따라 최상위 객체까지 도달할때까지 해당 메소드를 찾지 못한다면 <code>undefined</code> 이 되는 것이다. </p><p><img src="./@img/flowchart.png" alt="관계도1"></p><p>하지만 A 객체가 생성당시 x 라는 메소드 혹은 의미있는 프로퍼티에 대한 정의가 포함된 내용을 가지고 있다면 이들은 공유가 아닌 상속된다. </p><pre><code class="js">var A= <span class="keyword">function</span>() <span class="cell">{}</span>;
+이는 프로토타입 기반 상속에서 매우 중요한 특성을 말하고 있다. </p><p>위 예제에서 사용한 x 라는 메소드를 하위객체에서 찾지 못하면 상위객체에서 해당 메소드를 탐색한다. 이러 방법으로 프로토타입 체인을 따라 최상위 객체까지 도달할때까지 해당 메소드를 찾지 못한다면 <code>undefined</code> 이 되는 것이다. </p><p><img src="./@img/flowchart.png" alt="관계도1"></p><p>하지만 A 객체가 생성당시 x 라는 메소드 혹은 의미있는 프로퍼티에 대한 정의가 포함된 내용을 가지고 있다면 이들은 공유가 아닌 상속된다. </p><pre><code class="js">var A= <span class="function"><span class="keyword">function</span><span class="params">()</span> {};</span>
 var B = new A();
 <span class="transposed_variable">A.</span><span class="transposed_variable">prototype.</span>x=<span class="string">'hello'</span>;
 <span class="transposed_variable">console.</span><span class="built_in">log</span>(B);
-</code></pre><p><img src="./@img/result1.jpeg" alt="A"></p><pre><code class="js"><span class="keyword">var</span> A= <span class="keyword">function</span>() {<span class="keyword">this</span>.x=<span class="string">'hello'</span>;};
-<span class="keyword">var</span> B = <span class="keyword">new</span> A();
-console.log(B);
+</code></pre><p><img src="./@img/result1.jpeg" alt="A"></p><pre><code class="js">var A= <span class="function"><span class="keyword">function</span><span class="params">()</span> {<span class="title">this</span>.<span class="title">x</span>='<span class="title">hello</span>';};</span>
+var B = new A();
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(B);
 </code></pre><p><img src="./@img/result2.jpeg" alt="A"></p><p>이처럼 공유와 상속의 구분을 정확히 이해하고 사용하는 것은 매우 중요하다. 이들을 햇갈리게 되면 후에 프로토타입 재정의에 따른 원하지 않는 참혹한 결과를 가져다 줄수도 있기 때문이다.</p>
 <h1 id="toc_251">갈무리</h1>
 <p>프로토타입에 대한 제대로된 이해를 한다는 것은 결국 자바스크립트의 객체에 대한 이해를 하는 것과 동일하다고 생각한다. 이 글을 쓰면서도 이 주제를 어떻게 풀어야할지 많은 고민을 했었다. 그만큼 개념적으로 다가서기가 좀 까다로운 부분이기도 했다. 하지만 내가 아는 범위내에서는 모두 풀어냈다고 보고 이글을 보고도 이해가 잘안된다면 더 많은 레퍼런스를 참고하기 바란다. 참고할만한 레퍼런스는 이글 끝에 추가 하도록 하겠다. 이로서 미루고 미루고 미뤄왔던 프로토타입에 대한 글을 마무리하고 다음 주제는 function 객체 외 다수의 객체들에 대하여 알아볼것이라는 떡밥을 던지며 마무리 한다. </p>

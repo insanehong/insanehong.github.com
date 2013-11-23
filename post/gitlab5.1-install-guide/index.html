@@ -249,7 +249,7 @@
 <p>모든 작업이 그렇게지만 페키지들을 설치 하기 앞서 페키지 메니저를 통한 업데이트와 메니저 업그레이드를 먼저 실시 해주었다. 물론 공식 문서에도 나와있다. </p><pre><code class="">// 패키지 설치에 사용할 apt-get <span class="operator"><span class="keyword">update</span> 및 upgrade
 $ apt-<span class="keyword">get</span> <span class="keyword">update</span>
 $ apt-<span class="keyword">get</span> upgrade
-</code></pre><p>작업이 완료되고 공식 설치 가이드를 따라 필요한 페키지들의 설치를 시작하였다. 나중에 공식문서가 얼마나 부실한지 깨닿게 되었지만 지금 순간에는 중요한게 아니다.</p><pre><code class="">$ apt-<span class="keyword">get</span> install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev curl git-core openssh-<span class="built_in">server</span> redis-<span class="built_in">server</span> postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev
+</span></code></pre><p>작업이 완료되고 공식 설치 가이드를 따라 필요한 페키지들의 설치를 시작하였다. 나중에 공식문서가 얼마나 부실한지 깨닿게 되었지만 지금 순간에는 중요한게 아니다.</p><pre><code class=""><span class="comment">$</span> <span class="comment">apt</span><span class="literal">-</span><span class="comment">get</span> <span class="comment">install</span> <span class="literal">-</span><span class="comment">y</span> <span class="comment">build</span><span class="literal">-</span><span class="comment">essential</span> <span class="comment">zlib1g</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libyaml</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libssl</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libgdbm</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libreadline</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libncurses5</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libffi</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">curl</span> <span class="comment">git</span><span class="literal">-</span><span class="comment">core</span> <span class="comment">openssh</span><span class="literal">-</span><span class="comment">server</span> <span class="comment">redis</span><span class="literal">-</span><span class="comment">server</span> <span class="comment">postfix</span> <span class="comment">checkinstall</span> <span class="comment">libxml2</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libxslt</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libcurl4</span><span class="literal">-</span><span class="comment">openssl</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libicu</span><span class="literal">-</span><span class="comment">dev</span>
 </code></pre><p>설치중 난데없이 <em class="label label-warning"><strong>postfix</strong></em> 호스트관련 설정을 하라는 녀석이 튀어 나왔다. postfix는 당장 사용할 생각도 없었고 필요할 때가 되면 <code>smtp.gmail.com</code> 을 사용할 계획이라 일단 <code>설정안함</code>을 선택해서 무시 했다. </p><p><img src="./@img/postfix.png" alt="ignore postfix setting"></p>
 <h2 id="toc_101">1.2 Python 설치(2.5 &gt;= version)</h2>
 <p>공식  설치 가이드에서 <em class="label label-important"><strong>python v2.5</strong></em> 이상을 설치하여야 하지만 아직 <em class="label label-important"><strong>v3.0</strong></em> 이상은 지원하지 않는다고 나와 있기에 <em class="label label-info"><strong>v2.7</strong></em> 버전을 설치 하기로 했다. </p>
@@ -261,34 +261,34 @@ $ apt-get install <span class="keyword">python</span>
 <span class="comment">// 설치 버전 확인</span>
 $ <span class="keyword">python</span> --version
 Python <span class="number">2.7</span><span class="number">.3</span>
-</code></pre><p>설치 하려고 했던 버전이 잘 설치 되었음을 확인했다. 하지만 이부분은 설치 가이드에도 나와있듯이 정확한 버전을 설치 하는 것이 중요하니 공식문서상에 나와있는 이슈 해결부분을 마저 기록으로 남겨논다. </p><pre><code class=""><span class="regexp">//</span> apt-get install 시 python <span class="number">3</span> 가 설치 되는 경우 ver2<span class="number">.7</span>으로 재설치 한다.
-$ apt-get install python2<span class="number">.7</span>
-
-<span class="regexp">//</span> 설치버전을 반드시 다시 확인한다.
-$ python2 --version
-
-<span class="regexp">//</span> python2 install 후 버전 확인시 `<span class="javascript">command not found</span>` error 가 발생할 경우 심볼릭 링크를 걸어 준다.
-$ ln -s <span class="regexp">/usr/bin/python /usr/bin/</span>python2
+</code></pre><p>설치 하려고 했던 버전이 잘 설치 되었음을 확인했다. 하지만 이부분은 설치 가이드에도 나와있듯이 정확한 버전을 설치 하는 것이 중요하니 공식문서상에 나와있는 이슈 해결부분을 마저 기록으로 남겨논다. </p><pre><code class="">// apt-<span class="built_in">get</span> install 시 python <span class="number">3</span> 가 설치 되는 경우 ver2<span class="number">.7</span>으로 재설치 한다.
+$ apt-<span class="built_in">get</span> install python2<span class="number">.7</span>
+<span class="comment">
+// 설치버전을 반드시 다시 확인한다.
+</span>$ python2 <span class="comment">--version</span>
+<span class="comment">
+// python2 install 후 버전 확인시 `command not found` error 가 발생할 경우 심볼릭 링크를 걸어 준다.
+</span>$ <span class="built_in">ln</span> -s /usr/bin/python /usr/bin/python2
 </code></pre>
 <h1 id="toc_102">2. Mysql Install</h1>
 <p><em class="label label-info"><strong>PostgreSQL</strong></em> 와 <em class="label label-info"><strong>Mysql</strong></em> 중 단 1초의 고민도 없이  <em class="label label-info"><strong>Mysql</strong></em>을 선택 했다. PostgreSQL를 사용하지 않은 이유는 너무나도 간단 했다. </p>
 <blockquote>
 <p>&quot;PostgreSQL를 사용해본적이 단 한번도 없었다.&quot; </p></blockquote>
-<pre><code class="">// Mysql 설치
-$ apt-get install -y mysql-server mysql-client libmysqlclient-dev
+<pre><code class=""><span class="comment">// Mysql 설치</span>
+$ apt<span class="attribute">-get</span> install <span class="attribute">-y</span> mysql<span class="attribute">-server</span> mysql<span class="attribute">-client</span> libmysqlclient<span class="attribute">-dev</span>
 
-// user추가 및 database 생성을 위해 root 계정으로 로그인 한다.
-$ mysql -u root -p
+<span class="comment">// user추가 및 database 생성을 위해 root 계정으로 로그인 한다.</span>
+$ mysql <span class="attribute">-u</span> root <span class="attribute">-p</span>
 
-// database  생성
-mysql&gt; <span class="operator"><span class="keyword">CREATE</span> DATABASE IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">`gitlabhq_production`</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARACTER</span> <span class="keyword">SET</span> <span class="string">`utf8`</span> <span class="keyword">COLLATE</span> <span class="string">`utf8_unicode_ci`</span>;</span>
+<span class="comment">// database  생성</span>
+mysql<span class="subst">&gt;</span> CREATE DATABASE <span class="keyword">IF</span> <span class="literal">NOT</span> EXISTS <span class="string">`gitlabhq_production`</span> DEFAULT CHARACTER <span class="built_in">SET</span> <span class="string">`utf8`</span> COLLATE <span class="string">`utf8_unicode_ci`</span>;
 
-// user 생성 및 권한 추가
-mysql&gt; <span class="operator"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> gitlabhq_production.* <span class="keyword">to</span> <span class="string">'gitlab'</span>@<span class="string">'localhost'</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">'사용할 비밀번호'</span>;</span>
+<span class="comment">// user 생성 및 권한 추가</span>
+mysql<span class="subst">&gt;</span> GRANT <span class="literal">ALL</span> PRIVILEGES <span class="keyword">ON</span> gitlabhq_production<span class="built_in">.</span><span class="subst">*</span> <span class="keyword">to</span> <span class="string">'gitlab'</span>@<span class="string">'localhost'</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">'사용할 비밀번호'</span>;
 
-mysql&gt; FLUSH PRIVILEGES;
+mysql<span class="subst">&gt;</span> FLUSH PRIVILEGES;
 
-mysql&gt; quit;
+mysql<span class="subst">&gt;</span> quit;
 </code></pre><p>설치와 동시에 <em class="label label-success"><strong>database</strong></em>와 <em class="label label-success"><strong>user</strong></em> 추가까지 완료했으며 접속 테스트까지 수행해 본결과 성공적으로 마무리 되었다.</p>
 <h1 id="toc_103">3. Gitlab User 추가</h1>
 <p>설치 가이드에서는 계정추가 이전에 Ruby를 설치하라고 하지만 계정을 만드는 것을 먼저 진행했다. 계정추가를 먼저 진행한 이유는 다음과 같다.  </p>
@@ -297,8 +297,8 @@ mysql&gt; quit;
 <li>git 계정 하위로 rvm 설치<br></li>
 <li>독립적인 ruby 버전 관리를 통하여 Global 설치된 Ruby의 버전 변경에 영향을 받지 않기 위함.</li>
 </ul>
-<p>이부분에서는 <a href="http://twitter.com/andrwj">@andrwj</a> 의 조언이 큰 도움이 되었다. 곧 조공을 받쳐야 할듯 싶다.</p><p>어찌되었건 <em class="label label-info"><strong>git</strong></em> 계정 추가 작업을 설치가이드에 맞추어 진행 하였다. </p><pre><code class=""><span class="comment">//</span> <span class="comment">git</span> <span class="comment">계정은</span> <span class="comment">로그인</span> <span class="comment">비밀번호</span> <span class="comment">없이</span> <span class="comment">생성한다</span>.
-<span class="comment">$</span> <span class="comment">adduser</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">disabled</span>-<span class="comment">login</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">gecos</span> <span class="comment">'GitLab'</span> <span class="comment">git</span>
+<p>이부분에서는 <a href="http://twitter.com/andrwj">@andrwj</a> 의 조언이 큰 도움이 되었다. 곧 조공을 받쳐야 할듯 싶다.</p><p>어찌되었건 <em class="label label-info"><strong>git</strong></em> 계정 추가 작업을 설치가이드에 맞추어 진행 하였다. </p><pre><code class=""><span class="comment">//</span> <span class="comment">git</span> <span class="comment">계정은</span> <span class="comment">로그인</span> <span class="comment">비밀번호</span> <span class="comment">없이</span> <span class="comment">생성한다</span><span class="string">.</span>
+<span class="comment">$</span> <span class="comment">adduser</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">disabled</span><span class="literal">-</span><span class="comment">login</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">gecos</span> <span class="comment">'GitLab'</span> <span class="comment">git</span>
 
 <span class="comment">//</span> <span class="comment">git</span> <span class="comment">계정으로</span> <span class="comment">전환</span>
 <span class="comment">$</span> <span class="comment">su</span> <span class="literal">-</span> <span class="comment">git</span>
@@ -309,69 +309,69 @@ mysql&gt; quit;
 <h1 id="toc_104">4. Ruby Install</h1>
 <p>위에서 밝혔듯이 지금부터 나오는 내용은 공식문서와는 전혀 다르게 진행되었다. 개인적으로 공식문서에 나온 바이너리 설치가 못마땅(?)했기에 <em class="label label-info"><strong>RVM(Ruby Version Manager)</strong></em>을 사용해서 Ruby 를 설치 하기로 했고 설치 경로와 소유자는 당연히 <em class="label label-info"><strong>git</strong></em>이 되어야 했다.</p>
 <h2 id="toc_105">4.1 RVM 설치</h2>
-<pre><code class=""><span class="regexp">//</span> rvm 을 설치
-$ bash -s stable &lt; &lt;(curl -s https:<span class="regexp">//</span>raw.github.com<span class="regexp">/wayneeseguin/rvm/master/binscripts/</span>rvm-installer)
+<pre><code class="">// rvm 을 설치
+$ bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
 
-<span class="regexp">//</span> rvm 자동로드 .bash_profile 에 추가
+// rvm 자동로드 .bash_profile 에 추가
 $ echo <span class="string">'[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; . "$HOME/.rvm/scripts/rvm" # Load RVM function'</span> &gt;&gt; ~/.bash_profile
 
-<span class="regexp">//</span>  vi(vim)을 이용하여 직접 추가 하는 경우 
+//  vi(vim)을 이용하여 직접 추가 하는 경우 
 $ vi .bash_profile
 
-<span class="regexp">//</span> .bash_profile 에 추가될 내용
-<span class="comment">######</span> Ruby Version Manager
-[[ -s <span class="string">"$HOME/.rvm/scripts/rvm"</span> ]] &amp;&amp; source <span class="string">"$HOME/.rvm/scripts/rvm"</span> <span class="comment"># Load RVM into a shell session *as a function*</span>
+// .bash_profile 에 추가될 내용
+###### Ruby Version Manager
+<span class="string">[[ -s "$HOME/.rvm/scripts/rvm" ]]</span> &amp;&amp; source <span class="string">"$HOME/.rvm/scripts/rvm"</span> # Load RVM into a shell session *as a <span class="function"><span class="keyword">function</span>*
 
-<span class="regexp">//</span> 재접속을 피하기 위해 바로 적용.
-$ source .bash_profile
+// 재접속을 피하기 위해 바로 적용.
+$ <span class="title">source</span> .<span class="title">bash_profile</span>
 
-$ rvm -v
-rvm <span class="number">1.19</span><span class="number">.6</span> (stable) <span class="keyword">by</span> Wayne E. Seguin &lt;wayneeseguin<span class="property">@gmail</span>.com&gt;, Michal Papis &lt;mpapis<span class="property">@gmail</span>.com&gt; [https:<span class="regexp">//</span>rvm.io/]
+$ <span class="title">rvm</span> -<span class="title">v</span>
+<span class="title">rvm</span> 1.19.6 <span class="params">(stable)</span></span> by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; [https://rvm.<span class="built_in">io</span>/]
 </code></pre><p>RVM 이 제대로 설치 된것을 확인 했으니 Ruby 설치를 바로 진행 했다. </p>
 <h2 id="toc_106">4.2 Ruby Install</h2>
 <p>이제 RVM 을 사용해서 ruby를 설치하려고 했는데 문제가 발생 했다. ruby 를 설치하기 위해 필요한 몇가지 페키지들이 설치 되어 있지 않다고 오류가 나왔다. 
-사실 RVM 설치를 할때 나왔던 메세지를 잘 읽어봤으면 생기지 않을 문제였지만 귀찮이즘과 시간단축을 위해 무시했던게 화근이기도 했다. </p><p><em class="label label-info"><strong>rvm requirements</strong></em> command 수행후 <em class="label label-important"><strong>Missing required packages:</strong></em> 부분에서 알려주는 페키지들을 설치(global install)해 주어야 했다.</p><p><img src="./@img/ruby-dependency.png" alt="ruby-dependency"> </p><p>패키지 설치를 위해서 잠시 <em class="label label-info"><strong>root</strong></em> 계정으로 변경 하였다. </p><pre><code class=""><span class="regexp">//</span> 누락된 페키지들을 설치한다. 
-$ apt-get install libsqlite3-dev sqlite3 autoconf automake libtool bison
+사실 RVM 설치를 할때 나왔던 메세지를 잘 읽어봤으면 생기지 않을 문제였지만 귀찮이즘과 시간단축을 위해 무시했던게 화근이기도 했다. </p><p><em class="label label-info"><strong>rvm requirements</strong></em> command 수행후 <em class="label label-important"><strong>Missing required packages:</strong></em> 부분에서 알려주는 페키지들을 설치(global install)해 주어야 했다.</p><p><img src="./@img/ruby-dependency.png" alt="ruby-dependency"> </p><p>패키지 설치를 위해서 잠시 <em class="label label-info"><strong>root</strong></em> 계정으로 변경 하였다. </p><pre><code class=""><span class="comment">// 누락된 페키지들을 설치한다. </span>
+$ apt<span class="attribute">-get</span> install libsqlite3<span class="attribute">-dev</span> sqlite3 autoconf automake libtool bison
 
-<span class="regexp">//</span> 설치가 완료되면 git 계정으로 전환한다.
-$ su - git
+<span class="comment">// 설치가 완료되면 git 계정으로 전환한다.</span>
+$ su <span class="subst">-</span> git
 
-$ cd <span class="regexp">/home/gi</span>t
+$ cd <span class="subst">/</span>home<span class="subst">/</span>git
 
-<span class="regexp">//</span> Dependency 확인
+<span class="comment">// Dependency 확인</span>
 $ rvm requirements
-Installing requirements <span class="keyword">for</span> ubuntu, might require sudo password.
-Skipping `<span class="javascript">apt-get update</span>` make sure your system <span class="keyword">is</span> up to date.
-RVM autolibs <span class="keyword">is</span> now configured <span class="reserved">with</span> mode <span class="string">'2'</span> =&gt; <span class="string">'check and stop if missing'</span>,
-please run `<span class="javascript">rvm autolibs enable</span>` to <span class="reserved">let</span> RVM <span class="keyword">do</span> its job <span class="keyword">or</span> run <span class="keyword">and</span> read `<span class="javascript">rvm autolibs [help]</span>`
-<span class="keyword">or</span> visit https:<span class="regexp">//</span>rvm.io<span class="regexp">/rvm/</span>autolibs <span class="keyword">for</span> more information.
-</code></pre><p>패키지 설치가 완료 되어 더이상 <em class="label label-important"><strong>Missing required packages:</strong></em> 부분이 출력되지 않았다. 드디어 Ruby 를 설치할 수 있는 환경이 만들어졌다. </p><p>공식 문서상에 나와 있고 설치관련 각종 이슈등에서도 v1.9.3 버전을 설치하라고 나와 있어 그대로 따르기로 했다. </p><pre><code class=""><span class="comment">// rvm 을 사용하여 ruby v1.9.3 을 설치한다.</span>
-$ rvm install <span class="number">1.9</span><span class="number">.3</span>
+Installing requirements for ubuntu, might <span class="keyword">require</span> sudo password<span class="built_in">.</span>
+Skipping <span class="string">`apt-get update`</span> make sure your system is up <span class="keyword">to</span> <span class="built_in">date</span><span class="built_in">.</span>
+RVM autolibs is now configured <span class="keyword">with</span> mode <span class="string">'2'</span> <span class="subst">=&gt;</span> <span class="string">'check and stop if missing'</span>,
+please run <span class="string">`rvm autolibs enable`</span> <span class="keyword">to</span> <span class="keyword">let</span> RVM <span class="keyword">do</span> its job <span class="literal">or</span> run <span class="literal">and</span> read <span class="string">`rvm autolibs [help]`</span>
+<span class="literal">or</span> visit https:<span class="comment">//rvm.io/rvm/autolibs for more information.</span>
+</code></pre><p>패키지 설치가 완료 되어 더이상 <em class="label label-important"><strong>Missing required packages:</strong></em> 부분이 출력되지 않았다. 드디어 Ruby 를 설치할 수 있는 환경이 만들어졌다. </p><p>공식 문서상에 나와 있고 설치관련 각종 이슈등에서도 v1.9.3 버전을 설치하라고 나와 있어 그대로 따르기로 했다. </p><pre><code class=""><span class="comment">//</span> <span class="comment">rvm</span> <span class="comment">을</span> <span class="comment">사용하여</span> <span class="comment">ruby</span> <span class="comment">v1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span> <span class="comment">을</span> <span class="comment">설치한다</span><span class="string">.</span>
+<span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">install</span> <span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span>
 
-<span class="comment">// 설치후 시스템에서 사용할 ruby 버전으로 등록해 준다.</span>
-$ rvm --<span class="keyword">default</span> ruby-<span class="number">1.9</span><span class="number">.3</span>
+<span class="comment">//</span> <span class="comment">설치후</span> <span class="comment">시스템에서</span> <span class="comment">사용할</span> <span class="comment">ruby</span> <span class="comment">버전으로</span> <span class="comment">등록해</span> <span class="comment">준다</span><span class="string">.</span>
+<span class="comment">$</span> <span class="comment">rvm</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">default</span> <span class="comment">ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span>
 
-<span class="comment">// 지정한 버전이 설정 되어있는지 확인한다.</span>
-$ ruby -v
-ruby <span class="number">1.9</span><span class="number">.3</span>p392 (<span class="number">2013</span>-<span class="number">02</span>-<span class="number">22</span> revision <span class="number">39386</span>) [x86_64-linux]
+<span class="comment">//</span> <span class="comment">지정한</span> <span class="comment">버전이</span> <span class="comment">설정</span> <span class="comment">되어있는지</span> <span class="comment">확인한다</span><span class="string">.</span>
+<span class="comment">$</span> <span class="comment">ruby</span> <span class="literal">-</span><span class="comment">v</span>
+<span class="comment">ruby</span> <span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3p392</span> <span class="comment">(2013</span><span class="literal">-</span><span class="comment">02</span><span class="literal">-</span><span class="comment">22</span> <span class="comment">revision</span> <span class="comment">39386)</span> <span class="title">[</span><span class="comment">x86_64</span><span class="literal">-</span><span class="comment">linux</span><span class="title">]</span>
 
-<span class="comment">// bundler 설치.</span>
-$ gem install bundler 
+<span class="comment">//</span> <span class="comment">bundler</span> <span class="comment">설치</span><span class="string">.</span>
+<span class="comment">$</span> <span class="comment">gem</span> <span class="comment">install</span> <span class="comment">bundler</span> 
 </code></pre><p>이렇게 해서 ruby 설치는 완료 되었다. </p>
 <h1 id="toc_107">5. Gitlab-Shell Install</h1>
 <p>이어서 Gitlab 5.x 에서 새로 적용된 <em class="label label-info"><strong>Gitlab-Shell</strong></em>을 설치했다. 이녀석으로 인하여 설치가 간편해졌다고 하지만 지금까지 작업만으로도 숨가뿌게 달리고 지루하 일이였던 것 만큼 간편해졌다는게 전혀 와닿지 않는다. 어째든 설치는 계속 진행 되었다.</p><p>사실 이후에 v1.3.0 으로 재설치 하였다. 왜 그렇게 했는지는 기록해 두었다. 이글을 따라서 설치하는 사람이 있다면 애당초  v1.3.0 branch를 사용할 것을 추천한다.</p><pre><code class=""><span class="comment">// gitlab-shell 을 Clone 받는다. </span>
 $ git clone https:<span class="comment">//github.com/gitlabhq/gitlab-shell.git</span>
 
-$ cd gitlab-shell
+$ <span class="built_in">cd</span> gitlab-shell
 
 <span class="comment">// v1.2.0  branch 로 변경한다.</span>
-$ git checkout -b v1<span class="number">.2</span><span class="number">.0</span>
+$ git checkout -b <span class="transposed_variable">v1.</span><span class="number">2.0</span>
 
 <span class="comment">// 환경세팅파일을 복사한다.</span>
-$ cp config<span class="variable">.yml</span><span class="variable">.example</span> config<span class="variable">.yml</span>
+$ cp <span class="transposed_variable">config.</span><span class="transposed_variable">yml.</span>example <span class="transposed_variable">config.</span>yml
 
 <span class="comment">// gitlab에 사용될 URL 정보를 수정해 한다.</span>
-$ vi config<span class="variable">.yml</span>
+$ vi <span class="transposed_variable">config.</span>yml
 </code></pre><p><em class="label label-info"><strong>config.yml</strong></em> 파일을 열어보면 <code>gitlab_url: &quot;http://localhost/&quot;</code> 로 되어 있는 부분이 있는데 이놈을 `gitlab.ninjacamp.org&#39;로 수정을 해주었다.</p><p><img src="./@img/config-yml.png" alt="config-yml"></p><p>수정이 완료 후 설치 스크립트를 실행해 주었다. </p><pre><code class=""><span class="comment">// Gitlab-shell 을 설치한다.</span>
 $ .<span class="regexp">/bin/i</span>nstall
 
@@ -379,144 +379,144 @@ $ .<span class="regexp">/bin/i</span>nstall
 <h1 id="toc_108">6. GitLab Install</h1>
 <p>지금까지 열심히 달려왔지만 이제서야 <em class="label label-info"><strong>Gitlab</strong></em> 을 설치하게 되었다. 만약 이 글을 따라하고 있는 사람이 있다면 앞으로 남은길이 산더미 같으니 포기하려면 지금 내려 놓는 것이 정신 건강에 좋을 것이다. </p>
 <h2 id="toc_109">6.1 Clone the Gitlab 5.1</h2>
-<p><em class="label label-info"><strong>Gitlab-shell</strong></em> 설치를 위해 디렉토리의 변경이 있었기에 작업디렉토리를 변경해주는 것을 잊지 말고 수행해줘야 했다. 사실 신경안쓰고 넘어갈뻔 하기도 했다.</p><pre><code class=""><span class="regexp">//</span> 작업디렉토리 변경
-$ cd <span class="regexp">/home/gi</span>t
+<p><em class="label label-info"><strong>Gitlab-shell</strong></em> 설치를 위해 디렉토리의 변경이 있었기에 작업디렉토리를 변경해주는 것을 잊지 말고 수행해줘야 했다. 사실 신경안쓰고 넘어갈뻔 하기도 했다.</p><pre><code class=""><span class="comment">// 작업디렉토리 변경</span>
+$ cd <span class="subst">/</span>home<span class="subst">/</span>git
 
-<span class="regexp">//</span> clone the gitlab source 
-$ git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/gitlabhq/gi</span>tlabhq.git gitlab
+<span class="comment">// clone the gitlab source </span>
+$ git clone https:<span class="comment">//github.com/gitlabhq/gitlabhq.git gitlab</span>
 
-<span class="regexp">//</span> clone 받은 gitlab 디렉토리로 이동한다. 
+<span class="comment">// clone 받은 gitlab 디렉토리로 이동한다. </span>
 $ cd gitlab
 
-$ git checkout -b <span class="number">5</span>-<span class="number">1</span>-stable 
+$ git checkout <span class="attribute">-b</span> <span class="number">5</span><span class="subst">-</span><span class="number">1</span><span class="attribute">-stable</span> 
 </code></pre><p>gitlab 공식 가이드에 따르면  <em class="label label-important"><strong>master branch</strong></em> 를 사용해도 되지만  <em class="label label-important"><strong>stable branch</strong></em> 사용을 권장하고 있었다. 정신건강을 위해 가이드를 따르는 것이 좋을거 같았다.</p>
 <blockquote>
 <p>Note: You can change 5-1-stable to master if you want the bleeding edge version, but do so with caution!</p></blockquote>
 
 <h2 id="toc_110">6.2 Gitlab Configure</h2>
 <p>지금부터의 작업은 지겨운 설정과의 싸움이며 <em class="label label-info"><strong>gem</strong></em>과의 전쟁의 시초가 되었다. 아마 앞으로 나올 설정중 이부분이 가장 간단하게 완료된 부분이 아니였나 생각한다. 실제로도 할게 거이 없기도 하다. </p><pre><code class=""><span class="comment">// gitlab 설정 파일을 복사한다.</span>
-$ cp  config/gitlab<span class="variable">.yml</span><span class="variable">.example</span> config/gitlab<span class="variable">.yml</span>
+$ cp  config/<span class="transposed_variable">gitlab.</span><span class="transposed_variable">yml.</span>example config/<span class="transposed_variable">gitlab.</span>yml
 
 <span class="comment">// 복사된 설정 파일을 열어 `localhost` 부분을 `gitlab-shell` 설정에 추가한 URL로 변경해 준다.</span>
-$ vi config/gitlab<span class="variable">.yml</span>
-</code></pre><p><em class="label label-info"><strong>gitlab.yml</strong></em> 파일을 열어보면 <code>production</code> 부분에 3개의 <em class="label label-important"><strong>localhost</strong></em>가 존재한다. 각각 <em class="label label-success"><strong>host</strong></em>, <em class="label label-success"><strong>email_from</strong></em>, <em class="label label-success"><strong>support_email</strong></em> 인데 이부분을 수정해 주었다.</p><p><img src="./@img/gitlab-config-yml.png" alt="gitlab-config-yml"> </p><p>수정이 완료되면 디렉토리에 대한 약간의 작업을 진행 했다. 공식문서에 나온 가이드를 옮겨왔지만 개인적으로 모든 작업을 <em class="label label-info"><strong>git</strong></em> 계정으로 해놨기에 불필요한 부분도 있었다. </p><pre><code class=""><span class="regexp">//</span> <span class="regexp">/log, /</span>tmp 디렉토리의 소유자와 권한을 수정해 준다.
-<span class="regexp">//</span> git 계정으로 작업하였기에 소유자는 굳이 손대지 않아도 되었다.
-$ chown -R git tmp/
-$ chmod -R u+rwX  tmp/
-$ chown -R git log/
-$ chmod -R u+rwX log/
+$ vi config/<span class="transposed_variable">gitlab.</span>yml
+</code></pre><p><em class="label label-info"><strong>gitlab.yml</strong></em> 파일을 열어보면 <code>production</code> 부분에 3개의 <em class="label label-important"><strong>localhost</strong></em>가 존재한다. 각각 <em class="label label-success"><strong>host</strong></em>, <em class="label label-success"><strong>email_from</strong></em>, <em class="label label-success"><strong>support_email</strong></em> 인데 이부분을 수정해 주었다.</p><p><img src="./@img/gitlab-config-yml.png" alt="gitlab-config-yml"> </p><p>수정이 완료되면 디렉토리에 대한 약간의 작업을 진행 했다. 공식문서에 나온 가이드를 옮겨왔지만 개인적으로 모든 작업을 <em class="label label-info"><strong>git</strong></em> 계정으로 해놨기에 불필요한 부분도 있었다. </p><pre><code class=""><span class="comment">// /log, /tmp 디렉토리의 소유자와 권한을 수정해 준다.</span>
+<span class="comment">// git 계정으로 작업하였기에 소유자는 굳이 손대지 않아도 되었다.</span>
+$ chown <span class="attribute">-R</span> git tmp<span class="subst">/</span>
+$ chmod <span class="attribute">-R</span> u<span class="subst">+</span>rwX  tmp<span class="subst">/</span>
+$ chown <span class="attribute">-R</span> git <span class="keyword">log</span><span class="subst">/</span>
+$ chmod <span class="attribute">-R</span> u<span class="subst">+</span>rwX <span class="keyword">log</span><span class="subst">/</span>
 
-<span class="regexp">//</span> gitlab-satellites 디렉토리를 생성해 준다.
-$ mkdir <span class="regexp">/home/git/gi</span>tlab-satellites
+<span class="comment">// gitlab-satellites 디렉토리를 생성해 준다.</span>
+$ mkdir <span class="subst">/</span>home<span class="subst">/</span>git<span class="subst">/</span>gitlab<span class="attribute">-satellites</span>
 
-<span class="regexp">//</span> <span class="regexp">/home/git/gitlab/</span>tmp 디렉토리에 `<span class="javascript">pids</span>`를 생성해 준다.
-$ mkdir tmp<span class="regexp">/pids/</span> 
+<span class="comment">// /home/git/gitlab/tmp 디렉토리에 `pids`를 생성해 준다.</span>
+$ mkdir tmp<span class="subst">/</span>pids<span class="subst">/</span> 
 
-$ chmod -R u+rwX  tmp/pids 
+$ chmod <span class="attribute">-R</span> u<span class="subst">+</span>rwX  tmp<span class="subst">/</span>pids 
 </code></pre>
 <h2 id="toc_111">6.3 puma.rb 설정</h2>
-<p><a href="http://twitter.com/andrwj">@andrwj</a>의 말에 따르면 이녀석은 unicorn 의 대체자로 gitlab 시작 스크립트가 이전버전(5.0 &gt;=) 에서는 <em class="label label-important"><strong>unicorn</strong></em> 을 호출하고 v5.1 부터는 <em class="label label-important"><strong>puma</strong></em>를 호출하게 변경 되었다고 한다.</p><pre><code class=""><span class="regexp">//</span> puma 설정파일을 복사 한다.
-$ cp config<span class="regexp">/puma.rb.example config/</span>puma.rb
+<p><a href="http://twitter.com/andrwj">@andrwj</a>의 말에 따르면 이녀석은 unicorn 의 대체자로 gitlab 시작 스크립트가 이전버전(5.0 &gt;=) 에서는 <em class="label label-important"><strong>unicorn</strong></em> 을 호출하고 v5.1 부터는 <em class="label label-important"><strong>puma</strong></em>를 호출하게 변경 되었다고 한다.</p><pre><code class=""><span class="comment">// puma 설정파일을 복사 한다.</span>
+$ cp config/puma.rb.example config/puma.rb
 
-<span class="regexp">//</span> tcp 사용을 위한 수정
+<span class="comment">// tcp 사용을 위한 수정</span>
 $ vi config/puma.rb
 
-<span class="regexp">//</span> replace config
-<span class="regexp">//</span> from
+<span class="comment">// replace config</span>
+<span class="comment">// from</span>
 <span class="comment"># bind "tcp://0.0.0.0:9292"</span>
-bind <span class="string">"unix://<span class="subst">#{application_path}</span>/tmp/sockets/gitlab.socket
+bind <span class="string">"unix://#{application_path}/tmp/sockets/gitlab.socket
 
 //to
-bind "</span>tcp:<span class="regexp">//gi</span>tlab.ninjacamp.org:<span class="number">9292</span> 
+bind "</span>tcp:<span class="comment">//gitlab.ninjacamp.org:9292 </span>
 <span class="comment"># bind "unix://#{application_path}/tmp/sockets/gitlab.socket</span>
 </code></pre>
 <h2 id="toc_112">6.4 database 설정</h2>
 <p>위에서 메모해둔 mysql 정보를 써먹을때가 왔다. 사실 절대 잊어버릴수 없는 비밀번호임을 다시 생각해본다. </p><pre><code class=""><span class="comment">// mysql 설정 파일을 복사 한다.</span>
-$ cp config/database<span class="variable">.yml</span><span class="variable">.mysql</span> config/database<span class="variable">.yml</span>
+$ cp config/<span class="transposed_variable">database.</span><span class="transposed_variable">yml.</span>mysql config/<span class="transposed_variable">database.</span>yml
 
 <span class="comment">// production 설정을 생성한 database 맞게 수정한다.</span>
-$ vi config/database<span class="variable">.yml</span>
+$ vi config/<span class="transposed_variable">database.</span>yml
 </code></pre><p><em class="label label-info"><strong>database.yml</strong></em> 파일을 열어보면 <em class="label label-important"><strong>production</strong></em>, <em class="label label-important"><strong>development</strong></em>, <em class="label label-important"><strong>test</strong></em> 의 3가지 섹션이 존재 한다. 하지만 이번 설치에서는 <em class="label label-important"><strong>production</strong></em> 부분만을 수정했다. </p><p><em class="label label-info"><strong>username</strong></em> 과 <em class="label label-info"><strong>password</strong></em> 만 위에서 생성한 정보로 수정 했다. </p><p><img src="./@img/database.png" alt="worker"> </p>
 <h2 id="toc_113">6.5 Install Gems</h2>
-<p>이제부터가 진정한 싸움의 시작을 알리는 서막이였다. 처음부터 오류가 터져 나와 주었다. <em class="label label-important"><strong>charlock_holmes</strong></em> 설치가 되지 않았던 것이다. </p><pre><code class="">$ gem install charlock_holmes <span class="comment">--version '0.6.9'</span>
+<p>이제부터가 진정한 싸움의 시작을 알리는 서막이였다. 처음부터 오류가 터져 나와 주었다. <em class="label label-important"><strong>charlock_holmes</strong></em> 설치가 되지 않았던 것이다. </p><pre><code class=""><span class="comment">$</span> <span class="comment">gem</span> <span class="comment">install</span> <span class="comment">charlock_holmes</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">version</span> <span class="comment">'0</span><span class="string">.</span><span class="comment">6</span><span class="string">.</span><span class="comment">9'</span>
 
-Building native extensions.  This could take a <span class="keyword">while</span>...
-ERROR:  Error installing charlock_holmes:
-    ERROR: Failed <span class="keyword">to</span> build gem native extension.
+<span class="comment">Building</span> <span class="comment">native</span> <span class="comment">extensions</span><span class="string">.</span>  <span class="comment">This</span> <span class="comment">could</span> <span class="comment">take</span> <span class="comment">a</span> <span class="comment">while</span><span class="string">.</span><span class="string">.</span><span class="string">.</span>
+<span class="comment">ERROR:</span>  <span class="comment">Error</span> <span class="comment">installing</span> <span class="comment">charlock_holmes:</span>
+    <span class="comment">ERROR:</span> <span class="comment">Failed</span> <span class="comment">to</span> <span class="comment">build</span> <span class="comment">gem</span> <span class="comment">native</span> <span class="comment">extension</span><span class="string">.</span>
 
-        /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/bin/ruby extconf.rb
-checking <span class="keyword">for</span> main() <span class="keyword">in</span> -licui18n... *** extconf.rb failed ***
-Could <span class="keyword">not</span> create Makefile due <span class="keyword">to</span> <span class="keyword">some</span> reason, probably lack <span class="keyword">of</span>
-necessary libraries <span class="keyword">and</span>/<span class="keyword">or</span> headers.  Check <span class="keyword">the</span> mkmf.<span class="command">log</span> <span class="type">file</span> <span class="keyword">for</span> more
-details.  You may need configuration options.
+        <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/bin/ruby</span> <span class="comment">extconf</span><span class="string">.</span><span class="comment">rb</span>
+<span class="comment">checking</span> <span class="comment">for</span> <span class="comment">main()</span> <span class="comment">in</span> <span class="literal">-</span><span class="comment">licui18n</span><span class="string">.</span><span class="string">.</span><span class="string">.</span> <span class="comment">***</span> <span class="comment">extconf</span><span class="string">.</span><span class="comment">rb</span> <span class="comment">failed</span> <span class="comment">***</span>
+<span class="comment">Could</span> <span class="comment">not</span> <span class="comment">create</span> <span class="comment">Makefile</span> <span class="comment">due</span> <span class="comment">to</span> <span class="comment">some</span> <span class="comment">reason</span><span class="string">,</span> <span class="comment">probably</span> <span class="comment">lack</span> <span class="comment">of</span>
+<span class="comment">necessary</span> <span class="comment">libraries</span> <span class="comment">and/or</span> <span class="comment">headers</span><span class="string">.</span>  <span class="comment">Check</span> <span class="comment">the</span> <span class="comment">mkmf</span><span class="string">.</span><span class="comment">log</span> <span class="comment">file</span> <span class="comment">for</span> <span class="comment">more</span>
+<span class="comment">details</span><span class="string">.</span>  <span class="comment">You</span> <span class="comment">may</span> <span class="comment">need</span> <span class="comment">configuration</span> <span class="comment">options</span><span class="string">.</span>
 
-Provided configuration options:
-    <span class="comment">--with-opt-dir</span>
-    <span class="comment">--without-opt-dir</span>
-    <span class="comment">--with-opt-include</span>
-    <span class="comment">--without-opt-include=${opt-dir}/include</span>
-    <span class="comment">--with-opt-lib</span>
-    <span class="comment">--without-opt-lib=${opt-dir}/lib</span>
-    <span class="comment">--with-make-prog</span>
-    <span class="comment">--without-make-prog</span>
-    <span class="comment">--srcdir=.</span>
-    <span class="comment">--curdir</span>
-    <span class="comment">--ruby=/home/git/.rvm/rubies/ruby-1.9.3-p392/bin/ruby</span>
-    <span class="comment">--with-icu-dir</span>
-    <span class="comment">--without-icu-dir</span>
-    <span class="comment">--with-icu-include</span>
-    <span class="comment">--without-icu-include=${icu-dir}/include</span>
-    <span class="comment">--with-icu-lib</span>
-    <span class="comment">--without-icu-lib=${icu-dir}/lib</span>
-    <span class="comment">--with-icui18nlib</span>
-    <span class="comment">--without-icui18nlib</span>
-/home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">381</span>:<span class="keyword">in</span> `try_do': The compiler failed <span class="keyword">to</span> generate an executable <span class="type">file</span>. (RuntimeError)
-You have <span class="keyword">to</span> install development tools <span class="keyword">first</span>.
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">461</span>:<span class="keyword">in</span> `try_link0'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">476</span>:<span class="keyword">in</span> `try_link'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">619</span>:<span class="keyword">in</span> `try_func'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">845</span>:<span class="keyword">in</span> `block <span class="keyword">in</span> have_library'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">790</span>:<span class="keyword">in</span> `block <span class="keyword">in</span> checking_for'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">284</span>:<span class="keyword">in</span> `block (<span class="number">2</span> levels) <span class="keyword">in</span> postpone'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">254</span>:<span class="keyword">in</span> `open'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">284</span>:<span class="keyword">in</span> `block <span class="keyword">in</span> postpone'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">254</span>:<span class="keyword">in</span> `open'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">280</span>:<span class="keyword">in</span> `postpone'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">789</span>:<span class="keyword">in</span> `checking_for'
-    <span class="keyword">from</span> /home/git/.rvm/rubies/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/lib/ruby/<span class="number">1.9</span><span class="number">.1</span>/mkmf.rb:<span class="number">840</span>:<span class="keyword">in</span> `have_library'
-    <span class="keyword">from</span> extconf.rb:<span class="number">27</span>:<span class="keyword">in</span> `&lt;main&gt;'
+<span class="comment">Provided</span> <span class="comment">configuration</span> <span class="comment">options:</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">opt</span><span class="literal">-</span><span class="comment">dir</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">without</span><span class="literal">-</span><span class="comment">opt</span><span class="literal">-</span><span class="comment">dir</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">opt</span><span class="literal">-</span><span class="comment">include</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">without</span><span class="literal">-</span><span class="comment">opt</span><span class="literal">-</span><span class="comment">include=${opt</span><span class="literal">-</span><span class="comment">dir}/include</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">opt</span><span class="literal">-</span><span class="comment">lib</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">without</span><span class="literal">-</span><span class="comment">opt</span><span class="literal">-</span><span class="comment">lib=${opt</span><span class="literal">-</span><span class="comment">dir}/lib</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">make</span><span class="literal">-</span><span class="comment">prog</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">without</span><span class="literal">-</span><span class="comment">make</span><span class="literal">-</span><span class="comment">prog</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">srcdir=</span><span class="string">.</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">curdir</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">ruby=/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/bin/ruby</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">icu</span><span class="literal">-</span><span class="comment">dir</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">without</span><span class="literal">-</span><span class="comment">icu</span><span class="literal">-</span><span class="comment">dir</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">icu</span><span class="literal">-</span><span class="comment">include</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">without</span><span class="literal">-</span><span class="comment">icu</span><span class="literal">-</span><span class="comment">include=${icu</span><span class="literal">-</span><span class="comment">dir}/include</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">icu</span><span class="literal">-</span><span class="comment">lib</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">without</span><span class="literal">-</span><span class="comment">icu</span><span class="literal">-</span><span class="comment">lib=${icu</span><span class="literal">-</span><span class="comment">dir}/lib</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">icui18nlib</span>
+    <span class="literal">-</span><span class="literal">-</span><span class="comment">without</span><span class="literal">-</span><span class="comment">icui18nlib</span>
+<span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:381:in</span> <span class="comment">`try_do':</span> <span class="comment">The</span> <span class="comment">compiler</span> <span class="comment">failed</span> <span class="comment">to</span> <span class="comment">generate</span> <span class="comment">an</span> <span class="comment">executable</span> <span class="comment">file</span><span class="string">.</span> <span class="comment">(RuntimeError)</span>
+<span class="comment">You</span> <span class="comment">have</span> <span class="comment">to</span> <span class="comment">install</span> <span class="comment">development</span> <span class="comment">tools</span> <span class="comment">first</span><span class="string">.</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:461:in</span> <span class="comment">`try_link0'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:476:in</span> <span class="comment">`try_link'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:619:in</span> <span class="comment">`try_func'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:845:in</span> <span class="comment">`block</span> <span class="comment">in</span> <span class="comment">have_library'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:790:in</span> <span class="comment">`block</span> <span class="comment">in</span> <span class="comment">checking_for'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:284:in</span> <span class="comment">`block</span> <span class="comment">(2</span> <span class="comment">levels)</span> <span class="comment">in</span> <span class="comment">postpone'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:254:in</span> <span class="comment">`open'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:284:in</span> <span class="comment">`block</span> <span class="comment">in</span> <span class="comment">postpone'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:254:in</span> <span class="comment">`open'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:280:in</span> <span class="comment">`postpone'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:789:in</span> <span class="comment">`checking_for'</span>
+    <span class="comment">from</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/rubies/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/lib/ruby/1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">1/mkmf</span><span class="string">.</span><span class="comment">rb:840:in</span> <span class="comment">`have_library'</span>
+    <span class="comment">from</span> <span class="comment">extconf</span><span class="string">.</span><span class="comment">rb:27:in</span> <span class="comment">`</span>&lt;<span class="comment">main</span>&gt;<span class="comment">'</span>
 
 
-Gem files will remain installed <span class="keyword">in</span> /home/git/.rvm/gems/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/gems/charlock_holmes-<span class="number">0.6</span><span class="number">.9</span> <span class="keyword">for</span> inspection.
-Results logged <span class="keyword">to</span> /home/git/.rvm/gems/ruby-<span class="number">1.9</span><span class="number">.3</span>-p392/gems/charlock_holmes-<span class="number">0.6</span><span class="number">.9</span>/ext/charlock_holmes/gem_make.out
-</code></pre><p>이를 해결하기 위해 <code>Gitlab 메일링 그룹</code>과 <code>Stackoverflow</code> 에 문의했으나 아무런 대답이 없었고 <a href="http://twitter.com/andrwj">@andrwj</a> 가 트러블슈팅을 도와주었다.  </p><p>장작 24시간동안 메달린 오류의 원인은 너무나도 황당,간단,기본적인 녀석이였기에 엄청난 갈굼을 견더야 했지만 조공을 바치는 선에서 해결했다.</p><p><em class="label label-important"><strong>rails</strong></em>의 부제. 그렇다 지금까지 작업 히스토리를 아무리 뒤져보아도 <em class="label label-important"><strong>rails</strong></em>를 설치한 적이 없었다. 어째되었건 원인을 찾았으니 설치를 계속 진행 했다.(사실 charlock_holmes와 bundle install은 <a href="http://twitter.com/andrwj">@andrwj</a>가 진행해 주었다.)</p><p>이부분은 오류 해결을 위해 @andrwj 가 수행한 command set을 그대로 남긴다.</p><pre><code class=""><span class="comment">//</span> <span class="comment">rvm</span> <span class="comment">을</span> <span class="comment">최신</span> <span class="comment">버전으로</span> <span class="comment">업데이트</span> 
-<span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">get</span> <span class="comment">head</span>
+<span class="comment">Gem</span> <span class="comment">files</span> <span class="comment">will</span> <span class="comment">remain</span> <span class="comment">installed</span> <span class="comment">in</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/gems/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/gems/charlock_holmes</span><span class="literal">-</span><span class="comment">0</span><span class="string">.</span><span class="comment">6</span><span class="string">.</span><span class="comment">9</span> <span class="comment">for</span> <span class="comment">inspection</span><span class="string">.</span>
+<span class="comment">Results</span> <span class="comment">logged</span> <span class="comment">to</span> <span class="comment">/home/git/</span><span class="string">.</span><span class="comment">rvm/gems/ruby</span><span class="literal">-</span><span class="comment">1</span><span class="string">.</span><span class="comment">9</span><span class="string">.</span><span class="comment">3</span><span class="literal">-</span><span class="comment">p392/gems/charlock_holmes</span><span class="literal">-</span><span class="comment">0</span><span class="string">.</span><span class="comment">6</span><span class="string">.</span><span class="comment">9/ext/charlock_holmes/gem_make</span><span class="string">.</span><span class="comment">out</span>
+</code></pre><p>이를 해결하기 위해 <code>Gitlab 메일링 그룹</code>과 <code>Stackoverflow</code> 에 문의했으나 아무런 대답이 없었고 <a href="http://twitter.com/andrwj">@andrwj</a> 가 트러블슈팅을 도와주었다.  </p><p>장작 24시간동안 메달린 오류의 원인은 너무나도 황당,간단,기본적인 녀석이였기에 엄청난 갈굼을 견더야 했지만 조공을 바치는 선에서 해결했다.</p><p><em class="label label-important"><strong>rails</strong></em>의 부제. 그렇다 지금까지 작업 히스토리를 아무리 뒤져보아도 <em class="label label-important"><strong>rails</strong></em>를 설치한 적이 없었다. 어째되었건 원인을 찾았으니 설치를 계속 진행 했다.(사실 charlock_holmes와 bundle install은 <a href="http://twitter.com/andrwj">@andrwj</a>가 진행해 주었다.)</p><p>이부분은 오류 해결을 위해 @andrwj 가 수행한 command set을 그대로 남긴다.</p><pre><code class="">// rvm 을 최신 버전으로 업데이트 
+$ rvm <span class="built_in">get</span> head
+<span class="comment">
+// 종속 페키지 확인
+</span>$ rvm requirements run<span class="comment">
+// 기존 ruby 삭제
+</span>$ rvm remove <span class="number">1.9</span><span class="number">.3</span><span class="comment">
+// ruby 재설치 및 default 지정
+</span>$ rvm use <span class="number">1.9</span><span class="number">.3</span> <span class="comment">--install --default</span><span class="comment">
+// rails 설치
+</span>$ gem install rails<span class="comment">
+// charlock_holmes 설치
+</span>$ gem install charlock_holmes <span class="comment">--version '0.6.9'</span>
+<span class="comment">
+// bundle install 
+</span>$ bundle install <span class="comment">--deployment --without development test postgres</span>
 
-<span class="comment">//</span> <span class="comment">종속</span> <span class="comment">페키지</span> <span class="comment">확인</span>
-<span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">requirements</span> <span class="comment">run</span>
-<span class="comment">//</span> <span class="comment">기존</span> <span class="comment">ruby</span> <span class="comment">삭제</span>
-<span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">remove</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">3</span>
-<span class="comment">//</span> <span class="comment">ruby</span> <span class="comment">재설치</span> <span class="comment">및</span> <span class="comment">default</span> <span class="comment">지정</span>
-<span class="comment">$</span> <span class="comment">rvm</span> <span class="comment">use</span> <span class="comment">1</span>.<span class="comment">9</span>.<span class="comment">3</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">install</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">default</span>
-<span class="comment">//</span> <span class="comment">rails</span> <span class="comment">설치</span>
-<span class="comment">$</span> <span class="comment">gem</span> <span class="comment">install</span> <span class="comment">rails</span>
-<span class="comment">//</span> <span class="comment">charlock_holmes</span> <span class="comment">설치</span>
-<span class="comment">$</span> <span class="comment">gem</span> <span class="comment">install</span> <span class="comment">charlock_holmes</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">version</span> <span class="comment">'0</span>.<span class="comment">6</span>.<span class="comment">9'</span>
+$ bundle exec rake gitlab:setup RAILS_ENV=production
+This will <span class="built_in">create</span> <span class="operator">the</span> necessary database tables <span class="operator">and</span> seed <span class="operator">the</span> database.
+You will lose <span class="keyword">any</span> previous data stored <span class="operator">in</span> <span class="operator">the</span> database.
+Do you want <span class="built_in">to</span> continue (yes/no)? yes
+.
+. (중략)
+.
+Administrator account created:
 
-<span class="comment">//</span> <span class="comment">bundle</span> <span class="comment">install</span> 
-<span class="comment">$</span> <span class="comment">bundle</span> <span class="comment">install</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">deployment</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">without</span> <span class="comment">development</span> <span class="comment">test</span> <span class="comment">postgres</span>
-
-<span class="comment">$</span> <span class="comment">bundle</span> <span class="comment">exec</span> <span class="comment">rake</span> <span class="comment">gitlab:setup</span> <span class="comment">RAILS_ENV=production</span>
-<span class="comment">This</span> <span class="comment">will</span> <span class="comment">create</span> <span class="comment">the</span> <span class="comment">necessary</span> <span class="comment">database</span> <span class="comment">tables</span> <span class="comment">and</span> <span class="comment">seed</span> <span class="comment">the</span> <span class="comment">database</span>.
-<span class="comment">You</span> <span class="comment">will</span> <span class="comment">lose</span> <span class="comment">any</span> <span class="comment">previous</span> <span class="comment">data</span> <span class="comment">stored</span> <span class="comment">in</span> <span class="comment">the</span> <span class="comment">database</span>.
-<span class="comment">Do</span> <span class="comment">you</span> <span class="comment">want</span> <span class="comment">to</span> <span class="comment">continue</span> <span class="comment">(yes/no)?</span> <span class="comment">yes</span>
-<span class="string">.</span>
-<span class="string">.</span> <span class="comment">(중략)</span>
-<span class="string">.</span>
-<span class="comment">Administrator</span> <span class="comment">account</span> <span class="comment">created:</span>
-
-<span class="comment">login</span>.<span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="comment">admin@local</span>.<span class="comment">host</span>
-<span class="comment">password</span>.<span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="string">.</span><span class="comment">5iveL!fe</span>
+login.........admin@local.host
+password.....<span class="number">.5</span>iveL!fe
 </code></pre><p>마지막 명령을 수행하고 나오는 ouput 중 중요한 정보들이 있다. 초기 관리자 계정과 비밀번호. 나중에 다시 찾아보는걸 방지하기 위해 미리 기록해 두었다.</p>
 <h2 id="toc_114">6.6 Check Application Status</h2>
 <p>gitlab 을 스타트 하기 위해 필요한 녀석들이 제대로 인스톨 되었는지 확인하는 단계다. 바로 이부분에서  <em class="label label-info"><strong>Gitlab-Shell v1.2.0</strong></em> 설치 부분에서 말했던 이슈와 함께  <em class="label label-info"><strong>Gitlab-Shell</strong></em> 을 재설치 하게 되었다. </p><pre><code class=""><span class="char">$ </span>su - git
@@ -559,7 +559,7 @@ Checking Gitlab Shell ... Finished
 .(중략)
 .
 Checking GitLab ... Finished
-</code></pre><p><em class="label label-info"><strong>Gitlab</strong></em> 과 <em class="label label-info"><strong>Gitlab-Shell</strong></em> 모두 최신 버전으로 설치가 완료 되었음이 확인 되었다. </p>
+</span></code></pre><p><em class="label label-info"><strong>Gitlab</strong></em> 과 <em class="label label-info"><strong>Gitlab-Shell</strong></em> 모두 최신 버전으로 설치가 완료 되었음이 확인 되었다. </p>
 <h1 id="toc_115">7. Install init Script</h1>
 <p>이부부은 gitlab을 관리하는 스크립트를 설치하는 부분임으로 다시  <em class="label label-info"><strong>root</strong></em>계정으로 변경 하였다. 특별한 이슈 없이 설치 가이드를 따라 진행했다.</p><pre><code class=""><span class="char">$ </span>curl --output /etc/init.d/gitlab <span class="method">https:</span>//raw.github.com/gitlabhq/gitlab-recipes/<span class="number">5</span>-<span class="number">1</span>-stable/init.d/gitlab
 
@@ -575,17 +575,17 @@ Checking GitLab ... Finished
 <span class="class">Gitlab</span> service started
 </code></pre>
 <h1 id="toc_116">8. NginX Install</h1>
-<p><em class="label label-info"><strong>9292 포트</strong></em>로 열린 Gitlab을 <em class="label label-info"><strong>80 포트</strong></em>로 서비스하기 위해 nginx 를 proxy로 사용하기로 했다. </p><pre><code class="nginx"><span class="regexp">//</span> nginx 설치
-$ apt-get install nginx
+<p><em class="label label-info"><strong>9292 포트</strong></em>로 열린 Gitlab을 <em class="label label-info"><strong>80 포트</strong></em>로 서비스하기 위해 nginx 를 proxy로 사용하기로 했다. </p><pre><code class="nginx"><span class="comment">// nginx 설치</span>
+$ apt<span class="attribute">-get</span> install nginx
 
-<span class="regexp">//</span> config 다운로드 
-$ curl --output <span class="regexp">/etc/nginx/sites-available/gitlab https://raw.github.com/gitlabhq/gitlabhq/master/lib/support/nginx/gi</span>tlab
+<span class="comment">// config 다운로드 </span>
+$ curl <span class="subst">--</span>output <span class="subst">/</span>etc<span class="subst">/</span>nginx<span class="subst">/</span>sites<span class="attribute">-available</span><span class="subst">/</span>gitlab https:<span class="comment">//raw.github.com/gitlabhq/gitlabhq/master/lib/support/nginx/gitlab</span>
 
-<span class="regexp">//</span> 심볼링크 설정
-$ ln -s <span class="regexp">/etc/nginx/sites-available/gitlab /etc/nginx/sites-enabled/gi</span>tlab
+<span class="comment">// 심볼링크 설정</span>
+$ ln <span class="attribute">-s</span> <span class="subst">/</span>etc<span class="subst">/</span>nginx<span class="subst">/</span>sites<span class="attribute">-available</span><span class="subst">/</span>gitlab <span class="subst">/</span>etc<span class="subst">/</span>nginx<span class="subst">/</span>sites<span class="attribute">-enabled</span><span class="subst">/</span>gitlab
 
-<span class="regexp">//</span> 설정 파일 수정
-$ vi <span class="regexp">/etc/nginx/sites-available/gi</span>tlab
+<span class="comment">// 설정 파일 수정</span>
+$ vi <span class="subst">/</span>etc<span class="subst">/</span>nginx<span class="subst">/</span>sites<span class="attribute">-available</span><span class="subst">/</span>gitlab
 </code></pre><p>nginx를 통해 <em class="label label-info"><strong>80 포트</strong></em>로 Request 를 받고 이를  <em class="label label-info"><strong>9292 포트</strong></em> 로 던져주는 설정만 하면 되기에 아래와 같이 수정해 주었다.</p><pre><code class=""><span class="comment"># GITLAB</span>
 <span class="comment"># Maintainer: @randx</span>
 <span class="comment"># App Version: 5.0</span>
@@ -616,11 +616,11 @@ $ vi <span class="regexp">/etc/nginx/sites-available/gi</span>tlab
     <span class="title">proxy_set_header</span>   Host              <span class="variable">$http_host</span>;
     <span class="title">proxy_set_header</span>   X-Real-IP         <span class="variable">$remote_addr</span>;
 
-    <span class="title">proxy_pass</span> <span class="url">http://gitlab.ninjacamp.org:9292;</span>
+    <span class="title">proxy_pass</span> <span class="url">http://gitlab.ninjacamp.org:9292</span>;
   }
 }
 
-</code></pre><p>nginx 를 실행 시켜주고 서비스 되는지 확인.</p><pre><code class="">$ service nginx <span class="operator"><span class="keyword">start</span>
+</code></pre><p>nginx 를 실행 시켜주고 서비스 되는지 확인.</p><pre><code class=""><span class="variable">$ </span>service nginx start
 </code></pre><p><img src="./@img/gitlab-start.png" alt="gitlab-start"> </p>
 <h1 id="toc_117">9. .bashrc PATH 설정</h1>
 <p>사실 브라우저를 통해 실행 화면을 보았을때 모든게 끝이 났다고 생각했다. 하지만 크나큰 오산. </p><pre><code class=""><span class="char">$ </span>git push -u origin master
@@ -634,13 +634,13 @@ $ vi <span class="regexp">/etc/nginx/sites-available/gi</span>tlab
 /<span class="regexp">/ 최상단에 export PATH=/home</span><span class="regexp">/git/</span>.rvm/<span class="symbol">bin:</span><span class="variable">$PATH</span> 추가
 
 <span class="variable">$ </span>rm -f .profile
-</code></pre><p>이부분은 이미 백전노장 <a href="http://twitter.com/andrwj">@andrwj</a> 가 알려주었지만 깜박하고 있었기에 또한번의 갈굼을 피할길이 없었다. 이로인해 조공은 2배로 늘었다.</p><p>어째되었건 다시 push 테스트를 진행 하였고 성공적으로 모든 테스트가 완료 되었다. </p><pre><code class="">insanehong:~/WorkSpace/sample(master)&gt; git push -u origin master
-Counting objects: <span class="number">3</span>, <span class="transposed_variable">done.</span>
-Writing objects: <span class="number">100</span><span class="comment">% (3/3), 215 bytes, done.</span>
+</code></pre><p>이부분은 이미 백전노장 <a href="http://twitter.com/andrwj">@andrwj</a> 가 알려주었지만 깜박하고 있었기에 또한번의 갈굼을 피할길이 없었다. 이로인해 조공은 2배로 늘었다.</p><p>어째되었건 다시 push 테스트를 진행 하였고 성공적으로 모든 테스트가 완료 되었다. </p><pre><code class=""><span class="attribute">insanehong</span>:~/WorkSpace/sample(master)&gt; git push -u origin master
+Counting <span class="attribute">objects</span>: <span class="number">3</span>, done.
+Writing <span class="attribute">objects</span>: <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), <span class="number">215</span> bytes, done.
 Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
-To git@<span class="transposed_variable">gitlab.</span><span class="transposed_variable">ninjacamp.</span>org:Insanehong/<span class="transposed_variable">sample.</span>git
- * <span class="matrix">[new branch]</span>      master -&gt; master
-Branch master set up to track remote branch master from <span class="transposed_variable">origin.</span>
+To git<span class="property">@gitlab</span>.ninjacamp.<span class="attribute">org</span>:Insanehong/sample.git
+ * [<span class="keyword">new</span> branch]      master<span class="function"> -&gt;</span> master
+Branch master set up to track remote branch master from origin.
 </code></pre>
 <h1 id="toc_118">마무리</h1>
 <p>이로서 이번 재설치의 모든 작업을 기록으로 남기는 것이 모두 완료되었다. 처음에도 밝혔지만 별거아닌 작업이고 설치 가이드를 따라 진행했으며 백전노장의 도움을 받으면서 이글은 누군가가 이글을 따라 설치하는데 도움이 됬으면 한다거나 하는 생각으로 만든 글이 아니다. 단순히 개인의 작업을 리뷰할 생각으로 기록으로 남기고 싶었을 뿐이다.</p><p>이 작업이 완료될수 있게(평소에도 많은 도움을 받지만) 도와준  백전노장 <a href="http://twitter.com/andrwj">@andrwj</a> 에게 다시한번 감사의 말을 전하며 마친다.</p>
