@@ -237,13 +237,13 @@
 <blockquote>
 <p>windows 사용자의 경우 &#39;msysgit&#39; 을 실행 시켜 Command 를 입력하면 된다.</p></blockquote>
 <p>git 을 설치 했다면 git 을 사용하기 앞서 먼저 해줘야 몇가지 일이 있다. 
-git의 기본 config 를 set up 하는 것이다. </p><p>방법은 간단하다 아래의 명령어를 실행 하면 된다.</p><pre><code class=""><span class="comment">$</span> <span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">"username"</span>
+git의 기본 config 를 set up 하는 것이다. </p><p>방법은 간단하다 아래의 명령어를 실행 하면 된다.</p><pre><code class=""><span class="comment">$</span> <span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">user</span><span class="string">.</span><span class="comment">name</span> <span class="comment">username"</span>
 <span class="comment">//</span> <span class="comment">git</span> <span class="comment">commit에</span> <span class="comment">사용될</span> <span class="comment">username</span>
-<span class="comment">//</span> <span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">"insanehong"</span>
+<span class="comment">//</span> <span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">user</span><span class="string">.</span><span class="comment">name</span> <span class="comment">"insanehong"</span>
 
-<span class="comment">$</span> <span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">"your_email@example</span><span class="string">.</span><span class="comment">com"</span>
+<span class="comment">$</span> <span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">user</span><span class="string">.</span><span class="comment">email</span> <span class="comment">"your_email@example</span><span class="string">.</span><span class="comment">com"</span>
 <span class="comment">//</span> <span class="comment">git</span> <span class="comment">commit</span> <span class="comment">에</span> <span class="comment">사용될</span> <span class="comment">email</span> <span class="comment">주소</span>
-<span class="comment">//</span> <span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">"insanehong@gmail</span><span class="string">.</span><span class="comment">com"</span>
+<span class="comment">//</span> <span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">user</span><span class="string">.</span><span class="comment">email</span> <span class="comment">"insanehong@gmail</span><span class="string">.</span><span class="comment">com"</span>
 </code></pre>
 <blockquote>
 <p>git 설정을 반드시 <code>--global</code> 옵션으로 지정하지 않아도 된다. 하지만 특별한 경우(개인 프로젝트와 회사프로젝트에서 사용되는 정보가 다른경우 등)가 아니라면 대부분 global  정보만으로도 큰 문제가 없기때문에 --global 로 설정하길 바란다. 개별 저장소마다 설정하는 것이 귀찮은 일이기도 하다.</p></blockquote>
