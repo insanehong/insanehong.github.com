@@ -300,7 +300,7 @@ Object 객체가 가진 특별한 구성요소들이란  바로 <code>constructo
 <p>아마 지금부터 나오는 내용은 너무나도 큰 충격으로 다가올수도 있다. <strong>자바스크립트의 객체는 곧 배열</strong>이다. 지금까지 객체에 대해 감 나와라 콩 나와라 설명해놓고 이제와서 객체가 곧 배열이다 라는 개소리를 하는 나 자신도 충격적이다. 
 하지만 이는 명백한 사실이다. 이를 증명할수 있는 방법은 많다. 가장 간단한 방법은 <strong>객체의 메소드는 객체 안에 존재하지 않는다</strong>. 메소드를 소유한 parent 객체는 객체에 포함된 메소드들의 참조값만을 가지고 있다. 즉 메소드들 자체도 각각 개별 객체로서 존재한다. 이 내용은 prototype을 다루면서 더 자세히 설명하겠다. 또한가지 방법은 <code>Object Notation</code> 이다. JSON의 key, value 방식의 객체 리터럴 구조는 프로그래밍 언어를 공부한 사람은 누구나 아는 <strong>배열 구조와 동일</strong> 하다.
 특히 php 와 같은 스크립트 언어의 배열을 봐왔던 사람들은 더더욱 그럴것이다. 즉 JSON의 표현방식은 [] 라는 Array 표현의 다른 방식일 뿐이다. 실제로 객체의 프로퍼티 생성이나 참조에서 . 연산자가 아닌 []를 사용 할수도 있다. </p><pre><code class="javascript">var foo = <span class="cell">{name:<span class="string">'foo'</span>}</span>;
-<span class="transposed_variable">console.</span><span class="built_in">log</span>(foo<span class="matrix">[name]</span>);
+<span class="transposed_variable">console.</span><span class="built_in">log</span>(foo<span class="matrix">[<span class="string">'name'</span>]</span>);
 &gt; foo
 </code></pre><p>즉 객체는 자기 자신을 이루는 요소들을 저장한 배열들의 집한체이며 이들은 chain 이라는 연결 구조를 가지고 있다. </p>
 <h1 id="toc_268">갈무리</h1>
