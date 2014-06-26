@@ -333,20 +333,20 @@ var C = new A();
 var B = new A();
 var C = new A();
 
-<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">B.</span>x());
+<span class="transposed_variable">B.</span>x();
 &gt; hello 
 
-<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">C.</span>x());
+<span class="transposed_variable">C.</span>x();
 &gt; hello 
 
 <span class="transposed_variable">A.</span><span class="transposed_variable">prototype.</span>x = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
      <span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="string">'world'</span>);
 };
 
-<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">B.</span>x());
+<span class="transposed_variable">B.</span>x();
 &gt; world
 
-<span class="transposed_variable">console.</span><span class="built_in">log</span>(<span class="transposed_variable">C.</span>x());
+<span class="transposed_variable">C.</span>x();
 &gt; world
 </code></pre><p>위 예제에서 A의 <code>Prototype Object</code>의 x 메소드를 재정의 하였을 때 B,C객체도 그 영향을 받는다는 것을 알 수 있다. 그 이유는 <strong>프로토타입 체인에 의한 공유 때문</strong>이다. 아래의 그림을 잘 봐보기 바란다. 
 <img src="./@img/relation3.png" alt="관계도1"></p><p>이전에 소개했던 그림과 비슷하다. 그러니 프로토타입 상속에 대한 구조 이해는 가능하리라 믿는다. 여기서 유심히 봐야할것은 <code>A Prototype Object</code> 가 소유한 <code>Constructor</code> 다. <code>A Prototype Object</code>의 <code>Constructor</code>는 A 객체의 생성자 함수이다.
