@@ -152,6 +152,11 @@
         <li class="nav-header">Recent Articles</li>
     
         <li>
+            <a href="/post/fuck-that-statup" target="_blank">우리나라 개발자들이 스타트업에 가지 않으려는 이유
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
             <a href="/post/git-commit-push" target="_blank">local 저장소에 새로운 commit 하기 
             <span class="label">Insanehong</span></a>
         </li>
@@ -168,11 +173,6 @@
     
         <li>
             <a href="/post/debuging-with-git" target="_blank">git으로 디버깅하기
-            <span class="label">Insanehong</span></a>
-        </li>
-    
-        <li>
-            <a href="/post/deview2013" target="_blank">deview2013 -  2일간의 행적들
             <span class="label">Insanehong</span></a>
         </li>
     
@@ -222,53 +222,53 @@
                         </div>
 
                         <div class="markdown-wrapper">
-                            <h1 id="toc_149">Guide to Git for Windows</h1>
+                            <h1 id="toc_153">Guide to Git for Windows</h1>
 <p>이 글은 팀내 <em class="label label-info"><strong>Windows OS</strong></em> 사용자를 위하여 Git 설치 및 업무환경 세팅에 대하여 사내 위키 문서에 정리해 놓은 내용을 옮겨온 것입니다. </p><p><em class="label label-info"><strong>Windows 7</strong></em> 을 기준으로 작성 되었으며 GUI 특히 <em class="label label-info"><strong>tortoiseSVN</strong></em> 에 익숙한 사용자 경험을 원하는 분들을 위하여<br>
 <em class="label label-important"><strong>TortoiseGit</strong></em> 의 설치와 <em class="label label-important"><strong>CLI</strong></em>를 사용하기 원하는 분들을 위한 <em class="label label-info"><strong>mysysgit</strong></em>의 설치 과정을 담고 있습니다.</p>
-<h2 id="toc_150">TortoiseGit 설치하기</h2>
+<h2 id="toc_154">TortoiseGit 설치하기</h2>
 
 <ul>
 <li><a href="https://code.google.com/p/tortoisegit/wiki/Download?tm=2">다운로드</a></li>
 </ul>
 
-<h3 id="toc_151">1. 다운로드 페이지 본인 컴퓨터에 맞는 설치 파일을 다운로드 받습니다.</h3>
+<h3 id="toc_155">1. 다운로드 페이지 본인 컴퓨터에 맞는 설치 파일을 다운로드 받습니다.</h3>
 <p><img src="./@img/tor1.jpg" alt="TortoiseGit 다운로드 페이지"></p>
-<h3 id="toc_152">2. 다운로드된 파일을 실행 합니다.</h3>
+<h3 id="toc_156">2. 다운로드된 파일을 실행 합니다.</h3>
 <p><img src="./@img/tor2.jpg" alt="TortoiseGit 다운로드 페이지"></p>
-<h3 id="toc_153">3. 다음의 예시와 같이 설치를 진행 합니다.</h3>
+<h3 id="toc_157">3. 다음의 예시와 같이 설치를 진행 합니다.</h3>
 <p><img src="./@img/tor3.jpg" alt="TortoiseGit 설치1"></p><p><img src="./@img/tor4.jpg" alt="TortoiseGit 설치2"></p><p><img src="./@img/tor5.jpg" alt="TortoiseGit 설치3"></p><p><img src="./@img/tor6.jpg" alt="TortoiseGit 설치4"></p><p><img src="./@img/tor7.jpg" alt="TortoiseGit 설치5"></p><p><img src="./@img/tor8.jpg" alt="TortoiseGit 설치6"></p>
-<h3 id="toc_154">4. 설치가 완료되면 마우스 오른쪽 버튼을 눌러 TortoiseGit 이 제대로 설치 됬는지 확인 합니다.</h3>
+<h3 id="toc_158">4. 설치가 완료되면 마우스 오른쪽 버튼을 눌러 TortoiseGit 이 제대로 설치 됬는지 확인 합니다.</h3>
 <p><img src="./@img/tor9.jpg" alt="TortoiseGit 설치 확인"></p>
-<h2 id="toc_155">ssh public key 만들기</h2>
+<h2 id="toc_159">ssh public key 만들기</h2>
 <p><em class="label label-info"><strong>github</strong></em>, <em class="label label-info"><strong>gitlab</strong></em>, <em class="label label-info"><strong>bitbucket</strong></em> 등을 이용하거나 별도로 구축한 원격의 저장소를 이용하기 위해서는 <em class="label label-important"><strong>ssh key</strong></em> 가 필요합니다. </p><p>이후에 얘기할 <em class="label label-info"><strong>msysGit</strong></em>을 이용하면 몇줄의 <em class="label label-info"><strong>commend</strong></em>info 입력으로 간단하게 만들수 있지만 일단 windows 환경에서 <em class="label label-important"><strong>PuTTYgen</strong></em> 을 이용하여 만드는 법을 소개 합니다.</p>
-<h3 id="toc_156">1. 윈도우 시작 &gt; TortoiseGit 안에 있는 PuTTYgen 을 실행 합니다.</h3>
+<h3 id="toc_160">1. 윈도우 시작 &gt; TortoiseGit 안에 있는 PuTTYgen 을 실행 합니다.</h3>
 <p><img src="./@img/key1.jpg" alt="PuTTYgen 실행1"></p>
-<h3 id="toc_157">2. PuTTY Key Generator 실행 화면에서 Generate 버튼을 클릭 합니다.</h3>
+<h3 id="toc_161">2. PuTTY Key Generator 실행 화면에서 Generate 버튼을 클릭 합니다.</h3>
 <p><img src="./@img/key2.jpg" alt="PuTTYgen 실행2"></p>
-<h3 id="toc_158">3. 표시된 영역에서 progress bar가 100%가 될때까지 마우스를 움직입니다.</h3>
+<h3 id="toc_162">3. 표시된 영역에서 progress bar가 100%가 될때까지 마우스를 움직입니다.</h3>
 <p><img src="./@img/key3.jpg" alt="PuTTYgen 실행3"></p>
-<h3 id="toc_159">4. 키 생성이 완료되면 Save Button 이 활성화 됩니다. password 를 사용하는 경우 비밀번호를 입력하고 Save Private Key Button 을 클릭합니다.</h3>
+<h3 id="toc_163">4. 키 생성이 완료되면 Save Button 이 활성화 됩니다. password 를 사용하는 경우 비밀번호를 입력하고 Save Private Key Button 을 클릭합니다.</h3>
 <p><img src="./@img/key4.jpg" alt="PuTTYgen 실행4"></p>
-<h3 id="toc_160">5. 적당한 곳에 적당한 이름으로 저장합니다. ( 예제에서는 C:\Users{username}.ssh 디렉토리를 생성하고 key 라는 이름으로 저장 하였습니다.)</h3>
+<h3 id="toc_164">5. 적당한 곳에 적당한 이름으로 저장합니다. ( 예제에서는 C:\Users{username}.ssh 디렉토리를 생성하고 key 라는 이름으로 저장 하였습니다.)</h3>
 <p><img src="./@img/key5.jpg" alt="PuTTYgen 실행5"></p>
 <ol>
 <li>public key 부분도 복사하여 별도의 파일로 저장해둔다. (추후 repository server에 public key를 등록해야한다.)</li>
 </ol>
 <p><img src="./@img/key6.jpg" alt="PuTTYgen 실행6"></p>
-<h2 id="toc_161">CLI 사용을 위한 msysGit 설치</h2>
+<h2 id="toc_165">CLI 사용을 위한 msysGit 설치</h2>
 <p>Git은 여러모로 GUI보다는 CLI 에 최적화 있기 때문에 윈도우 사용자 중 CLI를 이용하고 싶은 분만 따라 하시면 됩니다. 
 GUI 를 선호하시는분은 Skip 하셔도 됩니다. </p>
 <ul>
 <li><a href="https://code.google.com/p/msysgit/downloads/list">다운로드</a></li>
 </ul>
 
-<h3 id="toc_162">1. msysGit Download 사이트로 접속후 최신버전의 설치 파일을 받습니다. (git-버전.preview배포일자.exe)</h3>
+<h3 id="toc_166">1. msysGit Download 사이트로 접속후 최신버전의 설치 파일을 받습니다. (git-버전.preview배포일자.exe)</h3>
 <p><img src="./@img/msys1.jpg" alt="msysGit 다운로드"></p>
-<h3 id="toc_163">2. 다운로드 받은 파일을 실행 합니다.</h3>
+<h3 id="toc_167">2. 다운로드 받은 파일을 실행 합니다.</h3>
 <p><img src="./@img/msys2.jpg" alt="msysGit 설치 실행"></p>
-<h3 id="toc_164">3. 다음의 안내와 같이 설치를 진행 합니다.</h3>
+<h3 id="toc_168">3. 다음의 안내와 같이 설치를 진행 합니다.</h3>
 <p><img src="./@img/msys3.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys4.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys5.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys6.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys7.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys8.jpg" alt="msysGit 설치 실행"></p><p><img src="./@img/msys9.jpg" alt="msysGit 설치 실행"></p>
-<h2 id="toc_165">참고 할만한 동영상</h2>
+<h2 id="toc_169">참고 할만한 동영상</h2>
 
 <ul>
 <li><a href="http://youtu.be/pp2S2lHjzZI">설치 가이드 영상</a></li>

@@ -152,6 +152,11 @@
         <li class="nav-header">Recent Articles</li>
     
         <li>
+            <a href="/post/fuck-that-statup" target="_blank">우리나라 개발자들이 스타트업에 가지 않으려는 이유
+            <span class="label">Insanehong</span></a>
+        </li>
+    
+        <li>
             <a href="/post/git-commit-push" target="_blank">local 저장소에 새로운 commit 하기 
             <span class="label">Insanehong</span></a>
         </li>
@@ -168,11 +173,6 @@
     
         <li>
             <a href="/post/debuging-with-git" target="_blank">git으로 디버깅하기
-            <span class="label">Insanehong</span></a>
-        </li>
-    
-        <li>
-            <a href="/post/deview2013" target="_blank">deview2013 -  2일간의 행적들
             <span class="label">Insanehong</span></a>
         </li>
     
@@ -223,9 +223,9 @@
 
                         <div class="markdown-wrapper">
                             <p>2013년 3월 어느날 새벽 4시를 향해가고 있었고  몇시간의 사투 끝에 <a href="http://twitter.com/andrwj">@andrwj</a>와 페어 작업을 통해 <em class="label label-info"><strong>Gitlab 5.0</strong></em> 설치에 성공 하였다.</p><p>하지만 그당시 서버 설정 및 기타 설치에 관련한 <em class="label label-warning"><strong>꼼수</strong></em>들이 존재 했었고 권한에 있어서는 굉장히 난해한 상황이였던 이유로 처음부터 다시 깔끔한 설정으로 설치해 보고 싶어 졌다.</p><p>그래서 지금부터 <em class="label label-info"><strong>Gitlab 5.1</strong></em>를 재설치 하는 과정을 모두 이글에 담아보려고 한다.</p>
-<h1 id="toc_125">Overview</h1>
+<h1 id="toc_129">Overview</h1>
 <p>이 글은 <a href="https://github.com/gitlabhq/gitlabhq/blob/5-1-stable/doc/install/installation.md">Gitlab 5.1 stable 설치 가이드</a>를 기반으로 <em class="label label-info"><strong>Gitlab 5.1</strong></em>을 설치하는 과정을 담고 있다. 하지만 개인의 <em class="label label-important"><strong>선호도</strong></em>와 <em class="label label-important"><strong>스타일</strong></em>, <em class="label label-important"><strong>권한관리</strong></em> 관점등을 이유로 공식가이드와 다소 다른 부분이 많이 존재한다.</p><p>이 글은 설치 가이드가 아니다. 그런이유로 이 글에서 나오는 세팅이 마음에 맞지 않거나 불가능한 설정도 담겨 있다. 그러니 절대 이 글을 통해서 완벽한 설치에 도움을 받을것이라 기대하는 것은 무리일 것이다. </p>
-<h2 id="toc_126">서버 환경</h2>
+<h2 id="toc_130">서버 환경</h2>
 
 <ul>
 <li>ubuntu 12.0.4</li>
@@ -233,7 +233,7 @@
 <li>단, 호스팅 업체에서 OS 설치시 약간의 Package를 설치해 주었다.</li>
 </ul>
 
-<h2 id="toc_127">설치 Gitlab Package &amp; Dependencies</h2>
+<h2 id="toc_131">설치 Gitlab Package &amp; Dependencies</h2>
 
 <ul>
 <li>GitLab : v5.1 stable</li>
@@ -245,15 +245,15 @@
 <li>Nginx : v1.1.19</li>
 </ul>
 
-<h1 id="toc_128">1. Packages &amp; Dependencies Install</h1>
+<h1 id="toc_132">1. Packages &amp; Dependencies Install</h1>
 <p>일단 가이드를 따라 <em class="label label-success"><strong>Dependency</strong></em> 되어있는 몇가지 <em class="label label-success"><strong>Package</strong></em> 들을 설치해야 했다. 페키지 설치는 너무나도 당연한 얘기지만 <em class="label label-success"><strong>apt-get</strong></em> 을 사용할 것이다.</p><p>현재는  <em class="label label-info"><strong>root</strong></em> 계정으로 로그인 되어있는 상태이다. </p>
-<h2 id="toc_129">1.1 Packages Install</h2>
+<h2 id="toc_133">1.1 Packages Install</h2>
 <p>모든 작업이 그렇게지만 페키지들을 설치 하기 앞서 페키지 메니저를 통한 업데이트와 메니저 업그레이드를 먼저 실시 해주었다. 물론 공식 문서에도 나와있다. </p><pre><code class="">// 패키지 설치에 사용할 apt-get <span class="operator"><span class="keyword">update</span> 및 upgrade
 $ apt-<span class="keyword">get</span> <span class="keyword">update</span>
 $ apt-<span class="keyword">get</span> upgrade
 </span></code></pre><p>작업이 완료되고 공식 설치 가이드를 따라 필요한 페키지들의 설치를 시작하였다. 나중에 공식문서가 얼마나 부실한지 깨닿게 되었지만 지금 순간에는 중요한게 아니다.</p><pre><code class=""><span class="comment">$</span> <span class="comment">apt</span><span class="literal">-</span><span class="comment">get</span> <span class="comment">install</span> <span class="literal">-</span><span class="comment">y</span> <span class="comment">build</span><span class="literal">-</span><span class="comment">essential</span> <span class="comment">zlib1g</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libyaml</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libssl</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libgdbm</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libreadline</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libncurses5</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libffi</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">curl</span> <span class="comment">git</span><span class="literal">-</span><span class="comment">core</span> <span class="comment">openssh</span><span class="literal">-</span><span class="comment">server</span> <span class="comment">redis</span><span class="literal">-</span><span class="comment">server</span> <span class="comment">postfix</span> <span class="comment">checkinstall</span> <span class="comment">libxml2</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libxslt</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libcurl4</span><span class="literal">-</span><span class="comment">openssl</span><span class="literal">-</span><span class="comment">dev</span> <span class="comment">libicu</span><span class="literal">-</span><span class="comment">dev</span>
 </code></pre><p>설치중 난데없이 <em class="label label-warning"><strong>postfix</strong></em> 호스트관련 설정을 하라는 녀석이 튀어 나왔다. postfix는 당장 사용할 생각도 없었고 필요할 때가 되면 <code>smtp.gmail.com</code> 을 사용할 계획이라 일단 <code>설정안함</code>을 선택해서 무시 했다. </p><p><img src="./@img/postfix.png" alt="ignore postfix setting"></p>
-<h2 id="toc_130">1.2 Python 설치(2.5 &gt;= version)</h2>
+<h2 id="toc_134">1.2 Python 설치(2.5 &gt;= version)</h2>
 <p>공식  설치 가이드에서 <em class="label label-important"><strong>python v2.5</strong></em> 이상을 설치하여야 하지만 아직 <em class="label label-important"><strong>v3.0</strong></em> 이상은 지원하지 않는다고 나와 있기에 <em class="label label-info"><strong>v2.7</strong></em> 버전을 설치 하기로 했다. </p>
 <blockquote>
 <p> Make sure you have the right version of Python installed. Make sure that Python is 2.5+ (3.x is not supported at the moment)</p></blockquote>
@@ -272,7 +272,7 @@ $ apt-<span class="built_in">get</span> install python2<span class="number">.7</
 // python2 install 후 버전 확인시 `command not found` error 가 발생할 경우 심볼릭 링크를 걸어 준다.
 </span>$ <span class="built_in">ln</span> -s /usr/bin/python /usr/bin/python2
 </code></pre>
-<h1 id="toc_131">2. Mysql Install</h1>
+<h1 id="toc_135">2. Mysql Install</h1>
 <p><em class="label label-info"><strong>PostgreSQL</strong></em> 와 <em class="label label-info"><strong>Mysql</strong></em> 중 단 1초의 고민도 없이  <em class="label label-info"><strong>Mysql</strong></em>을 선택 했다. PostgreSQL를 사용하지 않은 이유는 너무나도 간단 했다. </p>
 <blockquote>
 <p>&quot;PostgreSQL를 사용해본적이 단 한번도 없었다.&quot; </p></blockquote>
@@ -292,7 +292,7 @@ mysql<span class="subst">&gt;</span> FLUSH PRIVILEGES;
 
 mysql<span class="subst">&gt;</span> quit;
 </code></pre><p>설치와 동시에 <em class="label label-success"><strong>database</strong></em>와 <em class="label label-success"><strong>user</strong></em> 추가까지 완료했으며 접속 테스트까지 수행해 본결과 성공적으로 마무리 되었다.</p>
-<h1 id="toc_132">3. Gitlab User 추가</h1>
+<h1 id="toc_136">3. Gitlab User 추가</h1>
 <p>설치 가이드에서는 계정추가 이전에 Ruby를 설치하라고 하지만 계정을 만드는 것을 먼저 진행했다. 계정추가를 먼저 진행한 이유는 다음과 같다.  </p>
 <ul>
 <li>rvm 을 통한 ruby 설치</li>
@@ -308,9 +308,9 @@ mysql<span class="subst">&gt;</span> quit;
 <span class="comment">//</span> <span class="comment">이후</span> <span class="comment">작업을</span> <span class="comment">위해</span> <span class="comment">git</span> <span class="comment">디렉토리로</span> <span class="comment">변경</span>
 <span class="comment">$</span> <span class="comment">cd</span> <span class="comment">/home/git</span>
 </code></pre><p><em class="label label-info"><strong>git</strong></em> 계정을 추가하고 곧바로  <em class="label label-info"><strong>Ruby</strong></em> 설치 단계로 진행 하였다.</p>
-<h1 id="toc_133">4. Ruby Install</h1>
+<h1 id="toc_137">4. Ruby Install</h1>
 <p>위에서 밝혔듯이 지금부터 나오는 내용은 공식문서와는 전혀 다르게 진행되었다. 개인적으로 공식문서에 나온 바이너리 설치가 못마땅(?)했기에 <em class="label label-info"><strong>RVM(Ruby Version Manager)</strong></em>을 사용해서 Ruby 를 설치 하기로 했고 설치 경로와 소유자는 당연히 <em class="label label-info"><strong>git</strong></em>이 되어야 했다.</p>
-<h2 id="toc_134">4.1 RVM 설치</h2>
+<h2 id="toc_138">4.1 RVM 설치</h2>
 <pre><code class="">// rvm 을 설치
 $ bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
 
@@ -330,7 +330,7 @@ $ <span class="title">source</span> .<span class="title">bash_profile</span>
 $ <span class="title">rvm</span> -<span class="title">v</span>
 <span class="title">rvm</span> 1.19.6 <span class="params">(stable)</span></span> by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; [https://rvm.<span class="built_in">io</span>/]
 </code></pre><p>RVM 이 제대로 설치 된것을 확인 했으니 Ruby 설치를 바로 진행 했다. </p>
-<h2 id="toc_135">4.2 Ruby Install</h2>
+<h2 id="toc_139">4.2 Ruby Install</h2>
 <p>이제 RVM 을 사용해서 ruby를 설치하려고 했는데 문제가 발생 했다. ruby 를 설치하기 위해 필요한 몇가지 페키지들이 설치 되어 있지 않다고 오류가 나왔다. 
 사실 RVM 설치를 할때 나왔던 메세지를 잘 읽어봤으면 생기지 않을 문제였지만 귀찮이즘과 시간단축을 위해 무시했던게 화근이기도 했다. </p><p><em class="label label-info"><strong>rvm requirements</strong></em> command 수행후 <em class="label label-important"><strong>Missing required packages:</strong></em> 부분에서 알려주는 페키지들을 설치(global install)해 주어야 했다.</p><p><img src="./@img/ruby-dependency.png" alt="ruby-dependency"> </p><p>패키지 설치를 위해서 잠시 <em class="label label-info"><strong>root</strong></em> 계정으로 변경 하였다. </p><pre><code class=""><span class="comment">// 누락된 페키지들을 설치한다. </span>
 $ apt<span class="attribute">-get</span> install libsqlite3<span class="attribute">-dev</span> sqlite3 autoconf automake libtool bison
@@ -360,7 +360,7 @@ please run <span class="string">`rvm autolibs enable`</span> <span class="keywor
 <span class="comment">//</span> <span class="comment">bundler</span> <span class="comment">설치</span><span class="string">.</span>
 <span class="comment">$</span> <span class="comment">gem</span> <span class="comment">install</span> <span class="comment">bundler</span> 
 </code></pre><p>이렇게 해서 ruby 설치는 완료 되었다. </p>
-<h1 id="toc_136">5. Gitlab-Shell Install</h1>
+<h1 id="toc_140">5. Gitlab-Shell Install</h1>
 <p>이어서 Gitlab 5.x 에서 새로 적용된 <em class="label label-info"><strong>Gitlab-Shell</strong></em>을 설치했다. 이녀석으로 인하여 설치가 간편해졌다고 하지만 지금까지 작업만으로도 숨가뿌게 달리고 지루하 일이였던 것 만큼 간편해졌다는게 전혀 와닿지 않는다. 어째든 설치는 계속 진행 되었다.</p><p>사실 이후에 v1.3.0 으로 재설치 하였다. 왜 그렇게 했는지는 기록해 두었다. 이글을 따라서 설치하는 사람이 있다면 애당초  v1.3.0 branch를 사용할 것을 추천한다.</p><pre><code class=""><span class="comment">// gitlab-shell 을 Clone 받는다. </span>
 $ git clone https:<span class="comment">//github.com/gitlabhq/gitlab-shell.git</span>
 
@@ -378,9 +378,9 @@ $ vi <span class="transposed_variable">config.</span>yml
 $ .<span class="regexp">/bin/i</span>nstall
 
 </code></pre><p>설치가 완료되면 <em class="label label-info"><strong>/home/git/.ssh/</strong></em> 디렉토리에  <em class="label label-important"><strong>authorized_keys</strong></em> 라는 파일이 생성되는데 gitlab이 repository로 접근하는 데 사용되는 인증키이다. 4.0 버전에서는 별도로 ssh key 생성을 해주어야 했는데 자동으로 생성해주니 편리하긴 했다. </p>
-<h1 id="toc_137">6. GitLab Install</h1>
+<h1 id="toc_141">6. GitLab Install</h1>
 <p>지금까지 열심히 달려왔지만 이제서야 <em class="label label-info"><strong>Gitlab</strong></em> 을 설치하게 되었다. 만약 이 글을 따라하고 있는 사람이 있다면 앞으로 남은길이 산더미 같으니 포기하려면 지금 내려 놓는 것이 정신 건강에 좋을 것이다. </p>
-<h2 id="toc_138">6.1 Clone the Gitlab 5.1</h2>
+<h2 id="toc_142">6.1 Clone the Gitlab 5.1</h2>
 <p><em class="label label-info"><strong>Gitlab-shell</strong></em> 설치를 위해 디렉토리의 변경이 있었기에 작업디렉토리를 변경해주는 것을 잊지 말고 수행해줘야 했다. 사실 신경안쓰고 넘어갈뻔 하기도 했다.</p><pre><code class=""><span class="comment">// 작업디렉토리 변경</span>
 $ cd <span class="subst">/</span>home<span class="subst">/</span>git
 
@@ -395,7 +395,7 @@ $ git checkout <span class="attribute">-b</span> <span class="number">5</span><s
 <blockquote>
 <p>Note: You can change 5-1-stable to master if you want the bleeding edge version, but do so with caution!</p></blockquote>
 
-<h2 id="toc_139">6.2 Gitlab Configure</h2>
+<h2 id="toc_143">6.2 Gitlab Configure</h2>
 <p>지금부터의 작업은 지겨운 설정과의 싸움이며 <em class="label label-info"><strong>gem</strong></em>과의 전쟁의 시초가 되었다. 아마 앞으로 나올 설정중 이부분이 가장 간단하게 완료된 부분이 아니였나 생각한다. 실제로도 할게 거이 없기도 하다. </p><pre><code class=""><span class="comment">// gitlab 설정 파일을 복사한다.</span>
 $ cp  config/<span class="transposed_variable">gitlab.</span><span class="transposed_variable">yml.</span>example config/<span class="transposed_variable">gitlab.</span>yml
 
@@ -416,7 +416,7 @@ $ mkdir tmp<span class="subst">/</span>pids<span class="subst">/</span>
 
 $ chmod <span class="attribute">-R</span> u<span class="subst">+</span>rwX  tmp<span class="subst">/</span>pids 
 </code></pre>
-<h2 id="toc_140">6.3 puma.rb 설정</h2>
+<h2 id="toc_144">6.3 puma.rb 설정</h2>
 <p><a href="http://twitter.com/andrwj">@andrwj</a>의 말에 따르면 이녀석은 unicorn 의 대체자로 gitlab 시작 스크립트가 이전버전(5.0 &gt;=) 에서는 <em class="label label-important"><strong>unicorn</strong></em> 을 호출하고 v5.1 부터는 <em class="label label-important"><strong>puma</strong></em>를 호출하게 변경 되었다고 한다.</p><pre><code class=""><span class="comment">// puma 설정파일을 복사 한다.</span>
 $ cp config/puma.rb.example config/puma.rb
 
@@ -432,14 +432,14 @@ bind <span class="string">"unix://#{application_path}/tmp/sockets/gitlab.socket
 bind "</span>tcp:<span class="comment">//gitlab.ninjacamp.org:9292 </span>
 <span class="comment"># bind "unix://#{application_path}/tmp/sockets/gitlab.socket</span>
 </code></pre>
-<h2 id="toc_141">6.4 database 설정</h2>
+<h2 id="toc_145">6.4 database 설정</h2>
 <p>위에서 메모해둔 mysql 정보를 써먹을때가 왔다. 사실 절대 잊어버릴수 없는 비밀번호임을 다시 생각해본다. </p><pre><code class=""><span class="comment">// mysql 설정 파일을 복사 한다.</span>
 $ cp config/<span class="transposed_variable">database.</span><span class="transposed_variable">yml.</span>mysql config/<span class="transposed_variable">database.</span>yml
 
 <span class="comment">// production 설정을 생성한 database 맞게 수정한다.</span>
 $ vi config/<span class="transposed_variable">database.</span>yml
 </code></pre><p><em class="label label-info"><strong>database.yml</strong></em> 파일을 열어보면 <em class="label label-important"><strong>production</strong></em>, <em class="label label-important"><strong>development</strong></em>, <em class="label label-important"><strong>test</strong></em> 의 3가지 섹션이 존재 한다. 하지만 이번 설치에서는 <em class="label label-important"><strong>production</strong></em> 부분만을 수정했다. </p><p><em class="label label-info"><strong>username</strong></em> 과 <em class="label label-info"><strong>password</strong></em> 만 위에서 생성한 정보로 수정 했다. </p><p><img src="./@img/database.png" alt="worker"> </p>
-<h2 id="toc_142">6.5 Install Gems</h2>
+<h2 id="toc_146">6.5 Install Gems</h2>
 <p>이제부터가 진정한 싸움의 시작을 알리는 서막이였다. 처음부터 오류가 터져 나와 주었다. <em class="label label-important"><strong>charlock_holmes</strong></em> 설치가 되지 않았던 것이다. </p><pre><code class=""><span class="comment">$</span> <span class="comment">gem</span> <span class="comment">install</span> <span class="comment">charlock_holmes</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">version</span> <span class="comment">'0</span><span class="string">.</span><span class="comment">6</span><span class="string">.</span><span class="comment">9'</span>
 
 <span class="comment">Building</span> <span class="comment">native</span> <span class="comment">extensions</span><span class="string">.</span>  <span class="comment">This</span> <span class="comment">could</span> <span class="comment">take</span> <span class="comment">a</span> <span class="comment">while</span><span class="string">.</span><span class="string">.</span><span class="string">.</span>
@@ -520,7 +520,7 @@ Administrator account created:
 login.........admin@local.host
 password.....<span class="number">.5</span>iveL!fe
 </code></pre><p>마지막 명령을 수행하고 나오는 ouput 중 중요한 정보들이 있다. 초기 관리자 계정과 비밀번호. 나중에 다시 찾아보는걸 방지하기 위해 미리 기록해 두었다.</p>
-<h2 id="toc_143">6.6 Check Application Status</h2>
+<h2 id="toc_147">6.6 Check Application Status</h2>
 <p>gitlab 을 스타트 하기 위해 필요한 녀석들이 제대로 인스톨 되었는지 확인하는 단계다. 바로 이부분에서  <em class="label label-info"><strong>Gitlab-Shell v1.2.0</strong></em> 설치 부분에서 말했던 이슈와 함께  <em class="label label-info"><strong>Gitlab-Shell</strong></em> 을 재설치 하게 되었다. </p><pre><code class=""><span class="char">$ </span>su - git
 
 <span class="char">$ </span>cd /home/git/gitlab
@@ -562,7 +562,7 @@ Checking Gitlab Shell ... Finished
 .
 Checking GitLab ... Finished
 </span></code></pre><p><em class="label label-info"><strong>Gitlab</strong></em> 과 <em class="label label-info"><strong>Gitlab-Shell</strong></em> 모두 최신 버전으로 설치가 완료 되었음이 확인 되었다. </p>
-<h1 id="toc_144">7. Install init Script</h1>
+<h1 id="toc_148">7. Install init Script</h1>
 <p>이부부은 gitlab을 관리하는 스크립트를 설치하는 부분임으로 다시  <em class="label label-info"><strong>root</strong></em>계정으로 변경 하였다. 특별한 이슈 없이 설치 가이드를 따라 진행했다.</p><pre><code class=""><span class="char">$ </span>curl --output /etc/init.d/gitlab <span class="method">https:</span>//raw.github.com/gitlabhq/gitlab-recipes/<span class="number">5</span>-<span class="number">1</span>-stable/init.d/gitlab
 
 <span class="char">$ </span>chmod +x /etc/init.d/gitlab
@@ -576,7 +576,7 @@ Checking GitLab ... Finished
 * <span class="class">Listening</span> on <span class="method">tcp:</span>//gitlab.ninjacamp.<span class="method">org:</span><span class="number">9292</span>
 <span class="class">Gitlab</span> service started
 </code></pre>
-<h1 id="toc_145">8. NginX Install</h1>
+<h1 id="toc_149">8. NginX Install</h1>
 <p><em class="label label-info"><strong>9292 포트</strong></em>로 열린 Gitlab을 <em class="label label-info"><strong>80 포트</strong></em>로 서비스하기 위해 nginx 를 proxy로 사용하기로 했다. </p><pre><code class="nginx"><span class="comment">// nginx 설치</span>
 $ apt<span class="attribute">-get</span> install nginx
 
@@ -624,7 +624,7 @@ $ vi <span class="subst">/</span>etc<span class="subst">/</span>nginx<span class
 
 </code></pre><p>nginx 를 실행 시켜주고 서비스 되는지 확인.</p><pre><code class=""><span class="variable">$ </span>service nginx start
 </code></pre><p><img src="./@img/gitlab-start.png" alt="gitlab-start"> </p>
-<h1 id="toc_146">9. .bashrc PATH 설정</h1>
+<h1 id="toc_150">9. .bashrc PATH 설정</h1>
 <p>사실 브라우저를 통해 실행 화면을 보았을때 모든게 끝이 났다고 생각했다. 하지만 크나큰 오산. </p><pre><code class=""><span class="char">$ </span>git push -u origin master
 /usr/bin/<span class="method">env:</span> <span class="method">ruby:</span> 그런 파일이나 디렉터리가 없습니다
 <span class="method">fatal:</span> <span class="class">Could</span> not read from remote repository.
@@ -644,7 +644,7 @@ To git<span class="property">@gitlab</span>.ninjacamp.<span class="attribute">or
  * [<span class="keyword">new</span> branch]      master<span class="function"> -&gt;</span> master
 Branch master set up to track remote branch master from origin.
 </code></pre>
-<h1 id="toc_147">마무리</h1>
+<h1 id="toc_151">마무리</h1>
 <p>이로서 이번 재설치의 모든 작업을 기록으로 남기는 것이 모두 완료되었다. 처음에도 밝혔지만 별거아닌 작업이고 설치 가이드를 따라 진행했으며 백전노장의 도움을 받으면서 이글은 누군가가 이글을 따라 설치하는데 도움이 됬으면 한다거나 하는 생각으로 만든 글이 아니다. 단순히 개인의 작업을 리뷰할 생각으로 기록으로 남기고 싶었을 뿐이다.</p><p>이 작업이 완료될수 있게(평소에도 많은 도움을 받지만) 도와준  백전노장 <a href="http://twitter.com/andrwj">@andrwj</a> 에게 다시한번 감사의 말을 전하며 마친다.</p>
                         </div>
                         <hr />
