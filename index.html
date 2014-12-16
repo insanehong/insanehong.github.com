@@ -217,8 +217,9 @@
                 </div>
                 <div class="markdown-wrapper">
                     <h1 id="toc_363">14. 12.16(Tue)</h1>
-<p>spring boot 에서 template engine 으로 thymeleaf 사용하면서 문제가 생겼다. </p><pre><code class="">spring<span class="preprocessor">.thymeleaf</span><span class="preprocessor">.mode</span>=html
-</code></pre><p>hymeleaf 를 html5 모드로 돌렸더니 self end tag 관련 error 로 html 파싱을 제대로 해주지 못했다. </p><p>문제가 된 태그는 <code>link</code> 와 <code>meta</code> </p>
+<p>spring boot 에서 template engine 으로 thymeleaf 사용하면서 문제가 생겼다. </p><p>thymeleaf 를 html5 모드로 돌렸더니 self end tag 관련 error 로 html 파싱을 제대로 해주지 못했다. </p><pre><code class=""><span class="comment">//문제가된 설정</span>
+<span class="transposed_variable">spring.</span><span class="transposed_variable">thymeleaf.</span>mode=html5
+</code></pre><p>self close tag 가 없어 문제가 된 태그는 <code>link</code> 와 <code>meta</code>! </p>
                 </div>
                 <hr/>
                 <a class="pull-right" href="/post/yobi-dev-diary-4th#disqus_thread"></a>

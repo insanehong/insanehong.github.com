@@ -225,10 +225,11 @@
 
                         <div class="markdown-wrapper">
                             <h1 id="toc_362">14. 12.16(Tue)</h1>
-<p>spring boot 에서 template engine 으로 thymeleaf 사용하면서 문제가 생겼다. </p><pre><code class="">spring<span class="preprocessor">.thymeleaf</span><span class="preprocessor">.mode</span>=html
-</code></pre><p>hymeleaf 를 html5 모드로 돌렸더니 self end tag 관련 error 로 html 파싱을 제대로 해주지 못했다. </p><p>문제가 된 태그는 <code>link</code> 와 <code>meta</code> </p><p>하지만 html5  스펙에서 해당 태그들은</p><pre><code class="">Tag omission <span class="operator">in</span> <span class="keyword">text</span>/html:
+<p>spring boot 에서 template engine 으로 thymeleaf 사용하면서 문제가 생겼다. </p><p>thymeleaf 를 html5 모드로 돌렸더니 self end tag 관련 error 로 html 파싱을 제대로 해주지 못했다. </p><pre><code class=""><span class="comment">//문제가된 설정</span>
+<span class="transposed_variable">spring.</span><span class="transposed_variable">thymeleaf.</span>mode=html5
+</code></pre><p>self close tag 가 없어 문제가 된 태그는 <code>link</code> 와 <code>meta</code>! </p><p>하지만 html5  스펙에서 해당 태그들은</p><pre><code class="">Tag omission <span class="operator">in</span> <span class="keyword">text</span>/html:
 No <span class="function"><span class="keyword">end</span> <span class="title">tag</span>.</span>
-</code></pre><p>로 정의되어 있어 end tag 를 생략해도 무방한 상태.</p><p>뭔가 이상해서 구글신에게 물어본 결과 이미 known issue 였고 이미 solution 도 나와 closed 된 이슈였다. </p><p><a href="https://github.com/spring-projects/spring-boot/issues/1270">https://github.com/spring-projects/spring-boot/issues/1270</a></p><p>해결책은 </p><pre><code class="">spring<span class="preprocessor">.thymeleaf</span><span class="preprocessor">.mode</span>=LEGACYHTML5 
+</code></pre><p>와 같이  정의되어 있어 self end tag 를 생략해도 무방한 상태.</p><p>뭔가 이상해서 구글신에게 물어본 결과 이미 known issue 였고 이미 solution 도 나와 closed 된 이슈였다. </p><p><a href="https://github.com/spring-projects/spring-boot/issues/1270">https://github.com/spring-projects/spring-boot/issues/1270</a></p><p>해결책은 </p><pre><code class="">spring<span class="preprocessor">.thymeleaf</span><span class="preprocessor">.mode</span>=LEGACYHTML5 
 </code></pre><p>로 설정하는 것인데 추가적으로 pom.xml 에서 </p><pre><code class=""><span class="tag">&lt;<span class="title">dependency</span>&gt;</span>
    <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>net.sourceforge.nekohtml<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span>
    <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>nekohtml<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span>
